@@ -13,7 +13,7 @@ public class LookAround : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -24,6 +24,9 @@ public class LookAround : MonoBehaviour
 
         ScreenHeight = Screen.height / 2;
 
+
+        //Delimitador de visão por angulação + metade da tela
+        /*
         if (Input.mousePosition.y > ScreenHeight)
         {
             xRotation -= mouseY;
@@ -31,8 +34,11 @@ public class LookAround : MonoBehaviour
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }
 
-        Debug.Log(xRotation);
-        
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        */
+
         playerBody.Rotate(Vector3.up * mouseX);
     }
 }
