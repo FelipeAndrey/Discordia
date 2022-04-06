@@ -8,7 +8,7 @@ public class LookAround : MonoBehaviour
     public float mouseSensitive;
     public Transform playerBody;
     float xRotation = 0f;
-    float ScreenHeight;
+    //float ScreenHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -22,23 +22,21 @@ public class LookAround : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitive * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitive * Time.deltaTime;
 
-        ScreenHeight = Screen.height / 2;
-
-
         //Delimitador de visão por angulação + metade da tela
         /*
+        ScreenHeight = Screen.height / 2;
         if (Input.mousePosition.y > ScreenHeight)
         {
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 0f);
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }
+        */
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 0f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        */
-
+        
         playerBody.Rotate(Vector3.up * mouseX);
     }
 }
