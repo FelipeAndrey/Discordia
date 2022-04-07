@@ -7,7 +7,7 @@ public class PlayerWalking : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     public Transform player;
-    public Camera camera;
+    public Camera PlayerCam;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class PlayerWalking : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = PlayerCam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit))
