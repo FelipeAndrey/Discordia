@@ -34,7 +34,7 @@ public class LookAround : MonoBehaviour
         */
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -40f, 5f);
+        xRotation = Mathf.Clamp(xRotation, -75f, 75f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         
         playerBody.Rotate(Vector3.up * mouseX);
