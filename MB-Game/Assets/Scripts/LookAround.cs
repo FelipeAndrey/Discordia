@@ -22,17 +22,7 @@ public class LookAround : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitive * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitive * Time.deltaTime;
 
-        //Delimitador de visão por angulação + metade da tela
-        /*
-        ScreenHeight = Screen.height / 2;
-        if (Input.mousePosition.y > ScreenHeight)
-        {
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 0f);
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        }
-        */
-
+        //Delimitador de visão por angulação
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -75f, 75f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
