@@ -1112,6 +1112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porta_Volumes
       objectReference: {fileID: 0}
+    - target: {fileID: 1159580853137179852, guid: 71a4a8d36123ec54e86efd87a07e7427, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1159580853137179890, guid: 71a4a8d36123ec54e86efd87a07e7427, type: 3}
       propertyPath: m_Enabled
       value: 1

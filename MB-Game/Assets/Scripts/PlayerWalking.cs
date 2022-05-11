@@ -28,5 +28,11 @@ public class PlayerWalking : MonoBehaviour
                 navMeshAgent.SetDestination(hit.point);
             }
         }
+        Debug.Log(Input.mousePosition);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(PlayerCam.ScreenPointToRay(Input.mousePosition));
     }
 }
