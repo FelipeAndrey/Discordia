@@ -26,13 +26,9 @@ public class PlayerWalking : MonoBehaviour
             if(Physics.Raycast(ray, out hit))
             {
                 navMeshAgent.SetDestination(hit.point);
+                Debug.DrawRay(PlayerCam.transform.position, hit.point, Color.white, 2f);
             }
         }
-        Debug.Log(Input.mousePosition);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(PlayerCam.ScreenPointToRay(Input.mousePosition));
+        //Debug.Log(Input.mousePosition);
     }
 }
