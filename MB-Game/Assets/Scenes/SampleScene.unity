@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 4ede03209b788a841b874aa3db22625b, type: 2}
---- !u!1 &351546378
+--- !u!1 &494482604
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,23 +131,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 351546379}
+  - component: {fileID: 494482606}
+  - component: {fileID: 494482605}
   m_Layer: 0
-  m_Name: NavMesh
+  m_Name: CameraManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &351546379
+--- !u!114 &494482605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494482604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b512703a9bb209b45b56800a8141c87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &494482606
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351546378}
+  m_GameObject: {fileID: 494482604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.7211533, y: 16.820839, z: -6.3856125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -662,7 +675,7 @@ GameObject:
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,8 +1320,8 @@ GameObject:
   - component: {fileID: 1769510177}
   - component: {fileID: 1769510180}
   - component: {fileID: 1769510179}
-  - component: {fileID: 1769510181}
   - component: {fileID: 1769510182}
+  - component: {fileID: 1769510181}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
