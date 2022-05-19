@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
+    [Header("Atributos para o Diálogo")]
     public CameraManager cameraManager;
     public PlayerManager playerManager;
+    public GameObject dialogueCanvas;
+    public TextMeshProUGUI TMPName;
+    public TextMeshProUGUI TMPSentence;
+    private Queue<string> sentences;
     private bool onDialogue;
+
 
     void Start()
     {
         sentences = new Queue<string>();
+        dialogueCanvas.SetActive(false);
     }
 
     void Update()
@@ -43,7 +49,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueStructure dialogue)
     {
-        Debug.Log("Iniciando conversa com: " + dialogue.name);
+        dialogueCanvas.SetActive(onDialogue);
+        TMPName.text = dialogue.name;
         sentences.Clear();
 
         foreach(string sentence in dialogue.sentence)
@@ -62,17 +69,19 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string displaySentence = sentences.Dequeue();
-        Debug.Log(displaySentence);
+        TMPSentence.text = displaySentence;
     }
 
     public void EndDialogue()
     {
-        Debug.Log("Encerrou o dialogo");
         onDialogue = false;
+        dialogueCanvas.SetActive(onDialogue);
         playerManager.SetWalk(true);
 
         if (cameraManager.CameraTarget != null)
+        {
             ActiveCameraTrade(false);
+        }
     }
 
     #region Trade Camera On/Off
