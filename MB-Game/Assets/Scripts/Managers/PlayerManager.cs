@@ -12,8 +12,11 @@ public class PlayerManager : MonoBehaviour
     public Animator Animator;
     [Header("Look Settings")]
     [Range(10, 1000)] public float mouseSensitive;
-    private float yRotation = 0f;
     [SerializeField] LayerMask layerMask;
+    private float yRotation = 0f;
+
+    //Gets & Sets Variáveis
+    private bool canWalk = true;
 
     void Start()
     {
@@ -29,28 +32,33 @@ public class PlayerManager : MonoBehaviour
 
     public void Walking()
     {
-        Ray ray = main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Vector3 floor;
-
-        if (Physics.Raycast(ray, out hit, 1000, layerMask))
+        if (canWalk)
         {
-            if(Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, 1000, layerMask))
+            Ray ray = main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Vector3 floor;
+
+            //Disparo em linha reta
+            if (Physics.Raycast(ray, out hit, 1000, layerMask))
             {
-                floor = hit2.point;
+                //Autodisparo ponto no chão
+                if (Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, 1000, layerMask))
+                {
+                    floor = hit2.point;
+                }
+                else
+                {
+                    floor = hit.point;
+                }
+                NavMeshAgent.SetDestination(floor);
+                Debug.DrawRay(main.transform.position, hit.point, Color.white, 2f);
             }
-            else
-            {
-                floor= hit.point;
-            }
-            NavMeshAgent.SetDestination(floor);
-            Debug.DrawRay(main.transform.position, hit.point, Color.white, 2f);
-        }
+        }        
     }
 
     public void Focus(bool value)
     {
-        CameraManager.SetFocus(value);
+        CameraManager.Focus = value;
     }
 
     public void Look()
@@ -66,4 +74,23 @@ public class PlayerManager : MonoBehaviour
         main.transform.parent.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
 
     }
+
+    #region Gets & Sets Métodos
+    //Andar do personagem
+    /// <summary>
+    /// Retorna o valor atual da condição booleana <c>canWalk</c> referente ao recurso de movimentação do player.
+    /// </summary>
+    /// <returns>Retorna um valor: <c>bool</c></returns>
+    public bool GetWalk()
+    {
+        return canWalk;
+    }
+    /// <summary>
+    /// Altera o valor atual da condição booleana <c>canWalk</c> referente ao recurso de movimentação do player.
+    /// </summary>
+    public void SetWalk(bool value)
+    {
+        canWalk = value;
+    }
+    #endregion
 }

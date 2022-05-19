@@ -14,8 +14,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //Recursos passivos
         PlayerManager.Look();
         PlayerManager.Breathing();
+
+        //Recursos ativos
         if (Input.GetMouseButtonDown(1)){
             focus = !focus;
             PlayerManager.Focus(focus);
