@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 155172005}
   - component: {fileID: 155172007}
   - component: {fileID: 155172006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HauntCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 951342059}
   - component: {fileID: 951342057}
   - component: {fileID: 951342058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Haunt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,7 +996,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 31
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 1090715031}
   - component: {fileID: 1090715030}
   - component: {fileID: 1090715029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HauntBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1967,10 +1967,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NavMeshAgent: {fileID: 1769510180}
   Animator: {fileID: 1769510181}
-  mouseSensitive: 408
+  mouseSensitive: 400
   layerMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 63
 --- !u!114 &1769510183
 MonoBehaviour:
   m_ObjectHideFlags: 0
