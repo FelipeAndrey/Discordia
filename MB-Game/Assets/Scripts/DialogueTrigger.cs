@@ -36,11 +36,18 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        collided = true;
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            collided = true;
+        }
+        
     }
     private void OnTriggerExit(Collider other)
     {
-        collided = false;
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            collided = false;
+        }
     }
 
     private void TradeCamera()
