@@ -1374,6 +1374,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NavMeshAgent: {fileID: 1769510180}
   Animator: {fileID: 1769510181}
+  mouseSensitive: 400
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &1769510183
 MonoBehaviour:
   m_ObjectHideFlags: 0
