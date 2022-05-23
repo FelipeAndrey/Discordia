@@ -6,5 +6,5 @@ using UnityEngine;
 public class DialogueStructure
 {
     public string name;
-    [TextArea(3, 10)] public string[] sentence;
+    [TextArea(1, 3)] public string[] sentence;
 }

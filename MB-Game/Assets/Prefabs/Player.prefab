@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 4219055182111111547}
   - component: {fileID: 4219055182111111550}
   - component: {fileID: 4219055182111111551}
+  - component: {fileID: 2009497220943326428}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -238,7 +239,7 @@ MonoBehaviour:
   mouseSensitive: 400
   layerMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 191
 --- !u!114 &4219055182111111551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +255,23 @@ MonoBehaviour:
   main: {fileID: 4219055183454355755}
   ZoomSpeed: 2
   zoom: 25
+--- !u!114 &2009497220943326428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4219055182111111544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 2
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: fe61bc789618aa74aace9f09560d2425, type: 2}
 --- !u!1 &4219055183454355753
 GameObject:
   m_ObjectHideFlags: 0
