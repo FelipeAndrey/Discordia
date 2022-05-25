@@ -23,7 +23,8 @@ public class BargainManager : MonoBehaviour
         {
             case "HUD":
                 break;
-            case "Behaivor":
+            case "Behavior":
+                target.gameObject.GetComponent<PlayerManager>().SetSpeed(60f);
                 break;
             case "VFX":
                 target.gameObject.SetActive(false);
@@ -39,7 +40,7 @@ public class BargainManager : MonoBehaviour
         {
             case "HUD":
                 break;
-            case "Behaivor":
+            case "Behavior":
                 break;
             case "VFX":
                 target.gameObject.SetActive(false);

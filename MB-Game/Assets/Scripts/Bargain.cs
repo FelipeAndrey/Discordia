@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Bargain : MonoBehaviour
 {
-    public BargainManager BargainManager;
-    public DialogueTrigger DialogueTrigger;
-    public GameObject BargainTrigger, BargainTarget;
     #region Bargain Settings
     public enum Category { Local, Interactive }
-    public enum Type { HUD, Behavior, VFX, Camera}
+    public enum Type { HUD, Behavior, VFX, Camera }
     #endregion
+    public BargainManager BargainManager;
+    public DialogueTrigger DialogueTrigger;
+    public GameObject BargainTrigger, BargainTarget = null;
     public Category category;
     public Type type;
     [TextArea(1, 2)]public string description;
@@ -31,10 +31,12 @@ public class Bargain : MonoBehaviour
                 {
                     BargainManager.Type = type.ToString();
                     BargainManager.StartBargain(this);
-                    BargainManager.Interactive(BargainTarget);
+                    if(BargainTarget != null)
+                    {
+                        BargainManager.Interactive(BargainTarget);
+                    }
                     DialogueTrigger.manager.EndDialogue();
                     bargainID = BargainManager.Bargain.Count - 1;
-                    this.gameObject.SetActive(false);
                 }
                 else if(Input.GetKeyUp(KeyCode.N))
                 {
@@ -44,7 +46,7 @@ public class Bargain : MonoBehaviour
             {
                 BargainManager.StartBargain(this);
                 BargainTrigger.gameObject.SetActive(true);
-                BargainTrigger.GetComponent<ActivateBargainTrigger>().ID = bargainID;
+                BargainTrigger.GetComponent<LocalTrigger>().ID = bargainID;
                 bargainID = BargainManager.Bargain.Count - 1;
                 this.gameObject.SetActive(false);
             }

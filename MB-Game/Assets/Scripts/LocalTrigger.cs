@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateBargainTrigger : MonoBehaviour
+public class LocalTrigger : MonoBehaviour
 {
     public BargainManager bargainManager;
     public GameObject bargainTarget;
@@ -18,8 +18,17 @@ public class ActivateBargainTrigger : MonoBehaviour
                 {
                     bargainManager.Type = target.type.ToString();
                     bargainManager.Local(bargainTarget);
+                    if (!this.GetComponent<DialogueTrigger>().manager.onDialogue)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        this.gameObject.SetActive(false);
+                    }
                 }
             }
+            
         }
     }
 

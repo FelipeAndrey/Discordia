@@ -13,10 +13,14 @@ public class PlayerManager : MonoBehaviour
     [Header("Look Settings")]
     [Range(10, 1000)] public float mouseSensitive;
     [SerializeField] LayerMask layerMask;
-    private float yRotation = 0f;
+
+    #region Gets & Sets
     public int Sannity { get; set; } = 100;
+    public int distanceClick { get; set; } = 1000;
+    #endregion
 
     //Gets & Sets Variáveis
+    private float yRotation = 0f;
     private bool canWalk = true;
 
     void Start()
@@ -40,10 +44,10 @@ public class PlayerManager : MonoBehaviour
             Vector3 floor;
 
             //Disparo em linha reta
-            if (Physics.Raycast(ray, out hit, 1000, layerMask))
+            if (Physics.Raycast(ray, out hit, distanceClick, layerMask))
             {
                 //Autodisparo ponto no chão
-                if (Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, 1000, layerMask))
+                if (Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, distanceClick, layerMask))
                 {
                     floor = hit2.point;
                 }
@@ -75,9 +79,8 @@ public class PlayerManager : MonoBehaviour
         main.transform.parent.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
 
     }
-
+    
     #region Gets & Sets Métodos
-    //Andar do personagem
     /// <summary>
     /// Retorna o valor atual da condição booleana <c>canWalk</c> referente ao recurso de movimentação do player.
     /// </summary>
@@ -92,6 +95,15 @@ public class PlayerManager : MonoBehaviour
     public void SetWalk(bool value)
     {
         canWalk = value;
+    }
+
+    public void SetSpeed(float value)
+    {
+        NavMeshAgent.speed = value;
+    }
+    public void SetAcceleration(float value)
+    {
+        NavMeshAgent.acceleration = value;
     }
     #endregion
 }
