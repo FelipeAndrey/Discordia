@@ -12,7 +12,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI TMPName;
     public TextMeshProUGUI TMPSentence;
     private Queue<string> sentences;
-    private bool onDialogue;
+    public bool onDialogue { get; set; }
+    private DialogueTrigger trigger;
 
 
     void Start()
@@ -32,9 +33,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void Dialogue(bool value, DialogueStructure dialogue)
+    public void Dialogue(bool value, DialogueStructure dialogue, DialogueTrigger target)
     {
         this.gameObject.SetActive(value);
+        trigger = target;
         if (value)
         {
             onDialogue = true;

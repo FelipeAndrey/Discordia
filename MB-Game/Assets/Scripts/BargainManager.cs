@@ -13,13 +13,21 @@ public class BargainManager : MonoBehaviour
     public List<BargainTrigger> Bargains;
 
     //Privates
-    private Collider colliderTarget;
-    private int bargainActivated { get; set; }
+    private int Index { get; set; } = 0;
+    private List<Activators> Activators;
 
+    void Start()
+    {
+        foreach(BargainTrigger trigger in Bargains)
+        {
+            trigger.gameObject.SetActive(false);
+        }
+        Bargains[Index].gameObject.SetActive(true);
+    }
 
     public void StartBargain(int bargainIndex, BargainTrigger.TriggerCategory Category, string Type)
     {
-        bargainActivated = bargainIndex;
+        Index = bargainIndex;
         switch (Category)
         {
             case BargainTrigger.TriggerCategory.Local:
@@ -34,11 +42,6 @@ public class BargainManager : MonoBehaviour
 
     public void Local(string value) 
     {
-        if(Bargains[bargainActivated].ColliderTarget != null)
-        {
-            colliderTarget = Bargains[bargainActivated].ColliderTarget;
-        }
-        
         switch (value)
         {
             case "Camera":
@@ -47,10 +50,6 @@ public class BargainManager : MonoBehaviour
                 break;
             case "VFX":
                 GameObject PPTarget = PPManager.PP.Dequeue();
-                if (colliderTarget.isTrigger)
-                {
-                    PPTarget.gameObject.SetActive(false);
-                }
                 break;
             case "HUD":
                 break;

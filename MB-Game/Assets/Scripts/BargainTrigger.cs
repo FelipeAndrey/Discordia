@@ -12,8 +12,7 @@ public class BargainTrigger : MonoBehaviour
     public TriggerCategory BargainCategory;
     public enum Type { Camera, Behavior, VFX, HUD };
     public Type BargainType;
-    public Collider ColliderTarget;
-    private int bargainIndex;
+    private int bargainIndex { get; set; }
 
     private void Start()
     {
