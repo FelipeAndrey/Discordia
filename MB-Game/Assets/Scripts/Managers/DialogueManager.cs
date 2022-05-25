@@ -11,9 +11,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueCanvas;
     public TextMeshProUGUI TMPName;
     public TextMeshProUGUI TMPSentence;
-    private Queue<string> sentences;
+    public Queue<string> sentences;
     public bool onDialogue { get; set; }
-    private DialogueTrigger trigger;
+    public bool canNext { get; set; } = true;
 
 
     void Start()
@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (onDialogue)
+        if (onDialogue && canNext)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -33,10 +33,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void Dialogue(bool value, DialogueStructure dialogue, DialogueTrigger target)
+    public void Dialogue(bool value, DialogueStructure dialogue)
     {
         this.gameObject.SetActive(value);
-        trigger = target;
         if (value)
         {
             onDialogue = true;

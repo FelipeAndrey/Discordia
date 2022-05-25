@@ -60,6 +60,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue(bool value)
     {
-        manager.Dialogue(value, dialogue, this);
+        manager.Dialogue(value, dialogue);
     }
 }

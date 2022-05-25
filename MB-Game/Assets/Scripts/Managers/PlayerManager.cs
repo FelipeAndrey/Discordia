@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     [Range(10, 1000)] public float mouseSensitive;
     [SerializeField] LayerMask layerMask;
     private float yRotation = 0f;
+    public int Sannity { get; set; } = 100;
 
     //Gets & Sets Variáveis
     private bool canWalk = true;
