@@ -12,7 +12,7 @@ public class BargainManager : MonoBehaviour
     public List<Bargain> Bargain;
     public string Type { get; set; }
 
-    public void StartBargain(Bargain target)
+    public void AddBargain(Bargain target)
     {
         Bargain.Add(target);
     }

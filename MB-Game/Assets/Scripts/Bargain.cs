@@ -20,41 +20,71 @@ public class Bargain : MonoBehaviour
     private bool collided;
     #endregion
 
+    #region OnTriggerCollider
+    private void OnTriggerEnter(Collider other)
+    {
+        collided = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        collided = false;
+    }
+    #endregion
+
     private void Update()
     {
         if (collided)
         {
-            if (category.ToString() == "Interactive")//In Interactive Case
+            Debug.Log(this.category.ToString());
+            if (this.category.ToString() == "Interactive")//In Interactive Case
             {
-                DialogueTrigger.manager.canNext = DialogueTrigger.manager.sentences.Count == 0 ? false : true;
-                if (DialogueTrigger.manager.onDialogue && DialogueTrigger.manager.canNext == false && Input.GetKeyUp(KeyCode.Y))
-                {
-                    BargainManager.Type = type.ToString();
-                    BargainManager.StartBargain(this);
-                    if(BargainTarget != null)
-                    {
-                        BargainManager.Interactive(BargainTarget);
-                    }
-                    DialogueTrigger.manager.EndDialogue();
-                    bargainID = BargainManager.Bargain.Count - 1;
-                }
-                else if(Input.GetKeyUp(KeyCode.N))
+                Interactive();
+                if (Input.GetKeyDown(KeyCode.N))
                 {
                     DialogueTrigger.manager.EndDialogue();
                 }
-            }else if (!this.DialogueTrigger.manager.onDialogue)//In Local Case
+                
+            }else//In Local Case
             {
-                BargainManager.StartBargain(this);
-                BargainTrigger.gameObject.SetActive(true);
-                BargainTrigger.GetComponent<LocalTrigger>().ID = bargainID;
-                bargainID = BargainManager.Bargain.Count - 1;
-                this.gameObject.SetActive(false);
+                Local();
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    DialogueTrigger.manager.EndDialogue();
+                }
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Interactive() 
     {
-        collided = true;
+        DialogueTrigger.manager.canNext = DialogueTrigger.manager.sentences.Count == 0 ? false : true;
+        if (DialogueTrigger.manager.onDialogue && DialogueTrigger.manager.canNext == false && Input.GetKeyUp(KeyCode.Y))
+        {
+            BargainManager.Type = type.ToString();
+            BargainManager.AddBargain(this);
+            bargainID = BargainManager.Bargain.Count;
+            if (BargainTarget != null)
+            {
+                BargainManager.Interactive(BargainTarget);
+            }
+            DialogueTrigger.manager.EndDialogue();
+            collided = false;
+        }
+    }
+
+    public void Local() 
+    {
+        BargainManager.AddBargain(this);
+        BargainTrigger.gameObject.SetActive(true);
+        bargainID = BargainManager.Bargain.Count;
+        BargainTrigger.GetComponent<LocalTrigger>().ID = bargainID;
+        DialogueTrigger.manager.canNext = true;
+        if(DialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            DialogueTrigger.manager.canNext = false;
+            DialogueTrigger.manager.EndDialogue();
+        }
+        this.gameObject.SetActive(false);
+        collided = false;
     }
 }

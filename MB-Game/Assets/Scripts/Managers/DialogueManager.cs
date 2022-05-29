@@ -12,8 +12,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI TMPName;
     public TextMeshProUGUI TMPSentence;
     public Queue<string> sentences;
-    public bool onDialogue { get; set; }
-    public bool canNext { get; set; } = true;
+    public bool onDialogue { get; set; } = false;
+    public bool canNext { get; set; } = false;
 
 
     void Start()
@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Ondialogue: " + onDialogue + " | CanNext: " + canNext + " | Sentence Count: " + sentences.Count);
         if (onDialogue && canNext)
         {
             if (Input.GetKeyDown(KeyCode.Space))
