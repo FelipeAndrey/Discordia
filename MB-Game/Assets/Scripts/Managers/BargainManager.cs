@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class BargainManager : MonoBehaviour
 {
-    public PlayerManager PlayerManager;
-    public CameraManager CameraManager;
-    public VFXManager VFXManager;
-    public CanvasManager CanvasManager;
+    public PlayerManager playerManager;
+    public CameraManager cameraManager;
+    public VFXManager vFXManager;
+    public CanvasManager canvasManager;
+    public AudioManager audioManager;
     //[System.NonSerialized] 
     public List<Bargain> Bargain;
     public string Type { get; set; }
@@ -24,7 +26,8 @@ public class BargainManager : MonoBehaviour
             case "HUD":
                 break;
             case "Behavior":
-                target.gameObject.GetComponent<PlayerManager>().SetSpeed(60f);
+                target.gameObject.GetComponent<PlayerManager>().SetSpeed(40f);
+                audioManager.Pitch("PlayerWalk", 1.5f);
                 break;
             case "VFX":
                 target.gameObject.SetActive(false);

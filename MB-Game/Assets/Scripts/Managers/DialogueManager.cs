@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Ondialogue: " + onDialogue + " | CanNext: " + canNext + " | Sentence Count: " + sentences.Count);
         if (onDialogue && canNext)
         {
             if (Input.GetKeyDown(KeyCode.Space))

@@ -8,8 +8,9 @@ public class PlayerManager : MonoBehaviour
     Camera main;
     CameraManager CameraManager;
     [Header("Player Settings")]
-    public NavMeshAgent NavMeshAgent;
+    public NavMeshAgent navMeshAgent;
     public Animator Animator;
+    public float distMin;
     [Header("Look Settings")]
     [Range(10, 1000)] public float mouseSensitive;
     [SerializeField] LayerMask layerMask;
@@ -30,35 +31,51 @@ public class PlayerManager : MonoBehaviour
         main = Camera.main;
     }
 
+    private void Update()
+    {
+        if (navMeshAgent.remainingDistance > 0 && navMeshAgent.remainingDistance < distMin && canWalk)
+        {
+            canWalk = false;
+            navMeshAgent.isStopped = true;
+            FindObjectOfType<AudioManager>().Stop("PlayerWalk");
+        }
+    }
+
     public void Breathing()
     {
-        Animator.SetBool("Breathing", NavMeshAgent.velocity.magnitude <= .1f);
+        Animator.SetBool("Breathing", navMeshAgent.velocity.magnitude <= .1f);
     }
 
     public void Walking()
     {
-        if (canWalk)
-        {
-            Ray ray = main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            Vector3 floor;
+        canWalk = true;
+        navMeshAgent.isStopped = false;
+        Ray ray = main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Vector3 floor;
 
-            //Disparo em linha reta
-            if (Physics.Raycast(ray, out hit, distanceClick, layerMask))
+        if (Physics.Raycast(ray, out hit, distanceClick, layerMask))//Disparo em linha reta
+        {
+            //Autodisparo ponto no chão
+            if (Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, distanceClick, layerMask))
             {
-                //Autodisparo ponto no chão
-                if (Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, distanceClick, layerMask))
-                {
-                    floor = hit2.point;
-                }
-                else
-                {
-                    floor = hit.point;
-                }
-                NavMeshAgent.SetDestination(floor);
-                Debug.DrawRay(main.transform.position, hit.point, Color.white, 2f);
+                floor = hit2.point;
             }
-        }        
+            else
+            {
+                floor = hit.point;
+            }
+
+            if (navMeshAgent.remainingDistance < distMin)
+            {
+                FindObjectOfType<AudioManager>().Play("PlayerWalk");
+            }
+
+            navMeshAgent.SetDestination(floor);
+
+            //Debug.DrawRay(main.transform.position, hit.point, Color.white, 2f);
+        }
+        //Animator.SetBool("Walking", NavMeshAgent.velocity.magnitude > .1f);
     }
 
     public void Focus(bool value)
@@ -99,11 +116,11 @@ public class PlayerManager : MonoBehaviour
 
     public void SetSpeed(float value)
     {
-        NavMeshAgent.speed = value;
+        navMeshAgent.speed = value;
     }
     public void SetAcceleration(float value)
     {
-        NavMeshAgent.acceleration = value;
+        navMeshAgent.acceleration = value;
     }
     #endregion
 }

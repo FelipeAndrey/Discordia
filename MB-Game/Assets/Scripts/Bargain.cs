@@ -8,9 +8,10 @@ public class Bargain : MonoBehaviour
     public enum Category { Local, Interactive }
     public enum Type { HUD, Behavior, VFX, Camera }
     #endregion
-    public BargainManager BargainManager;
-    public DialogueTrigger DialogueTrigger;
-    public GameObject BargainTrigger, BargainTarget = null;
+    public BargainManager bargainManager;
+    public DialogueTrigger dialogueTrigger;
+    public AudioManager audioManager;
+    public GameObject bargainTrigger, bargainTarget = null;
     public Category category;
     public Type type;
     [TextArea(1, 2)]public string description;
@@ -35,13 +36,13 @@ public class Bargain : MonoBehaviour
     {
         if (collided)
         {
-            Debug.Log(this.category.ToString());
             if (this.category.ToString() == "Interactive")//In Interactive Case
             {
                 Interactive();
                 if (Input.GetKeyDown(KeyCode.N))
                 {
-                    DialogueTrigger.manager.EndDialogue();
+                    audioManager.Stop("Whisper");
+                    dialogueTrigger.manager.EndDialogue();
                 }
                 
             }else//In Local Case
@@ -49,7 +50,8 @@ public class Bargain : MonoBehaviour
                 Local();
                 if (Input.GetKeyDown(KeyCode.N))
                 {
-                    DialogueTrigger.manager.EndDialogue();
+                    audioManager.Stop("Whisper");
+                    dialogueTrigger.manager.EndDialogue();
                 }
             }
         }
@@ -57,32 +59,37 @@ public class Bargain : MonoBehaviour
 
     public void Interactive() 
     {
-        DialogueTrigger.manager.canNext = DialogueTrigger.manager.sentences.Count == 0 ? false : true;
-        if (DialogueTrigger.manager.onDialogue && DialogueTrigger.manager.canNext == false && Input.GetKeyUp(KeyCode.Y))
+        audioManager.Play("Whisper");
+        dialogueTrigger.manager.canNext = dialogueTrigger.manager.sentences.Count == 0 ? false : true;
+        if (dialogueTrigger.manager.onDialogue && dialogueTrigger.manager.canNext == false && Input.GetKeyUp(KeyCode.Y))
         {
-            BargainManager.Type = type.ToString();
-            BargainManager.AddBargain(this);
-            bargainID = BargainManager.Bargain.Count;
-            if (BargainTarget != null)
+            bargainManager.Type = type.ToString();
+            bargainManager.AddBargain(this);
+            bargainID = bargainManager.Bargain.Count;
+            if (bargainTarget != null)
             {
-                BargainManager.Interactive(BargainTarget);
+                bargainManager.Interactive(bargainTarget);
             }
-            DialogueTrigger.manager.EndDialogue();
+            dialogueTrigger.manager.EndDialogue();
+            this.gameObject.SetActive(false);
             collided = false;
+            audioManager.Stop("Whisper");
         }
     }
 
     public void Local() 
     {
-        BargainManager.AddBargain(this);
-        BargainTrigger.gameObject.SetActive(true);
-        bargainID = BargainManager.Bargain.Count;
-        BargainTrigger.GetComponent<LocalTrigger>().ID = bargainID;
-        DialogueTrigger.manager.canNext = true;
-        if(DialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+        audioManager.Play("Whisper");
+        bargainManager.AddBargain(this);
+        bargainTrigger.gameObject.SetActive(true);
+        bargainID = bargainManager.Bargain.Count;
+        bargainTrigger.GetComponent<LocalTrigger>().ID = bargainID;
+        dialogueTrigger.manager.canNext = true;
+        if(dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
         {
-            DialogueTrigger.manager.canNext = false;
-            DialogueTrigger.manager.EndDialogue();
+            audioManager.Stop("Whisper");
+            dialogueTrigger.manager.canNext = false;
+            dialogueTrigger.manager.EndDialogue();
         }
         this.gameObject.SetActive(false);
         collided = false;
