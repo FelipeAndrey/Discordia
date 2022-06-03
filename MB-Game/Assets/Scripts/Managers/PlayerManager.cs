@@ -33,7 +33,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(canWalk + " / " + navMeshAgent.isStopped);
         if (navMeshAgent.remainingDistance > 0 && navMeshAgent.remainingDistance < distMin && canWalk)
         {
             navMeshAgent.isStopped = true;

@@ -47,6 +47,8 @@ public class BargainManager : MonoBehaviour
                 break;
             case "VFX":
                 target.gameObject.SetActive(false);
+                GameObject HoH = GameObject.Find("Hidden Object Holder");
+                HoH.SetActive(false);
                 break;
             case "Camera":
                 break;
