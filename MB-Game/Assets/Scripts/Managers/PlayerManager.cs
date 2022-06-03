@@ -33,9 +33,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(canWalk + " / " + navMeshAgent.isStopped);
         if (navMeshAgent.remainingDistance > 0 && navMeshAgent.remainingDistance < distMin && canWalk)
         {
-            canWalk = false;
             navMeshAgent.isStopped = true;
             FindObjectOfType<AudioManager>().Stop("PlayerWalk");
         }
@@ -48,34 +48,33 @@ public class PlayerManager : MonoBehaviour
 
     public void Walking()
     {
-        canWalk = true;
-        navMeshAgent.isStopped = false;
-        Ray ray = main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Vector3 floor;
-
-        if (Physics.Raycast(ray, out hit, distanceClick, layerMask))//Disparo em linha reta
+        if (canWalk) 
         {
-            //Autodisparo ponto no chão
-            if (Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, distanceClick, layerMask))
-            {
-                floor = hit2.point;
-            }
-            else
-            {
-                floor = hit.point;
-            }
+            navMeshAgent.isStopped = false;
+            Ray ray = main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Vector3 floor;
 
-            if (navMeshAgent.remainingDistance < distMin)
+            if (Physics.Raycast(ray, out hit, distanceClick, layerMask))//Disparo em linha reta
             {
-                FindObjectOfType<AudioManager>().Play("PlayerWalk");
+                //Autodisparo ponto no chão
+                if (Physics.Raycast(hit.point, Vector3.down, out RaycastHit hit2, distanceClick, layerMask))
+                {
+                    floor = hit2.point;
+                }
+                else
+                {
+                    floor = hit.point;
+                }
+
+                if (navMeshAgent.remainingDistance < distMin)
+                {
+                    FindObjectOfType<AudioManager>().Play("PlayerWalk");
+                }
+
+                navMeshAgent.SetDestination(floor);
             }
-
-            navMeshAgent.SetDestination(floor);
-
-            //Debug.DrawRay(main.transform.position, hit.point, Color.white, 2f);
         }
-        //Animator.SetBool("Walking", NavMeshAgent.velocity.magnitude > .1f);
     }
 
     public void Focus(bool value)
