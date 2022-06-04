@@ -11,7 +11,7 @@ public class DialogueTrigger : MonoBehaviour
 
     [Header("Automatic Dialogue")]
     public bool autoDialogue;
-    private bool collided;
+    [System.NonSerialized] public bool collided;
 
     private bool trade = false;
 

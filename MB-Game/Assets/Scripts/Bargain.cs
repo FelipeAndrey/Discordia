@@ -24,6 +24,7 @@ public class Bargain : MonoBehaviour
     #region OnTriggerCollider
     private void OnTriggerEnter(Collider other)
     {
+        audioManager.Play("Whisper");
         collided = true;
     }
     private void OnTriggerExit(Collider other)
@@ -59,7 +60,6 @@ public class Bargain : MonoBehaviour
 
     public void Interactive() 
     {
-        audioManager.Play("Whisper");
         dialogueTrigger.manager.canNext = dialogueTrigger.manager.sentences.Count == 0 ? false : true;
         if (dialogueTrigger.manager.onDialogue && dialogueTrigger.manager.canNext == false && Input.GetKeyUp(KeyCode.Y))
         {
