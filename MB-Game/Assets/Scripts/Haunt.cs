@@ -14,7 +14,6 @@ public class Haunt : MonoBehaviour
             dialogueTrigger.manager.canNext = true;
             if (dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("Entrou");
                 GoodEnding.SetActive(true);
                 dialogueTrigger.manager.canNext = false;
                 this.gameObject.GetComponent<DialogueTrigger>().enabled = false;
