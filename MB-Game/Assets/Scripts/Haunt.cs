@@ -6,6 +6,7 @@ public class Haunt : MonoBehaviour
 {
     public DialogueTrigger dialogueTrigger;
     public GameObject GoodEnding;
+    public GameObject mark;
 
     void Update()
     {
@@ -15,8 +16,9 @@ public class Haunt : MonoBehaviour
             if (dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
             {
                 GoodEnding.SetActive(true);
-                dialogueTrigger.manager.canNext = false;
+                //dialogueTrigger.manager.canNext = false;
                 this.gameObject.GetComponent<DialogueTrigger>().enabled = false;
+                mark.SetActive(true);
             }
         }
     }
