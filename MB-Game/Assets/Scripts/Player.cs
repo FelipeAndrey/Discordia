@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    PlayerManager PlayerManager;
-    private bool focus = false;
-
+    //PlayerManager PlayerManager;
+    //bool focus = false;
+ 
     void Start()
     {
-        PlayerManager = GetComponent<PlayerManager>();
+        //PlayerManager = GetComponent<PlayerManager>();
     }
 
     void Update()
     {
         //Recursos passivos
-        PlayerManager.Look();
-        PlayerManager.Breathing();
-
-        //Recursos ativos
+        //PlayerManager.Look();
+        //PlayerManager.Breathing();
+        
+        /*Recursos ativos
         if (Input.GetMouseButtonDown(1)){
             focus = !focus;
             PlayerManager.Focus(focus);
@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             PlayerManager.Walking();
-        }
+        }*/
     }
+
+
 }
