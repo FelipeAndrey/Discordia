@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerInput playerInput;
     public float speed = 5f;
     public float mouseSensitivty = 100f;
-    private float xRotation = 0f;
+    //private float xRotation = 0f;
 
 
     private void Awake()
@@ -22,7 +22,6 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         movePlayer();
-        //playerRigidbody.AddForce(new Vector3(inputVector.x, 0, inputVector.y) * speed, ForceMode.Force);
     }
 
     private void movePlayer() 
