@@ -50,7 +50,7 @@ public class Moviment : MonoBehaviour
                 obj.Interact();
             }
         }
-        else if(Input.GetKeyDown(KeyCode.E)) 
+        /*else if(Input.GetKeyDown(KeyCode.E)) 
         {
             if (Physics.Raycast(camera.transform.position, camera.transform.right, out hitInfo, distanceToInteract, LayerMask.GetMask("Lantern"))) 
             {
@@ -61,7 +61,7 @@ public class Moviment : MonoBehaviour
                 obj.Interact();
             }
         
-        }
+        }*/
     }
     #region Moviment
     private void Jump() 

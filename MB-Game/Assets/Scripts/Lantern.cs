@@ -6,6 +6,7 @@ public class Lantern : MonoBehaviour, IInteractable
 {
     public Light luz;
     public float intencidade = 1;
+    public bool luzAtiva; 
 
     public void Interact() 
     {
@@ -22,27 +23,15 @@ public class Lantern : MonoBehaviour, IInteractable
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            if (this.enabled)
-            {
-                luz.gameObject.SetActive(true);
-            }
-            else
-            {
-                luz.gameObject.SetActive(false);
-            }
+            luzAtiva = !luzAtiva;
+            luz.gameObject.SetActive(luzAtiva);
         }
     }
 
     public void LigaDesliga() 
     {
-        Debug.Log("alow");
-        if (luz.enabled)
-        {
-            luz.gameObject.SetActive(true);
-        }
-        else 
-        {
-            luz.gameObject.SetActive(false);
-        }
+ 
+        luzAtiva = !luzAtiva;
+        luz.gameObject.SetActive(luzAtiva);
     }
 }
