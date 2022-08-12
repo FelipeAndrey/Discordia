@@ -28,7 +28,7 @@ public class Lantern : MonoBehaviour, IInteractable
         }
     }
 
-    public void LigaDesliga() 
+    private void LigaDesliga() 
     {
  
         luzAtiva = !luzAtiva;
