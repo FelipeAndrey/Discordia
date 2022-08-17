@@ -779,7 +779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &346949849
 Transform:
   m_ObjectHideFlags: 0
@@ -805,7 +805,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9341038, b: 0.6839622, a: 1}
   m_Intensity: 1
   m_Range: 25
   m_SpotAngle: 68.611336
@@ -1440,7 +1440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &975891381
 Transform:
   m_ObjectHideFlags: 0
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a571b0cbe49ecda4c8f786a2dc13cbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1000
+  mouseSensitivity: 100
   playerBody: {fileID: 1669656848}
   cam: {fileID: 565037900}
   orientetion: {fileID: 634441997}
@@ -1657,7 +1657,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1165766103
 Transform:
   m_ObjectHideFlags: 0
@@ -2170,6 +2170,7 @@ GameObject:
   - component: {fileID: 1669656848}
   - component: {fileID: 1669656847}
   - component: {fileID: 1669656849}
+  - component: {fileID: 1669656850}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2188,7 +2189,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3.8
+  m_Height: 3.5
   m_Radius: 0.65
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -2227,7 +2228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Orientetion: {fileID: 634441997}
   controller: {fileID: 1669656847}
-  speed: 12
+  speed: 8
   gravity: -19.81
   jumpHeight: 3
   groundCheck: {fileID: 1179578032}
@@ -2236,6 +2237,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   distanceToInteract: 5
+--- !u!114 &1669656850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669656846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f62ebe50afa4f147b749dad8ee489d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCrounch: 3
+  speedRunning: 15
+  normalSpeed: 8
+  currentScale: 3.5
 --- !u!1 &1680043905
 GameObject:
   m_ObjectHideFlags: 0

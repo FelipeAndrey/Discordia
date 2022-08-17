@@ -20,12 +20,15 @@ public class Moviment : MonoBehaviour
     public LayerMask groudMask;
 
     private bool isGrounded;
+    private Lantern lantern;
 
     public float distanceToInteract = 4f;
 
     private void Start()
     {
         camera = Camera.main;
+        lantern = GameObject.FindObjectOfType<Lantern>();
+
     }
 
     void Update()
@@ -49,19 +52,18 @@ public class Moviment : MonoBehaviour
 
                 obj.Interact();
             }
-        }
-        /*else if(Input.GetKeyDown(KeyCode.E)) 
-        {
-            if (Physics.Raycast(camera.transform.position, camera.transform.right, out hitInfo, distanceToInteract, LayerMask.GetMask("Lantern"))) 
+            else if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact")) && lantern.luzAtiva)
             {
                 IInteractable obj = hitInfo.transform.GetComponent<IInteractable>();
 
                 if (obj == null) return;
 
                 obj.Interact();
+
             }
+
+        }
         
-        }*/
     }
     #region Moviment
     private void Jump() 
