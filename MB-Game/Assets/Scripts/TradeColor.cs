@@ -12,11 +12,17 @@ public class TradeColor : MonoBehaviour, IInteractable
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.sharedMaterial = colors[x];
+
     }
 
     public void Interact() 
     {
-        nextColor();
+        if (FindObjectOfType<Lantern>() == null)
+            return;
+        else if (FindObjectOfType<Lantern>().luzAtiva == true)
+            nextColor();
+        else 
+            return;
     }
 
     public void nextColor() 

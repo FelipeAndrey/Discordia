@@ -6,36 +6,85 @@ public class Moviment : MonoBehaviour
 {
     [SerializeField] Transform Orientetion;
 
+    [Header("Objetos")]
     private new Camera camera;
     public CharacterController controller;
 
-    public float speed = 12f;
+    [Header("Moviment")]
     public float gravity = -9.81f;
-    public float jumpHeight = 3f;
-
     private Vector3 velocity;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groudMask;
+    [Header("Stamina")]
+    //Stamina
+    public float stamina = 100f;
+    [SerializeField] private float maxStamina = 100f;
+    [Range(0, 50)][SerializeField] private float decriStamina = 0.5f;
+    [Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
 
-    private bool isGrounded;
-    private Lantern lantern;
+    [Header("Speed")]
+    //Velocidades
+    public float speedCrounch = 3f;
+    public float speedRunning = 15;
+    public float normalSpeed;
+    public float currentScale = 3.5f;
+    private float scalePlayer, currentSpeed;
+
+    [Header("Bool")]
+    //Boleana
+    [HideInInspector] public bool isGrounded;
+    [HideInInspector] public bool crouch = false;
+    [HideInInspector] public bool running;
+    [HideInInspector] public bool hasRegenStamina;
+
 
     public float distanceToInteract = 4f;
 
     private void Start()
     {
         camera = Camera.main;
-        lantern = GameObject.FindObjectOfType<Lantern>();
-
+        normalSpeed = speed;
     }
 
-    void Update()
+    private void Update()
     {
         moviment();
-        Jump();
         Interacte();
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && !crouch)
+        {
+            currentSpeed = speedRunning;
+            running = true;
+            drainStamina();
+        }
+        else
+        {
+            currentSpeed = normalSpeed;
+            running = false;
+            gainStamina();
+        }
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            crouch = true;
+            scalePlayer = 0.5f;
+            currentSpeed = speedCrounch;
+
+        }
+        else if (!running)
+        {
+            if (Physics.Raycast(camera.transform.position, camera.transform.up, controller.height + 0.2f, LayerMask.GetMask("Ground")) && !crouch)
+            {
+                return;
+            }
+            crouch = false;
+            scalePlayer = currentScale;
+            currentSpeed = normalSpeed;
+        }
+
+        speed = currentSpeed;
+        controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
     }
 
     private void Interacte() 
@@ -49,38 +98,14 @@ public class Moviment : MonoBehaviour
                 IInteractable obj = hitInfo.transform.GetComponent<IInteractable>();
 
                 if (obj == null) return;
-
                 obj.Interact();
-            }
-            else if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact")) && lantern.luzAtiva)
-            {
-                IInteractable obj = hitInfo.transform.GetComponent<IInteractable>();
-
-                if (obj == null) return;
-
-                obj.Interact();
-
             }
 
         }
         
     }
+
     #region Moviment
-    private void Jump() 
-    {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groudMask);
-
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2;
-        }
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-    }
 
     private void moviment() 
     {
@@ -96,5 +121,25 @@ public class Moviment : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
     }
+    private void drainStamina()
+    {
+        if (running)
+        {
+            stamina -= decriStamina * Time.deltaTime;
+        }
+    }
+
+    private void gainStamina()
+    {
+        if (!running && stamina <= maxStamina - 0.01f)
+        {
+            stamina += staminaRegen * Time.deltaTime;
+        }
+    }
+
+    #endregion
+
+    #region Get & Set
+    public float speed { get; set; } = 8;
     #endregion
 }
