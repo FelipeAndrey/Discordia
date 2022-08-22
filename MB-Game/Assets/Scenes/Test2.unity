@@ -2306,8 +2306,8 @@ MonoBehaviour:
   gravity: -19.81
   stamina: 100
   maxStamina: 100
-  decriStamina: 6
-  staminaRegen: 0.5
+  decriStamina: 20
+  staminaRegen: 5
   speedCrounch: 3
   speedRunning: 15
   normalSpeed: 0
@@ -2316,6 +2316,8 @@ MonoBehaviour:
   crouch: 0
   running: 0
   hasRegenStamina: 0
+  staminaProgressUI: {fileID: 1600283515}
+  sliderCanvasGroup: {fileID: 2112366795}
   distanceToInteract: 5
 --- !u!1 &1680043905
 GameObject:
@@ -2439,7 +2441,7 @@ RectTransform:
   m_GameObject: {fileID: 1748188698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1303128262}
   m_RootOrder: 0
@@ -2760,6 +2762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112366793}
   - component: {fileID: 2112366794}
+  - component: {fileID: 2112366795}
   m_Layer: 0
   m_Name: StaminaCanvasGroup
   m_TagString: Untagged
@@ -2795,7 +2798,19 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112366792}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
+--- !u!225 &2112366795
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112366792}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1107224476030936127
 PrefabInstance:
   m_ObjectHideFlags: 0
