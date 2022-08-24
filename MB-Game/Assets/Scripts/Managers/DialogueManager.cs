@@ -6,8 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     [Header("Atributos para o Diálogo")]
-    public CameraManager cameraManager;
-    public PlayerManager playerManager;
+    public GameManager Manager;
     public GameObject dialogueCanvas;
     public TextMeshProUGUI TMPName;
     public TextMeshProUGUI TMPSentence;
@@ -39,7 +38,6 @@ public class DialogueManager : MonoBehaviour
         {
             onDialogue = true;
             StartDialogue(dialogue);
-            playerManager.SetWalk(false);
         }
         else
         {
@@ -76,14 +74,13 @@ public class DialogueManager : MonoBehaviour
     {
         onDialogue = false;
         dialogueCanvas.SetActive(onDialogue);
-        playerManager.SetWalk(true);
 
-        if (cameraManager.CameraTarget != null)
+        /*if (cameraManager.CameraTarget != null)
         {
             ActiveCameraTrade(false);
-        }
+        }*/
     }
-
+    /*
     #region Trade Camera On/Off
     /// <summary>
     /// ActiveCameraTrade: Ativa ou desativa a troca de câmera.
@@ -101,5 +98,5 @@ public class DialogueManager : MonoBehaviour
     {
         cameraManager.CameraTarget = target;
     }
-    #endregion
+    #endregion*/
 }

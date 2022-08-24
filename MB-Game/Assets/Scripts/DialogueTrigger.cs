@@ -28,7 +28,8 @@ public class DialogueTrigger : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    TradeCamera();
+                    print("Trocou De Camera");
+                    //TradeCamera();
                 }
             }
         }
@@ -53,8 +54,8 @@ public class DialogueTrigger : MonoBehaviour
     private void TradeCamera()
     {
         trade = !trade;
-        manager.TargetCameraTrade(targetCamera);
-        manager.ActiveCameraTrade(trade);
+        //manager.TargetCameraTrade(targetCamera);
+        //manager.ActiveCameraTrade(trade);
         TriggerDialogue(trade);
     }
 

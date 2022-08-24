@@ -15,7 +15,6 @@ public class Look : MonoBehaviour
     [SerializeField] Transform cam;
     [SerializeField] Transform orientetion;
 
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

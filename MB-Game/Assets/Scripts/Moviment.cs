@@ -9,6 +9,7 @@ public class Moviment : MonoBehaviour
 
     [Header("Objetos")]
     private new Camera camera;
+    public GameManager gameManager;
     public CharacterController controller;
 
     [Header("Moviment")]
@@ -46,7 +47,7 @@ public class Moviment : MonoBehaviour
 
     private void Start()
     {
-        camera = Camera.main;
+        camera = gameManager.GetCamera();
         normalSpeed = speed;
     }
 
@@ -54,7 +55,6 @@ public class Moviment : MonoBehaviour
     {
         moviment();
         Interacte();
-        print(speed);
     }
 
     private void FixedUpdate()
@@ -71,7 +71,11 @@ public class Moviment : MonoBehaviour
             currentSpeed = normalSpeed;
             running = false;
             gainStamina();
-            updateStamina(0);
+
+            if(stamina >= maxStamina - 0.1f) {
+              updateStamina(0);
+            }
+              
         }
         if (Input.GetKey(KeyCode.LeftControl))
         {
