@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void Letter(bool reading) 
     {
+        print(reading);
         
         if (reading)
         {
