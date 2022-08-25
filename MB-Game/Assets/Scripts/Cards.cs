@@ -10,6 +10,10 @@ public class Cards : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (reading)
+        {
+            return;
+        }
         manager.Cards = this;
         CallCardsTrigger();
         reading = true;
@@ -24,9 +28,10 @@ public class Cards : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (reading == true && Input.GetKeyDown(KeyCode.Mouse0))
+        if (reading == true && Input.GetKeyDown(KeyCode.Mouse1))
         {
             manager.Letter(false);
+            reading = false;
         }
 
     }

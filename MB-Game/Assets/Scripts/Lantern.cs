@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lantern : MonoBehaviour, IInteractable
+public class Lantern : MonoBehaviour
 {
     public Light luz;
     public float intencidade = 1;
     public bool luzAtiva; 
 
-    public void Interact() 
-    {
-        LigaDesliga();
-    }
+
     private void Start()
     {
         GetComponentInChildren<Light>();
@@ -28,10 +25,4 @@ public class Lantern : MonoBehaviour, IInteractable
         }
     }
 
-    private void LigaDesliga() 
-    {
- 
-        luzAtiva = !luzAtiva;
-        luz.gameObject.SetActive(luzAtiva);
-    }
 }
