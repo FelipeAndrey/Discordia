@@ -20,12 +20,12 @@ public class TradeColor : MonoBehaviour, IInteractable
         if (FindObjectOfType<Lantern>() == null)
             return;
         else if (FindObjectOfType<Lantern>().luzAtiva == true)
-            nextColor();
+            NextColor();
         else 
             return;
     }
 
-    public void nextColor() 
+    public void NextColor() 
     {
         if (x < 2)
         {

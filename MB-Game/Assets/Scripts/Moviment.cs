@@ -35,8 +35,9 @@ public class Moviment : MonoBehaviour
     //Boleana
     [HideInInspector] public bool isGrounded;
     [HideInInspector] public bool crouch = false;
-    [HideInInspector] public bool running;
+    [HideInInspector] public bool running = false;
     [HideInInspector] public bool hasRegenStamina;
+    [HideInInspector] public bool isMovin;
 
     [Header("Stamina UI elements")]
     [SerializeField] private Image staminaProgressUI;
@@ -53,7 +54,7 @@ public class Moviment : MonoBehaviour
 
     private void Update()
     {
-        moviment();
+        Movimente();
         Interacte();
     }
 
@@ -119,18 +120,24 @@ public class Moviment : MonoBehaviour
 
     #region Moviment
 
-    private void moviment() 
+    private void Movimente() 
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        isMovin = true;
 
-        Vector3 move = Orientetion.right * x + Orientetion.forward * z;
+        if (isMovin)
+        {
+            Vector3 move = Orientetion.right * x + Orientetion.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+            controller.Move(move * speed * Time.deltaTime);
 
-        velocity.y += gravity * Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
 
-        controller.Move(velocity * Time.deltaTime);
+            controller.Move(velocity * Time.deltaTime);
+
+        }
+        
 
     }
     private void drainStamina()
