@@ -33,9 +33,8 @@ public class Moviment : MonoBehaviour
 
     [Header("Bool")]
     //Boleana
-    [HideInInspector] public bool isGrounded;
     [HideInInspector] public bool crouch = false;
-    [HideInInspector] public bool running = false;
+    [HideInInspector] public bool running;
     [HideInInspector] public bool hasRegenStamina;
     [HideInInspector] public bool isMovin;
 
