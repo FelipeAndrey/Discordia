@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0c2b300b168654583a0241ea276f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 795952458}
+  Manager: {fileID: 0}
   dialogueCanvas: {fileID: 1223904097}
   TMPName: {fileID: 874339828}
   TMPSentence: {fileID: 1226051828}
