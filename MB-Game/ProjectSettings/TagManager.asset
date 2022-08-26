@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Entity
+  - Lantern
+  - Letter
   layers:
   - Default
   - TransparentFX
@@ -12,10 +13,10 @@ TagManager:
   - Scenary
   - Water
   - UI
-  - Haunt
-  - Entity
-  - 
-  - 
+  - Hauntings
+  - Ground
+  - Interact
+  - Lantern
   - 
   - 
   - 
