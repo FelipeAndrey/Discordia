@@ -18,6 +18,10 @@ public class GerenciadordeInterface : MonoBehaviour
     {
         SceneManager.LoadScene(CreditsLVL);
     }
+    public void OptionsBTN(string OptionsLVL)
+    {
+        SceneManager.LoadScene(OptionsLVL);
+    }
     public void BackBTN(string Return)
     {
         SceneManager.LoadScene(Return);
