@@ -36,9 +36,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Letter(bool reading) 
-    {
-        print(reading);
-        
+    { 
         if (reading)
         {
             foreach (var item in Letters)

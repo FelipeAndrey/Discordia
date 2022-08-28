@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bilboard : MonoBehaviour
+{
+    private Camera Cam;
+
+    public bool useStaticBillboard;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Cam = Camera.main;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!useStaticBillboard)
+        {
+            transform.LookAt(Cam.transform);
+        }
+        else
+        {
+            transform.rotation = Cam.transform.rotation;
+        }
+        
+
+        transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+    }
+}

@@ -61,9 +61,25 @@ public class Moviment : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0)
         {
-            currentSpeed = speedRunning;
-            running = true;
-            drainStamina();
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
+            {
+                currentSpeed = speedRunning;
+                running = true;
+                drainStamina();
+
+            }
+            else
+            {
+                running = false;
+                gainStamina();
+
+                if (stamina >= maxStamina - 0.1f)
+                {
+                    updateStamina(0);
+                }
+
+            }
+
             updateStamina(1);
         }
         else
@@ -134,7 +150,6 @@ public class Moviment : MonoBehaviour
             velocity.y += gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
-
         }
         
 
