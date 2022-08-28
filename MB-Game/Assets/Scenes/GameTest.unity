@@ -1627,7 +1627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1658,10 +1658,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1143624430}
   m_HandleRect: {fileID: 1796383669}
   m_Direction: 0
-  m_MinValue: 50
+  m_MinValue: 25
   m_MaxValue: 500
   m_WholeNumbers: 0
-  m_Value: 52
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3642,7 +3642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '50
+  m_text: '25
 
 '
   m_isRightToLeft: 0
@@ -3941,7 +3941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0
+  m_text: '50
 
 '
   m_isRightToLeft: 0
