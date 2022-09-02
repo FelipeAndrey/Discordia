@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private Moviment player;
 
     [Header("Camera")]
-    private Camera cameraAtual;
+    public Camera cameraAtual;
     public Camera tradeCamaera;
 
     [Header("Notas")]

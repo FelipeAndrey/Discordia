@@ -53,8 +53,6 @@ public class DialogueTrigger : MonoBehaviour
     private void TradeCamera()
     {
         trade = !trade;
-        //manager.TargetCameraTrade(targetCamera);
-        //manager.ActiveCameraTrade(trade);
         TriggerDialogue(trade);
     }
 

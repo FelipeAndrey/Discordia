@@ -61,6 +61,7 @@ public class Moviment : MonoBehaviour
     }*/
     private void Start()
     {
+        camera = Camera.main;
         camera = gameManager.GetCamera();
         normalSpeed = speed;
     }
@@ -126,6 +127,7 @@ public class Moviment : MonoBehaviour
         }
 
         speed = currentSpeed;
+        controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
     }
 
     private void Interacte() 

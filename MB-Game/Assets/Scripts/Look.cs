@@ -11,7 +11,7 @@ public class Look : MonoBehaviour
     private float xRotation = 0f;
     private float yRotation = 0f;
 
-    [SerializeField] Transform cam;
+    //[SerializeField] Transform cam;
     [SerializeField] Transform orientetion;
 
     void Start()
@@ -34,7 +34,7 @@ public class Look : MonoBehaviour
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -90, 90f);
 
-        cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
         orientetion.transform.rotation = Quaternion.Euler(0, yRotation, 0);
         //playerBody.Rotate(Vector3.up * mouseX);
 
