@@ -820,11 +820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ecaae745467884db54e6cc5700526b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &197045996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3038675898848412347, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
-  m_PrefabInstance: {fileID: 9099608996550438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203956466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &363713585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1336,7 +1331,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Size: {x: 1.02, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &570951479
 MeshRenderer:
@@ -1395,8 +1390,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570951477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.270071, y: 1.2921875, z: -27.815104}
-  m_LocalScale: {x: 2.8, y: 2, z: 2}
+  m_LocalPosition: {x: -24.270071, y: 1.2921875, z: -44.7}
+  m_LocalScale: {x: 40.9752, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 524391134}
   m_RootOrder: 5
@@ -1662,6 +1657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1560b9420c935489c6ae0a063143bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraAtual: {fileID: 1094970951}
   tradeCamaera: {fileID: 0}
   Letters:
   - {fileID: 856121214}
@@ -1695,7 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0c2b300b168654583a0241ea276f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: {fileID: 0}
+  Manager: {fileID: 795952458}
   dialogueCanvas: {fileID: 1223904097}
   TMPName: {fileID: 874339828}
   TMPSentence: {fileID: 1226051828}
@@ -2210,7 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7753e448b144c84499703fdb7e32bcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lantern: {fileID: 0}
+  lantern: {fileID: 1250677691}
 --- !u!64 &937151089
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2387,6 +2383,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!20 &1094970951 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8339638031656295849, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+  m_PrefabInstance: {fileID: 9099608996550438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1119847326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,6 +2866,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -477}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1250677691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3937218155612921912, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+  m_PrefabInstance: {fileID: 9099608996550438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1262279969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4701,7 +4707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2000589611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5357,6 +5363,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 795952458}
     - target: {fileID: 9099608467793463, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+      propertyPath: normalSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099608467793463, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: sliderCanvasGroup
       value: 
       objectReference: {fileID: 2112366795}
@@ -5366,12 +5376,12 @@ PrefabInstance:
       objectReference: {fileID: 1600283515}
     - target: {fileID: 748898066785481546, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 1384555151643888738, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 197045996}
+      objectReference: {fileID: 0}
     - target: {fileID: 1384555151643888738, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: playerBody
       value: 

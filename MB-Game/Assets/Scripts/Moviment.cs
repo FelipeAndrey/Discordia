@@ -29,14 +29,14 @@ public class Moviment : MonoBehaviour
     //Velocidades
     public float speedCrounch = 3f;
     public float speedRunning = 15;
-    public float normalSpeed;
+    public float normalSpeed = 8;
     public float currentScale = 3.5f;
     private float scalePlayer, currentSpeed;
 
     [Header("Bool")]
     //Boleana
-    [HideInInspector] public bool crouch = false;
-    [HideInInspector] public bool running;
+    /*[HideInInspector]*/ public bool crouch = false;
+    /*[HideInInspector]*/ public bool running;
     [HideInInspector] public bool hasRegenStamina;
     [HideInInspector] public bool isMovin;
 
@@ -64,70 +64,18 @@ public class Moviment : MonoBehaviour
         camera = Camera.main;
         camera = gameManager.GetCamera();
         normalSpeed = speed;
+        currentSpeed = normalSpeed;
     }
 
     private void Update()
     {
+        print(speed);
         Movimente();
+        Correr();
+        Abaixar();
         Interacte();
-    }
-
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0)
-        {
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
-            {
-                currentSpeed = speedRunning;
-                running = true;
-                drainStamina();
-
-            }
-            else
-            {
-                running = false;
-                gainStamina();
-
-                if (stamina >= maxStamina - 0.1f)
-                {
-                    updateStamina(0);
-                }
-
-            }
-
-            updateStamina(1);
-        }
-        else
-        {
-            currentSpeed = normalSpeed;
-            running = false;
-            gainStamina();
-
-            if(stamina >= maxStamina - 0.1f) {
-              updateStamina(0);
-            }
-              
-        }
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            crouch = true;
-            scalePlayer = 0.5f;
-            currentSpeed = speedCrounch;
-
-        }
-        else if (!running)
-        {
-            if (Physics.Raycast(camera.transform.position, camera.transform.up, controller.height + 0.2f, LayerMask.GetMask("Ground")) && !crouch)
-            {
-                return;
-            }
-            crouch = false;
-            scalePlayer = currentScale;
-            currentSpeed = normalSpeed;
-        }
-
+        
         speed = currentSpeed;
-        controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
     }
 
     private void Interacte() 
@@ -169,6 +117,88 @@ public class Moviment : MonoBehaviour
         
 
     }
+
+    private void Abaixar() 
+    {
+        bool estaEmBaixo = false;
+        RaycastHit hit;
+
+        if(Physics.Raycast(camera.transform.position, camera.transform.up, out hit, LayerMask.GetMask("Ground")))
+        {
+            if(hit.collider.gameObject.tag == "ObsCabeca")
+            {
+                estaEmBaixo = true;
+            }
+            else
+            {
+                estaEmBaixo = false;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.LeftControl) && !running && !crouch)
+        {
+            crouch = true;
+            scalePlayer = 0.5f;
+            currentSpeed = speedCrounch;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            crouch = false;
+            scalePlayer = 3.5f;
+        }
+        if (crouch && controller.height > scalePlayer)
+        {
+            controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
+        }
+        else if (!crouch && controller.height < scalePlayer && !estaEmBaixo)
+        {
+            controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
+        }
+        if(controller.height >= 3.4f && !running && !crouch)
+        {
+            currentSpeed = normalSpeed;
+        }
+    }
+
+    private void Correr()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0 && controller.height >= 3.4f)
+        {
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
+            {
+                currentSpeed = speedRunning;
+                running = true;
+                drainStamina();
+                updateStamina(1);
+            }
+            else
+            {
+                currentSpeed = normalSpeed;
+                running = false;
+                gainStamina();
+
+                if (stamina >= maxStamina - 0.1f)
+                {
+                    updateStamina(0);
+                }
+            }
+        }
+        else
+        {
+            gainStamina();
+
+            if (stamina >= maxStamina - 0.1f)
+            {
+                updateStamina(0);
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) && controller.height >= 3.4f)
+        {
+            currentSpeed = normalSpeed;
+            running = false;
+        }
+    }
     private void drainStamina()
     {
         if (running)
@@ -203,6 +233,6 @@ public class Moviment : MonoBehaviour
     #endregion
 
     #region Get & Set
-    public float speed { get; set; } = 8;
+    private float speed { get; set; } = 8;
     #endregion
 }
