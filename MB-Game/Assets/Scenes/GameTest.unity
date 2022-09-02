@@ -820,11 +820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ecaae745467884db54e6cc5700526b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &197045996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3038675898848412347, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
-  m_PrefabInstance: {fileID: 9099608996550438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203956466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1560b9420c935489c6ae0a063143bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tradeCamaera: {fileID: 0}
+  cameraAtual: {fileID: 1802058692}
+  tradeCamaera: {fileID: 1802058692}
   Letters:
   - {fileID: 856121214}
   - {fileID: 119905294}
@@ -2210,7 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7753e448b144c84499703fdb7e32bcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lantern: {fileID: 0}
+  lantern: {fileID: 1452013727}
 --- !u!64 &937151089
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3207,6 +3203,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385907893}
   m_CullTransparentMesh: 1
+--- !u!1 &1452013727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3937218155612921912, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+  m_PrefabInstance: {fileID: 9099608996550438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1466498839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,6 +4171,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796383668}
   m_CullTransparentMesh: 1
+--- !u!20 &1802058692 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8339638031656295849, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+  m_PrefabInstance: {fileID: 9099608996550438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1818164372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,12 +5372,12 @@ PrefabInstance:
       objectReference: {fileID: 1600283515}
     - target: {fileID: 748898066785481546, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 1384555151643888738, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 197045996}
+      objectReference: {fileID: 0}
     - target: {fileID: 1384555151643888738, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: playerBody
       value: 
