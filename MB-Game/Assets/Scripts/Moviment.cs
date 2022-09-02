@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Moviment : MonoBehaviour
 {
+    private Moviment instance;
+
     [SerializeField] Transform Orientetion;
 
     [Header("Objetos")]
@@ -45,6 +47,18 @@ public class Moviment : MonoBehaviour
     [Header("Interact")]
     public float distanceToInteract = 4f;
 
+    /*private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }*/
     private void Start()
     {
         camera = gameManager.GetCamera();
@@ -112,7 +126,6 @@ public class Moviment : MonoBehaviour
         }
 
         speed = currentSpeed;
-        controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
     }
 
     private void Interacte() 

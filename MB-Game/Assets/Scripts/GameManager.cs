@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager instance;
+
     [Header("Player")]
     private Moviment player;
 
@@ -19,8 +22,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public Cards Cards;
     private CardsTrigger Card;
 
+    [Header("SavePoint")]
+    public Vector3 lastCheckPoint;
+
     void Start()
     {
+        player = GameObject.FindObjectOfType<Moviment>();
         Card = new CardsTrigger();
         cameraAtual = Camera.main;
     }
@@ -56,6 +63,5 @@ public class GameManager : MonoBehaviour
             Card.gameObject.SetActive(false);
         }
     }
-
 
 }
