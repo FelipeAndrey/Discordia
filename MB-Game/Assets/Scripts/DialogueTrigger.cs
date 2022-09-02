@@ -29,7 +29,6 @@ public class DialogueTrigger : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     print("Trocou De Camera");
-                    //TradeCamera();
                 }
             }
         }
