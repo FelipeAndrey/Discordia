@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lantern
   - Letter
+  - ObsCabeca
   layers:
   - Default
   - TransparentFX

@@ -9,10 +9,14 @@ public class Moviment : MonoBehaviour
 
     [SerializeField] Transform Orientetion;
 
+    [Header("Canvas")]
+    public Image crossHair;
+
     [Header("Objetos")]
     private new Camera camera;
     public GameManager gameManager;
     public CharacterController controller;
+
 
     [Header("Moviment")]
     public float gravity = -9.81f;
@@ -69,7 +73,6 @@ public class Moviment : MonoBehaviour
 
     private void Update()
     {
-        print(speed);
         Movimente();
         Correr();
         Abaixar();
@@ -82,18 +85,34 @@ public class Moviment : MonoBehaviour
     {
         RaycastHit hitInfo;
 
+        var objInteract = Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact"));
+
         if (Input.GetKeyDown(KeyCode.Mouse0)) 
         {
             if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact"))) 
             {
                 IInteractable obj = hitInfo.transform.GetComponent<IInteractable>();
 
+                //objInteract = hitInfo.transform.gameObject;
+
                 if (obj == null) return;
                 obj.Interact();
+
             }
 
+
         }
-        
+        if (objInteract)
+        {
+            crossHair.color = Color.red;
+            //crossHair.sprite = nova imagem
+        }
+        else
+        {
+            crossHair.color = Color.white;
+            //crossHair.sprite = volta para a outra imagem
+        }
+
     }
 
     #region Moviment
