@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -13,7 +11,7 @@ public class CameraManager : MonoBehaviour
     private bool inFocus = false;
     private int normalFOV = 60;
 
-    
+
 
     void Start()
     {
@@ -44,7 +42,7 @@ public class CameraManager : MonoBehaviour
             main.enabled = true;
             cameraTarget.enabled = false;
         }
-        
+
     }
 
     public void ActiveZoom()

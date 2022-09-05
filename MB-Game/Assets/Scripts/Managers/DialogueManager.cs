@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -51,7 +50,7 @@ public class DialogueManager : MonoBehaviour
         TMPName.text = dialogue.name;
         sentences.Clear();
 
-        foreach(string sentence in dialogue.sentence)
+        foreach (string sentence in dialogue.sentence)
         {
             sentences.Enqueue(sentence);
         }
@@ -61,7 +60,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence()
     {
-        if(sentences.Count == 0)
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;

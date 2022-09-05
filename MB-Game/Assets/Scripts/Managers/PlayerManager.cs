@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -53,7 +51,7 @@ public class PlayerManager : MonoBehaviour
                 NavMeshAgent.SetDestination(floor);
                 Debug.DrawRay(main.transform.position, hit.point, Color.white, 2f);
             }
-        }        
+        }
     }
 
     public void Focus(bool value)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bilboard : MonoBehaviour
@@ -25,7 +23,7 @@ public class Bilboard : MonoBehaviour
         {
             transform.rotation = Cam.transform.rotation;
         }
-        
+
 
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
     }

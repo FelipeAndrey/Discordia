@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Cards : MonoBehaviour, IInteractable
 {
@@ -22,7 +19,7 @@ public class Cards : MonoBehaviour, IInteractable
 
     void Start()
     {
-        manager = FindObjectOfType<GameManager>(); 
+        manager = FindObjectOfType<GameManager>();
     }
 
 
@@ -36,7 +33,7 @@ public class Cards : MonoBehaviour, IInteractable
 
     }
 
-    public int CallCardsTrigger() 
+    public int CallCardsTrigger()
     {
         var id = int.Parse(gameObject.name);
 

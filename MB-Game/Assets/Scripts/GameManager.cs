@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +16,7 @@ public class GameManager : MonoBehaviour
     [Header("Notas")]
     public List<CardsTrigger> Letters;
     public CanvasGroup cardsGroup;
-    [HideInInspector]public Cards Cards;
+    [HideInInspector] public Cards Cards;
     private CardsTrigger Card;
 
     [Header("SavePoint")]
@@ -37,13 +34,13 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public Camera GetCamera() 
+    public Camera GetCamera()
     {
         return cameraAtual;
     }
 
-    public void Letter(bool reading) 
-    { 
+    public void Letter(bool reading)
+    {
         if (reading)
         {
             foreach (var item in Letters)
@@ -57,7 +54,7 @@ public class GameManager : MonoBehaviour
             }
             cardsGroup.alpha = 1;
         }
-        else 
+        else
         {
             cardsGroup.alpha = 0;
             Card.gameObject.SetActive(false);

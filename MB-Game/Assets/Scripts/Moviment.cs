@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Moviment : MonoBehaviour
 {
-    private Moviment instance;
+    public Lantern lantern;
+    public Transform lanterRef;
+
+    public InputLanternMode lanternMode;
 
     [SerializeField] Transform Orientetion;
 
@@ -39,8 +40,10 @@ public class Moviment : MonoBehaviour
 
     [Header("Bool")]
     //Boleana
-    /*[HideInInspector]*/ public bool crouch = false;
-    /*[HideInInspector]*/ public bool running;
+    /*[HideInInspector]*/
+    public bool crouch = false;
+    /*[HideInInspector]*/
+    public bool running;
     [HideInInspector] public bool hasRegenStamina;
     [HideInInspector] public bool isMovin;
 
@@ -77,31 +80,56 @@ public class Moviment : MonoBehaviour
         Correr();
         Abaixar();
         Interacte();
-        
+
         speed = currentSpeed;
     }
 
-    private void Interacte() 
+    private void Interacte()
     {
         RaycastHit hitInfo;
+        RaycastHit hitInfoLanterna;
 
         var objInteract = Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact"));
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) 
+        CrosshairImageChange(objInteract);
+
+        if (lanternMode == InputLanternMode.OnClick)
         {
-            if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact"))) 
+            if (!Input.GetKeyDown(KeyCode.Mouse0)) 
             {
-                IInteractable obj = hitInfo.transform.GetComponent<IInteractable>();
-
-                //objInteract = hitInfo.transform.gameObject;
-
-                if (obj == null) return;
-                obj.Interact();
-
+                return;
             }
-
-
         }
+
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact")))
+        {
+            if (hitInfo.transform.TryGetComponent<IInteractable>(out IInteractable obj))
+                obj.Interact();
+        }
+            
+        
+
+        //if (Physics.Raycast(lanterRef.position, lanterRef.right, out hitInfoLanterna, 200f))
+        //{
+        //    if (hitInfoLanterna.collider.CompareTag("Interact"))
+        //    {
+        //        Debug.DrawLine(lanterRef.position, lanterRef.right, Color.red, 5f);
+        //        print("oi");
+        //        IInteractable obj = hitInfoLanterna.transform.GetComponent<IInteractable>();
+        //        print(hitInfoLanterna.transform.name);
+        //        if (obj == null) return;
+        //        obj.Interact();
+        //    }
+
+        //}
+
+
+
+
+    }
+
+    private void CrosshairImageChange(bool objInteract)
+    {
         if (objInteract)
         {
             crossHair.color = Color.red;
@@ -112,12 +140,11 @@ public class Moviment : MonoBehaviour
             crossHair.color = Color.white;
             //crossHair.sprite = volta para a outra imagem
         }
-
     }
 
     #region Moviment
 
-    private void Movimente() 
+    private void Movimente()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -133,18 +160,18 @@ public class Moviment : MonoBehaviour
 
             controller.Move(velocity * Time.deltaTime);
         }
-        
+
 
     }
 
-    private void Abaixar() 
+    private void Abaixar()
     {
         bool estaEmBaixo = false;
         RaycastHit hit;
 
-        if(Physics.Raycast(camera.transform.position, camera.transform.up, out hit, LayerMask.GetMask("Ground")))
+        if (Physics.Raycast(camera.transform.position, camera.transform.up, out hit, LayerMask.GetMask("Ground")))
         {
-            if(hit.collider.gameObject.tag == "ObsCabeca")
+            if (hit.collider.gameObject.tag == "ObsCabeca")
             {
                 estaEmBaixo = true;
             }
@@ -174,7 +201,7 @@ public class Moviment : MonoBehaviour
         {
             controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
         }
-        if(controller.height >= 3.4f && !running && !crouch)
+        if (controller.height >= 3.4f && !running && !crouch)
         {
             currentSpeed = normalSpeed;
         }
@@ -235,7 +262,7 @@ public class Moviment : MonoBehaviour
         }
     }
 
-    private void updateStamina(int value) 
+    private void updateStamina(int value)
     {
         staminaProgressUI.fillAmount = stamina / maxStamina;
 
@@ -255,3 +282,5 @@ public class Moviment : MonoBehaviour
     private float speed { get; set; } = 8;
     #endregion
 }
+
+public enum InputLanternMode {Automatic, OnClick }

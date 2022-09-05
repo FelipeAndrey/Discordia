@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerPos : MonoBehaviour
 {
@@ -10,7 +7,7 @@ public class PlayerPos : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        
+
     }
 
 
@@ -18,7 +15,7 @@ public class PlayerPos : MonoBehaviour
     {
         AAAA();
     }
-    private void AAAA ()
+    private void AAAA()
     {
         if (Input.GetKey(KeyCode.Z))
         {

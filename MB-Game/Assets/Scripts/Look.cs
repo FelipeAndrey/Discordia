@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Look : MonoBehaviour
@@ -25,7 +23,7 @@ public class Look : MonoBehaviour
         CamereLook();
     }
 
-    private void CamereLook() 
+    private void CamereLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
@@ -38,5 +36,5 @@ public class Look : MonoBehaviour
         orientetion.transform.rotation = Quaternion.Euler(0, yRotation, 0);
         //playerBody.Rotate(Vector3.up * mouseX);
 
-    } 
+    }
 }

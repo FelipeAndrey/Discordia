@@ -13,9 +13,10 @@ public class Barganha : MonoBehaviour
         Vernovamente();
     }
     //Função de Visão
-    public void Vernovamente() { 
+    public void Vernovamente()
+    {
         //Caso o jogador aceite a barganha
-        if(barganhado == true)
+        if (barganhado == true)
         {   //Desliga os efeitos Cego
             volume1.SetActive(false);
             //Liga o  Efeito Visão;

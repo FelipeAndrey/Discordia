@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
@@ -15,7 +13,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameManager.lastCheckPoint = transform.position; 
+            gameManager.lastCheckPoint = transform.position;
         }
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,7 +33,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void Pause() 
+    public void Pause()
     {
         pauseMenuUI.alpha = 1;
         Time.timeScale = 0f;
@@ -43,19 +41,19 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void LoadMenu() 
+    public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void QuitGame() 
+    public void QuitGame()
     {
         print("Saiu do Game...");
         Application.Quit();
     }
 
-    public void SetNewSensitivity(float value) 
+    public void SetNewSensitivity(float value)
     {
         mouseSens.mouseSensitivity = value;
     }
