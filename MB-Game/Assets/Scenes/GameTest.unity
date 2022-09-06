@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119dcca5bcd3fbd4ba2ef1cb6a4269e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputLanternMode: 0
+  inputLanternMode: 1
   reading: 0
 --- !u!65 &1119847329
 BoxCollider:
