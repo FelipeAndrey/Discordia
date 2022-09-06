@@ -1,18 +1,20 @@
 using UnityEngine;
 
-public class AtivaLanterna : MonoBehaviour, IInteractable
+public class AtivaLanterna : Interactable
 {
     public GameObject lantern;
 
-    public void Interact()
-    {
-        Ativação();
-    }
-
+   
 
     public void Ativação()
     {
         lantern.SetActive(true);
         this.gameObject.SetActive(false);
+    }
+
+    public override void Interact()
+    {
+        Ativação();
+
     }
 }

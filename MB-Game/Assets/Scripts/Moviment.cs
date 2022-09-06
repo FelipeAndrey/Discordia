@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,8 +6,6 @@ public class Moviment : MonoBehaviour
 {
     public Lantern lantern;
     public Transform lanterRef;
-
-    public InputLanternMode lanternMode;
 
     [SerializeField] Transform Orientetion;
 
@@ -17,6 +16,7 @@ public class Moviment : MonoBehaviour
     private new Camera camera;
     public GameManager gameManager;
     public CharacterController controller;
+    public InputLanternMode lanternMode;
 
 
     [Header("Moviment")]
@@ -87,24 +87,26 @@ public class Moviment : MonoBehaviour
     private void Interacte()
     {
         RaycastHit hitInfo;
-        RaycastHit hitInfoLanterna;
 
         var objInteract = Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact"));
 
         CrosshairImageChange(objInteract);
 
-        if (lanternMode == InputLanternMode.OnClick)
-        {
-            if (!Input.GetKeyDown(KeyCode.Mouse0)) 
-            {
-                return;
-            }
-        }
-
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact")))
         {
-            if (hitInfo.transform.TryGetComponent<IInteractable>(out IInteractable obj))
-                obj.Interact();
+            if (hitInfo.transform.TryGetComponent<Interactable>(out Interactable obj))
+            {
+                if (obj.InputLanternMode == InputLanternMode.OnClick)
+                {
+                    if (!Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        return;
+                    }
+                }
+
+                obj.Interact(); 
+            
+            }
         }
             
         
@@ -283,4 +285,5 @@ public class Moviment : MonoBehaviour
     #endregion
 }
 
+[Serializable]
 public enum InputLanternMode {Automatic, OnClick }

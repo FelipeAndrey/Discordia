@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class TradeColor : MonoBehaviour, IInteractable
+public class TradeColor : Interactable
 {
     public Material[] colors;
     private int x = 0;
     private Renderer rend;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +16,9 @@ public class TradeColor : MonoBehaviour, IInteractable
 
     }
 
-    public void Interact()
+    public override void Interact()
     {
+
         if (FindObjectOfType<Lantern>() == null)
             return;
         else if (FindObjectOfType<Lantern>().luzAtiva == true)

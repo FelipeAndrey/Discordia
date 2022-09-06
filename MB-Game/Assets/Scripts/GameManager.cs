@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [Header("Player")]
-    private Moviment player;
+    [HideInInspector]public Moviment player;
 
     [Header("Camera")]
     public Camera cameraAtual;
