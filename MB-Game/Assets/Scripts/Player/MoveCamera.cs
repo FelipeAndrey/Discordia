@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
@@ -8,6 +6,6 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       transform.position = cameraPosition.position;
+        transform.position = cameraPosition.position;
     }
 }

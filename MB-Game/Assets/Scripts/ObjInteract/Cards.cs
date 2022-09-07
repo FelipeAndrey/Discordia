@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Cards : MonoBehaviour, IInteractable
+public class Cards :  Interactable
 {
     private GameManager manager;
     public bool reading = false;
 
-    public void Interact()
+    public override void Interact()
     {
+        manager.player.lanternMode = InputLanternMode.OnClick;
         if (reading)
         {
             return;
@@ -18,11 +16,12 @@ public class Cards : MonoBehaviour, IInteractable
         CallCardsTrigger();
         reading = true;
         manager.Letter(reading);
+
     }
 
     void Start()
     {
-        manager = FindObjectOfType<GameManager>(); 
+        manager = FindObjectOfType<GameManager>();
     }
 
 
@@ -36,7 +35,7 @@ public class Cards : MonoBehaviour, IInteractable
 
     }
 
-    public int CallCardsTrigger() 
+    public int CallCardsTrigger()
     {
         var id = int.Parse(gameObject.name);
 

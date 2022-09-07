@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -29,7 +27,6 @@ public class DialogueTrigger : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     print("Trocou De Camera");
-                    //TradeCamera();
                 }
             }
         }
@@ -41,7 +38,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             collided = true;
         }
-        
+
     }
     private void OnTriggerExit(Collider other)
     {
@@ -54,8 +51,6 @@ public class DialogueTrigger : MonoBehaviour
     private void TradeCamera()
     {
         trade = !trade;
-        //manager.TargetCameraTrade(targetCamera);
-        //manager.ActiveCameraTrade(trade);
         TriggerDialogue(trade);
     }
 

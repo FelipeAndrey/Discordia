@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Lantern
   - Letter
+  - ObsCabeca
+  - Interact
   layers:
   - Default
   - TransparentFX

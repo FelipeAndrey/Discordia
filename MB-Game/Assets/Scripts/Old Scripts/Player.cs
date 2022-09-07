@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     //PlayerManager PlayerManager;
     //bool focus = false;
- 
+
     void Start()
     {
         //PlayerManager = GetComponent<PlayerManager>();
@@ -17,7 +15,7 @@ public class Player : MonoBehaviour
         //Recursos passivos
         //PlayerManager.Look();
         //PlayerManager.Breathing();
-        
+
         /*Recursos ativos
         if (Input.GetMouseButtonDown(1)){
             focus = !focus;

@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class MouseLook : MonoBehaviour
 {
     [SerializeField] private float mouseSensitivity = 100f;
     private Vector2 mouseLook;
     private float xRotation = 0f;
-  
+
 
     [SerializeField] private Transform playerBody;
 
@@ -27,7 +24,7 @@ public class MouseLook : MonoBehaviour
         Look();
     }
 
-    private void Look() 
+    private void Look()
     {
         mouseLook = playerInput.Player.Mouse.ReadValue<Vector2>();
 
