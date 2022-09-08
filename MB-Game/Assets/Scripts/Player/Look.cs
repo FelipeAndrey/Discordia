@@ -4,12 +4,9 @@ public class Look : MonoBehaviour
 {
     public float mouseSensitivity;
 
-    public Transform playerBody;
-
     private float xRotation = 0f;
     private float yRotation = 0f;
 
-    //[SerializeField] Transform cam;
     [SerializeField] Transform orientetion;
 
     void Start()

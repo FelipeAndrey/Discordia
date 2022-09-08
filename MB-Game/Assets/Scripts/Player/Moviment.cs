@@ -18,7 +18,6 @@ public class Moviment : MonoBehaviour
     public CharacterController controller;
     public InputLanternMode lanternMode;
 
-
     [Header("Moviment")]
     public float gravity = -9.81f;
     private Vector3 velocity;
@@ -45,7 +44,7 @@ public class Moviment : MonoBehaviour
     /*[HideInInspector]*/
     public bool running;
     [HideInInspector] public bool hasRegenStamina;
-    [HideInInspector] public bool isMovin;
+    [HideInInspector] public bool isMovin = false;
 
     [Header("Stamina UI elements")]
     [SerializeField] private Image staminaProgressUI;
@@ -54,18 +53,6 @@ public class Moviment : MonoBehaviour
     [Header("Interact")]
     public float distanceToInteract = 4f;
 
-    /*private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }*/
     private void Start()
     {
         camera = Camera.main;
@@ -76,10 +63,20 @@ public class Moviment : MonoBehaviour
 
     private void Update()
     {
-        Movimente();
+        if(Mathf.Abs(Input.GetAxis("Horizontal")) < 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) < 0.1)
+        {
+            isMovin = false;
+        }
+        else
+        {
+            isMovin = true;
+            Movimente();
+        }
+
         Correr();
         Abaixar();
         Interacte();
+        gameManager.Breathing();
 
         speed = currentSpeed;
     }
@@ -108,26 +105,6 @@ public class Moviment : MonoBehaviour
             
             }
         }
-            
-        
-
-        //if (Physics.Raycast(lanterRef.position, lanterRef.right, out hitInfoLanterna, 200f))
-        //{
-        //    if (hitInfoLanterna.collider.CompareTag("Interact"))
-        //    {
-        //        Debug.DrawLine(lanterRef.position, lanterRef.right, Color.red, 5f);
-        //        print("oi");
-        //        IInteractable obj = hitInfoLanterna.transform.GetComponent<IInteractable>();
-        //        print(hitInfoLanterna.transform.name);
-        //        if (obj == null) return;
-        //        obj.Interact();
-        //    }
-
-        //}
-
-
-
-
     }
 
     private void CrosshairImageChange(bool objInteract)
@@ -150,20 +127,11 @@ public class Moviment : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        isMovin = true;
 
-        if (isMovin)
-        {
-            Vector3 move = Orientetion.right * x + Orientetion.forward * z;
-
-            controller.Move(move * speed * Time.deltaTime);
-
-            velocity.y += gravity * Time.deltaTime;
-
-            controller.Move(velocity * Time.deltaTime);
-        }
-
-
+        Vector3 move = Orientetion.right * x + Orientetion.forward * z;
+        controller.Move(move * speed * Time.deltaTime);
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 
     private void Abaixar()

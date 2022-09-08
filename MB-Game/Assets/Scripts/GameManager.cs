@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Player")]
     [HideInInspector]public Moviment player;
+    public Animator Animator;
 
     [Header("Camera")]
     public Camera cameraAtual;
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        print(player.isMovin);
     }
 
     public Camera GetCamera()
@@ -59,6 +60,10 @@ public class GameManager : MonoBehaviour
             cardsGroup.alpha = 0;
             Card.gameObject.SetActive(false);
         }
+    }
+    public void Breathing()
+    {
+        Animator.SetBool("Breathing", !player.isMovin);
     }
 
 }

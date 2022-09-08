@@ -22,7 +22,6 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(onDialogue + " / " + canNext);
         if (onDialogue && canNext)
         {
             if (Input.GetKeyDown(KeyCode.Space))

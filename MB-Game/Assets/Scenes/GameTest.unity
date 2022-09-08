@@ -1095,6 +1095,11 @@ Transform:
   m_Father: {fileID: 524391134}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &432141178 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5311821669227218075, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+  m_PrefabInstance: {fileID: 9099608996550438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &468223955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,6 +1668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  Animator: {fileID: 432141178}
   cameraAtual: {fileID: 1802058692}
   tradeCamaera: {fileID: 1802058692}
   Letters:
