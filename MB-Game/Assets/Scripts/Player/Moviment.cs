@@ -17,7 +17,7 @@ public class Moviment : MonoBehaviour
     public GameManager gameManager;
     public CharacterController controller;
     public InputLanternMode lanternMode;
-
+    
     [Header("Moviment")]
     public float gravity = -9.81f;
     private Vector3 velocity;
@@ -45,7 +45,7 @@ public class Moviment : MonoBehaviour
     public bool running;
     [HideInInspector] public bool hasRegenStamina;
     public bool isMoving { get; set; }
-    public bool canMove { get; set; }
+    public bool canMove { get; set; } = true;
 
     [Header("Stamina UI elements")]
     [SerializeField] private Image staminaProgressUI;
@@ -60,10 +60,13 @@ public class Moviment : MonoBehaviour
         camera = gameManager.GetCamera();
         normalSpeed = speed;
         currentSpeed = normalSpeed;
+        //gameManager.animationTrigger.CallAnimation(0, true);
+        //look = camera.GetComponent<Look>();
     }
 
     private void Update()
     {
+        print(canMove);
         if (canMove)
         {
             if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) < 0.1)
@@ -127,23 +130,24 @@ public class Moviment : MonoBehaviour
 
     #region Moviment
 
+    
     private void Movimente()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = Orientetion.right * x + Orientetion.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
+        move = new Vector3(move.x, velocity.y, move.z);
+        controller.Move(move * speed * Time.deltaTime);
         controller.Move(velocity * Time.deltaTime);
     }
-
     private void Abaixar()
     {
         bool estaEmBaixo = false;
         RaycastHit hit;
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.up, out hit, LayerMask.GetMask("Ground")))
+        if (Physics.Raycast(Orientetion.transform.position, Orientetion.transform.up, out hit, LayerMask.GetMask("Ground")))
         {
             if (hit.collider.gameObject.tag == "ObsCabeca")
             {
@@ -179,6 +183,8 @@ public class Moviment : MonoBehaviour
         {
             currentSpeed = normalSpeed;
         }
+
+        Orientetion.localPosition = new Vector3(0, scalePlayer == 0.5f ? 0.5f : 1.44f, 0);
     }
 
     private void Correr()

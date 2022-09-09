@@ -4,14 +4,16 @@ public class Look : MonoBehaviour
 {
     public float mouseSensitivity;
 
-    private float xRotation = 0f;
-    private float yRotation = 0f;
+    public float xRotation = 0f;
+    public float yRotation = 0f;
+    //public GameObject playerBody;
 
     [SerializeField] Transform orientetion;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        //playerBody = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -31,7 +33,5 @@ public class Look : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
         orientetion.transform.rotation = Quaternion.Euler(0, yRotation, 0);
-        //playerBody.Rotate(Vector3.up * mouseX);
-
     }
 }

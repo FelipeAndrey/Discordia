@@ -7,8 +7,9 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [Header("Player")]
-    [HideInInspector]public Moviment player;
+    public Moviment player;
     public Animator Animator;
+    public AnimationTrigger animationTrigger;
 
     [Header("Camera")]
     public Camera cameraAtual;
@@ -25,15 +26,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindObjectOfType<Moviment>();
         Card = new CardsTrigger();
         cameraAtual = Camera.main;
-        player.gameManager.GetComponent<AnimationTrigger>().CallAnimation(0, false);
-    }
-
-    void Update()
-    {
-        print(player.isMoving);
     }
 
     public Camera GetCamera()
@@ -62,9 +56,10 @@ public class GameManager : MonoBehaviour
             Card.gameObject.SetActive(false);
         }
     }
+
     public void Breathing()
     {
-        Animator.SetBool("Breathing", !player.isMoving);
+        Animator.enabled = !player.isMoving;
     }
 
     public void SetMoving(bool value)
