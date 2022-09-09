@@ -44,7 +44,8 @@ public class Moviment : MonoBehaviour
     /*[HideInInspector]*/
     public bool running;
     [HideInInspector] public bool hasRegenStamina;
-    [HideInInspector] public bool isMovin = false;
+    public bool isMoving { get; set; }
+    public bool canMove { get; set; }
 
     [Header("Stamina UI elements")]
     [SerializeField] private Image staminaProgressUI;
@@ -63,14 +64,17 @@ public class Moviment : MonoBehaviour
 
     private void Update()
     {
-        if(Mathf.Abs(Input.GetAxis("Horizontal")) < 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) < 0.1)
+        if (canMove)
         {
-            isMovin = false;
-        }
-        else
-        {
-            isMovin = true;
-            Movimente();
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) < 0.1)
+            {
+                isMoving = false;
+            }
+            else
+            {
+                isMoving = true;
+                Movimente();
+            }
         }
 
         Correr();

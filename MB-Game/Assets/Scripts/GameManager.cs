@@ -28,11 +28,12 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindObjectOfType<Moviment>();
         Card = new CardsTrigger();
         cameraAtual = Camera.main;
+        player.gameManager.GetComponent<AnimationTrigger>().CallAnimation(0, false);
     }
 
     void Update()
     {
-        print(player.isMovin);
+        print(player.isMoving);
     }
 
     public Camera GetCamera()
@@ -63,7 +64,11 @@ public class GameManager : MonoBehaviour
     }
     public void Breathing()
     {
-        Animator.SetBool("Breathing", !player.isMovin);
+        Animator.SetBool("Breathing", !player.isMoving);
     }
 
+    public void SetMoving(bool value)
+    {
+        player.canMove = value;
+    }
 }
