@@ -1442,7 +1442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &615471716
 Transform:
   m_ObjectHideFlags: 0
@@ -1685,7 +1685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647338982}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.17, z: 0}
+  m_LocalPosition: {x: 0, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 583025792}
@@ -3125,7 +3125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226040721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.72, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7, y: 2, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6199,6 +6199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2123548767, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9099608467793448, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6217,7 +6221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.73
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6275,7 +6279,12 @@ PrefabInstance:
       propertyPath: staminaProgressUI
       value: 
       objectReference: {fileID: 1600283515}
-    m_RemovedComponents: []
+    - target: {fileID: 9099609570100779, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.06
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2123548769, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
 --- !u!1001 &1107224476030936127
 PrefabInstance:
