@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [Header("Player")]
-    public Moviment player;
+    public Player player;
     public Animator Animator;
     public AnimationTrigger animationTrigger;
 

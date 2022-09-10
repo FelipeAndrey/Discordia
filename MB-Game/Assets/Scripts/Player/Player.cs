@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Moviment : MonoBehaviour
+public class Player: MonoBehaviour
 {
     public Lantern lantern;
     public Transform lanterRef;
@@ -69,23 +69,18 @@ public class Moviment : MonoBehaviour
         print(canMove);
         if (canMove)
         {
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) < 0.1)
-            {
-                isMoving = false;
-            }
-            else
-            {
-                isMoving = true;
-                Movimente();
-            }
+            Correr();
+            Abaixar();
+            Interacte();
+            Movimente();
+            speed = currentSpeed;
+        }
+        else
+        {
+            gameManager.Breathing();
         }
 
-        Correr();
-        Abaixar();
-        Interacte();
-        gameManager.Breathing();
 
-        speed = currentSpeed;
     }
 
     private void Interacte()
@@ -141,6 +136,15 @@ public class Moviment : MonoBehaviour
         move = new Vector3(move.x, velocity.y, move.z);
         controller.Move(move * speed * Time.deltaTime);
         controller.Move(velocity * Time.deltaTime);
+
+        if (Mathf.Abs(x) < 0.1 && Mathf.Abs(z) < 0.1)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
     }
     private void Abaixar()
     {
@@ -164,12 +168,14 @@ public class Moviment : MonoBehaviour
             crouch = true;
             scalePlayer = 0.5f;
             currentSpeed = speedCrounch;
+            Orientetion.localPosition = new Vector3(0, scalePlayer, 0);
         }
 
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             crouch = false;
             scalePlayer = 3.5f;
+            Orientetion.localPosition = new Vector3(0, scalePlayer, 0);
         }
         if (crouch && controller.height > scalePlayer)
         {
@@ -184,7 +190,7 @@ public class Moviment : MonoBehaviour
             currentSpeed = normalSpeed;
         }
 
-        Orientetion.localPosition = new Vector3(0, scalePlayer == 0.5f ? 0.5f : 1.44f, 0);
+        //Orientetion.localPosition = new Vector3(0, scalePlayer == 0.5f ? 0.5f : 1.44f, 0);
     }
 
     private void Correr()
