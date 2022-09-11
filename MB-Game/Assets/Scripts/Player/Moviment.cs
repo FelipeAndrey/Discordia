@@ -104,12 +104,12 @@ public class Moviment : MonoBehaviour
                     }
                 }
 
-                obj.Interact(); 
-            
+                obj.Interact();
+
             }
         }
-            
-        
+
+
 
         //if (Physics.Raycast(lanterRef.position, lanterRef.right, out hitInfoLanterna, 200f))
         //{
@@ -286,4 +286,4 @@ public class Moviment : MonoBehaviour
 }
 
 [Serializable]
-public enum InputLanternMode {Automatic, OnClick }
+public enum InputLanternMode { Automatic, OnClick }

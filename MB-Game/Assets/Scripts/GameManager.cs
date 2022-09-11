@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [Header("Player")]
-    [HideInInspector]public Moviment player;
+    [HideInInspector] public Moviment player;
 
     [Header("Camera")]
     public Camera cameraAtual;
@@ -60,5 +60,7 @@ public class GameManager : MonoBehaviour
             Card.gameObject.SetActive(false);
         }
     }
+
+
 
 }

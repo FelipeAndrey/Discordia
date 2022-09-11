@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +24,7 @@ public class PixelatedCamera : MonoBehaviour
     public ScreenSize targetScreenSize = new ScreenSize { width = 256, height = 144 };  // Only used with PixelScreenMode.Resize
     public uint screenScaleFactor = 1;  // Only used with PixelScreenMode.Scale
 
-    
+
     [Header("Display")]
     public RawImage display;
 
@@ -48,7 +46,8 @@ public class PixelatedCamera : MonoBehaviour
         if (CheckScreenResize()) Init();
     }
 
-    public void Init() {
+    public void Init()
+    {
 
         // Initialize the camera and get screen size values
         if (!renderCamera) renderCamera = GetComponent<Camera>();
@@ -65,7 +64,8 @@ public class PixelatedCamera : MonoBehaviour
         int height = mode == PixelScreenMode.Resize ? (int)targetScreenSize.height : screenHeight / (int)screenScaleFactor;
 
         // Initialize the render texture
-        renderTexture = new RenderTexture(width, height, 24) {
+        renderTexture = new RenderTexture(width, height, 24)
+        {
             filterMode = FilterMode.Point,
             antiAliasing = 1
         };
@@ -77,7 +77,8 @@ public class PixelatedCamera : MonoBehaviour
         display.texture = renderTexture;
     }
 
-    public bool CheckScreenResize() {
+    public bool CheckScreenResize()
+    {
         // Check whether the screen has been resized
         return Screen.width != screenWidth || Screen.height != screenHeight;
     }

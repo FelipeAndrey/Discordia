@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Cards :  Interactable
+public class Cards : Interactable
 {
     private GameManager manager;
     public bool reading = false;
