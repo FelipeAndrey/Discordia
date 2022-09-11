@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [Header("Player")]
-    public Moviment player;
+    public Player player;
     public Animator Animator;
     public AnimationTrigger animationTrigger;
 
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void Breathing()
     {
-        Animator.enabled = !player.isMoving;
+        //Animator.enabled = !player.isMoving;
     }
 
     public void SetMoving(bool value)

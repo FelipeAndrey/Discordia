@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Moviment : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Lantern lantern;
     public Transform lanterRef;
@@ -66,7 +66,6 @@ public class Moviment : MonoBehaviour
 
     private void Update()
     {
-        print(canMove);
         if (canMove)
         {
             if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) < 0.1)
@@ -264,4 +263,4 @@ public class Moviment : MonoBehaviour
 }
 
 [Serializable]
-public enum InputLanternMode {Automatic, OnClick }
+public enum InputLanternMode {Automatic, OnClick}

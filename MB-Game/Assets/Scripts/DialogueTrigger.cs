@@ -1,6 +1,7 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : Interactable
 {
     [Header("Dialogue Settings")]
     public DialogueStructure dialogue;
@@ -12,6 +13,10 @@ public class DialogueTrigger : MonoBehaviour
     [System.NonSerialized] public bool collided;
 
     private bool trade = false;
+    public override void Interact() 
+    {
+        TriggerDialogue(true);
+    }
 
     void Update()
     {
@@ -21,13 +26,6 @@ public class DialogueTrigger : MonoBehaviour
             {
                 TriggerDialogue(true);
                 collided = false;
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    print("Trocou De Camera");
-                }
             }
         }
     }
