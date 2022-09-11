@@ -142,6 +142,54 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307485, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307485, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_lineSpacing
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307485, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307485, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 525
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409318307487, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 191
+      objectReference: {fileID: 0}
     - target: {fileID: 5536428409353452360, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_Name
       value: UI
@@ -221,6 +269,38 @@ PrefabInstance:
     - target: {fileID: 5536428409888622044, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342555, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342555, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342555, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342555, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342555, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342555, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 306
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342557, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_fontStyle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410710342557, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
@@ -618,8 +698,8 @@ MonoBehaviour:
   dialogue:
     name: Santos
     sentence:
-    - "Mas que droga, a minha mochila rasgou. Minhas coisas est\xE3o todas espalhadas.\r\n"
-    - "Agora cad\xEA a minha lanterna?\r\n"
+    - "Mas que droga, a minha mochila rasgou. Minhas coisas est\xE3o todas espalhadas."
+    - "Agora cad\xEA a minha lanterna?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   autoDialogue: 0
