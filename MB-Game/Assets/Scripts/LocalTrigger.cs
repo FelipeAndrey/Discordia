@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LocalTrigger : MonoBehaviour
@@ -12,7 +10,7 @@ public class LocalTrigger : MonoBehaviour
     {
         if (collided)
         {
-            foreach(Bargain target in bargainManager.Bargain)
+            foreach (Bargain target in bargainManager.Bargain)
             {
                 if (target.bargainID == ID)
                 {
@@ -28,7 +26,7 @@ public class LocalTrigger : MonoBehaviour
                     }
                 }
             }
-            
+
         }
     }
 

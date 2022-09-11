@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
     public CharacterController controller;
     public InputLanternMode lanternMode;
-    
+
     [Header("Moviment")]
     public float gravity = -9.81f;
     private Vector3 velocity;
@@ -107,8 +107,8 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                obj.Interact(); 
-            
+                obj.Interact();
+
             }
         }
     }
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
 
     #region Moviment
 
-    
+
     private void Movimente()
     {
         float x = Input.GetAxis("Horizontal");
@@ -263,4 +263,4 @@ public class Player : MonoBehaviour
 }
 
 [Serializable]
-public enum InputLanternMode {Automatic, OnClick}
+public enum InputLanternMode { Automatic, OnClick }

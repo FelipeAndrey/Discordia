@@ -17,6 +17,6 @@ public class PlayerPos : MonoBehaviour
     }
     private void NewSavePosition()
     {
-         transform.position = gameManager.lastCheckPoint;
+        transform.position = gameManager.lastCheckPoint;
     }
 }

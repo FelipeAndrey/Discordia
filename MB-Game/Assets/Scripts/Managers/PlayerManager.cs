@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Walking()
     {
-        if (canWalk) 
+        if (canWalk)
         {
             navMeshAgent.isStopped = false;
             Ray ray = main.ScreenPointToRay(Input.mousePosition);
@@ -92,7 +92,7 @@ public class PlayerManager : MonoBehaviour
         main.transform.parent.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
 
     }
-    
+
     #region Gets & Sets Métodos
     /// <summary>
     /// Retorna o valor atual da condição booleana <c>canWalk</c> referente ao recurso de movimentação do player.

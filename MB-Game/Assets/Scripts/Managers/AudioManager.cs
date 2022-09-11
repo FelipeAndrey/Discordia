@@ -1,6 +1,6 @@
-using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
+using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
 
     public void Awake()
     {
-        foreach(Sound s in sounds)
+        foreach (Sound s in sounds)
         {
             s.AudioSource = gameObject.AddComponent<AudioSource>();
             s.AudioSource.clip = s.Clip;

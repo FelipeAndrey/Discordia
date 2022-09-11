@@ -4,7 +4,7 @@ public class AtivaLanterna : Interactable
 {
     public GameObject lantern;
 
-   
+
 
     public void Ativação()
     {

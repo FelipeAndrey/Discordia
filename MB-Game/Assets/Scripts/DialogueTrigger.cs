@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class DialogueTrigger : Interactable
 {
@@ -9,11 +8,12 @@ public class DialogueTrigger : Interactable
     public Camera targetCamera;
 
     [Header("Automatic Dialogue")]
+    public bool nextDialogue;
     public bool autoDialogue;
     [System.NonSerialized] public bool collided;
 
     private bool trade = false;
-    public override void Interact() 
+    public override void Interact()
     {
         TriggerDialogue(true);
     }
@@ -54,6 +54,7 @@ public class DialogueTrigger : Interactable
 
     public void TriggerDialogue(bool value)
     {
+        manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue);
     }
 }

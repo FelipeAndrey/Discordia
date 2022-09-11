@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +9,7 @@ public class GoodEnding : MonoBehaviour
 
     private void Update()
     {
-        if (collided) 
+        if (collided)
         {
             dialogueTrigger.manager.canNext = true;
             if (dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
@@ -21,7 +19,7 @@ public class GoodEnding : MonoBehaviour
         }
     }
 
-    public void callGoodEndingScene() 
+    public void callGoodEndingScene()
     {
         Loading.SetActive(true);
         Cursor.lockState = CursorLockMode.None;

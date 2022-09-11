@@ -27,7 +27,7 @@ public class AnimationTrigger : MonoBehaviour
     {
         gameManager.SetMoving(value);
 
-        if(sec == 0)
+        if (sec == 0)
         {
             print("Entrou no 0");
             animator.SetBool(clip.ToString(), true);

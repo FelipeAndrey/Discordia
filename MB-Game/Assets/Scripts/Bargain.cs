@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bargain : MonoBehaviour
@@ -14,7 +12,7 @@ public class Bargain : MonoBehaviour
     public GameObject bargainTrigger, bargainTarget = null;
     public Category category;
     public Type type;
-    [TextArea(1, 2)]public string description;
+    [TextArea(1, 2)] public string description;
     public int bargainID { get; set; }
 
     #region Privates
@@ -45,8 +43,9 @@ public class Bargain : MonoBehaviour
                     audioManager.Stop("Whisper");
                     dialogueTrigger.manager.EndDialogue();
                 }
-                
-            }else//In Local Case
+
+            }
+            else//In Local Case
             {
                 Local();
                 if (Input.GetKeyDown(KeyCode.N))
@@ -58,7 +57,7 @@ public class Bargain : MonoBehaviour
         }
     }
 
-    public void Interactive() 
+    public void Interactive()
     {
         dialogueTrigger.manager.canNext = dialogueTrigger.manager.sentences.Count == 0 ? false : true;
         if (dialogueTrigger.manager.onDialogue && dialogueTrigger.manager.canNext == false && Input.GetKeyUp(KeyCode.Y))
@@ -77,7 +76,7 @@ public class Bargain : MonoBehaviour
         }
     }
 
-    public void Local() 
+    public void Local()
     {
         audioManager.Play("Whisper");
         bargainManager.AddBargain(this);
@@ -85,7 +84,7 @@ public class Bargain : MonoBehaviour
         bargainID = bargainManager.Bargain.Count;
         bargainTrigger.GetComponent<LocalTrigger>().ID = bargainID;
         dialogueTrigger.manager.canNext = true;
-        if(dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+        if (dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
         {
             audioManager.Stop("Whisper");
             dialogueTrigger.manager.canNext = false;

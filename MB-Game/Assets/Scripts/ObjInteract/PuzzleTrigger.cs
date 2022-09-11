@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,19 +9,10 @@ public class PuzzleTrigger : Interactable
 
     public override void Interact()
     {
-        if (manager == null)
-            return;
-        else if (manager.player.lantern.luzAtiva)
-        {
-            this.gameObject.SetActive(false);
-            TriggerPuzzle();
- 
-        }
-        else
-            return;
-
+        this.gameObject.SetActive(false);
+        TriggerPuzzle();
     }
-        // Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
         //puzzleInteract = new List<GameObject>();
@@ -39,7 +29,6 @@ public class PuzzleTrigger : Interactable
     {
         for (int i = 0; i < puzzleInteract.Count; i++)
         {
-            print(puzzleInteract.Count);
             puzzleInteract[i].SetActive(true);
         }
     }
