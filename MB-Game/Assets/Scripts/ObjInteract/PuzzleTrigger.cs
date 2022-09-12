@@ -5,12 +5,33 @@ public class PuzzleTrigger : Interactable
 {
     private GameManager manager;
 
+    public GameObject badWords;
+
+    public GameObject door;
+
     public List<GameObject> puzzleInteract;
+
+    private bool puzzleSpawn;
 
     public override void Interact()
     {
-        this.gameObject.SetActive(false);
-        TriggerPuzzle();
+        if (manager.player.lantern == null)
+            return;
+        else if (manager.player.lantern.luzAtiva == true)
+        {
+
+            if (!puzzleSpawn)
+            {
+                this.gameObject.GetComponent<BoxCollider>().enabled = false;
+                this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                badWords.SetActive(true);
+                TriggerPuzzle();
+                puzzleSpawn = true;
+            }
+        }
+        else
+            return;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -22,7 +43,10 @@ public class PuzzleTrigger : Interactable
     // Update is called once per frame
     void Update()
     {
-
+        if (puzzleInteract.Count == 0)
+        {
+            Destroy(door);
+        }
     }
 
     public void TriggerPuzzle()
@@ -31,6 +55,7 @@ public class PuzzleTrigger : Interactable
         {
             puzzleInteract[i].SetActive(true);
         }
+
     }
 }
 
