@@ -68,22 +68,17 @@ public class Player : MonoBehaviour
     {
         if (canMove)
         {
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) < 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) < 0.1)
-            {
-                isMoving = false;
-            }
-            else
-            {
-                isMoving = true;
-                Movimente();
-            }
-        }
+            Movimente();
 
+        }
+        
+        
         Correr();
         Abaixar();
         Interacte();
         gameManager.Breathing();
-
+        //print(Orientetion.transform.position.y);
+        print(scalePlayer);
         speed = currentSpeed;
     }
 
@@ -134,10 +129,19 @@ public class Player : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
-        Vector3 move = Orientetion.right * x + Orientetion.forward * z;
         velocity.y += gravity * Time.deltaTime;
-        move = new Vector3(move.x, velocity.y, move.z);
+        Vector3 move = new Vector3();
+
+        if (Mathf.Abs(x) < 0.1 && Mathf.Abs(z) < 0.1)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            move = Orientetion.right * x + Orientetion.forward * z;
+            move = new Vector3(move.x, velocity.y, move.z);
+            isMoving = true;
+        }
         controller.Move(move * speed * Time.deltaTime);
         controller.Move(velocity * Time.deltaTime);
     }
@@ -163,12 +167,14 @@ public class Player : MonoBehaviour
             crouch = true;
             scalePlayer = 0.5f;
             currentSpeed = speedCrounch;
+            //Orientetion.transform.position = new Vector3(0, 0.5f, 0);
         }
 
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             crouch = false;
             scalePlayer = 3.5f;
+            //Orientetion.transform.position = new Vector3(0, 3.5f, 0);
         }
         if (crouch && controller.height > scalePlayer)
         {

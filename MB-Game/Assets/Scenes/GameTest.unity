@@ -1162,6 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d09b98ec1fb539439d7fdcd7c580594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputLanternMode: 0
   dialogue:
     name: Santos FC
     sentence:
@@ -1172,6 +1173,7 @@ MonoBehaviour:
     - Time minusculo!
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
+  nextDialogue: 0
   autoDialogue: 1
 --- !u!4 &830505672
 Transform:
@@ -1323,6 +1325,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!114 &1038682185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5102732117926774930, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+  m_PrefabInstance: {fileID: 5536428410510272105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1177161071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9099609570100778, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
@@ -1336,7 +1349,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177161071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d892a0f6fbdfad84da173b23f7428bb6, type: 2}
   m_CullingMode: 0
@@ -1740,6 +1753,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680043905}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1724956656
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 3
+  m_Width: 256
+  m_Height: 144
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 2
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!114 &1748188700 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5536428409840425077, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
@@ -2176,6 +2225,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2123548767, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9099608467793448, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2827,6 +2880,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 653437321640025695, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
+      propertyPath: display
+      value: 
+      objectReference: {fileID: 1038682185}
     - target: {fileID: 7134784828837346913, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2875,6 +2932,10 @@ PrefabInstance:
       propertyPath: orientetion
       value: 
       objectReference: {fileID: 1213237530}
+    - target: {fileID: 7134784828837346918, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 1724956656}
     - target: {fileID: 7134784828837346922, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: player
       value: 
