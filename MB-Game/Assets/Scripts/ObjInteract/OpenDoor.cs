@@ -4,9 +4,6 @@ using UnityEngine;
 public class OpenDoor : Interactable
 {
     public GameObject Door;
-
-    public List<GameObject> godWords;
-
     public override void Interact()
     {
         DestroyDoor();
