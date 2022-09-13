@@ -141,7 +141,9 @@ public class Player : MonoBehaviour
             move = Orientetion.right * x + Orientetion.forward * z;
             move = new Vector3(move.x, velocity.y, move.z);
             isMoving = true;
+
         }
+
         controller.Move(move * speed * Time.deltaTime);
         controller.Move(velocity * Time.deltaTime);
     }
