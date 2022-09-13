@@ -60,8 +60,6 @@ public class Player : MonoBehaviour
         camera = gameManager.GetCamera();
         normalSpeed = speed;
         currentSpeed = normalSpeed;
-        //gameManager.animationTrigger.CallAnimation(0, true);
-        //look = camera.GetComponent<Look>();
     }
 
     private void Update()
