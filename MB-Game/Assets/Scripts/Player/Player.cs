@@ -75,9 +75,9 @@ public class Player : MonoBehaviour
         Abaixar();
         Interacte();
         gameManager.Breathing();
-        //print(Orientetion.transform.position.y);
         print(scalePlayer);
         speed = currentSpeed;
+        print(speed);
     }
 
     private void Interacte()
