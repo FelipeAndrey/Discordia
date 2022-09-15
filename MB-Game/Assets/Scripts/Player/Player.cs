@@ -75,9 +75,7 @@ public class Player : MonoBehaviour
         Abaixar();
         Interacte();
         gameManager.Breathing();
-        print(scalePlayer);
         speed = currentSpeed;
-        print(speed);
     }
 
     private void Interacte()
@@ -194,7 +192,7 @@ public class Player : MonoBehaviour
 
     private void Correr()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0 && controller.height >= 3.4f)
+        if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0.1f && controller.height >= 3.4f)
         {
             if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
             {
@@ -224,7 +222,7 @@ public class Player : MonoBehaviour
                 updateStamina(0);
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && controller.height >= 3.4f)
+        if (Input.GetKeyUp(KeyCode.LeftShift) && controller.height >= 3.4f || stamina < 0.1f)
         {
             currentSpeed = normalSpeed;
             running = false;

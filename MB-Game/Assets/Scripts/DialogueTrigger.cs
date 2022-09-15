@@ -6,6 +6,8 @@ public class DialogueTrigger : Interactable
     public DialogueStructure dialogue;
     public DialogueManager manager;
     public Camera targetCamera;
+    public BoxCollider needToSet;
+
 
     [Header("Automatic Dialogue")]
     public bool nextDialogue;
@@ -22,9 +24,11 @@ public class DialogueTrigger : Interactable
     {
         if (collided)
         {
+            print("Entrou");
             if (autoDialogue)
             {
                 TriggerDialogue(true);
+                needToSet.enabled = false;
                 collided = false;
             }
         }
