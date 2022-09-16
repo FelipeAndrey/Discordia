@@ -7,6 +7,7 @@ public class DialogueTrigger : Interactable
     public DialogueManager manager;
     public Camera targetCamera;
     public BoxCollider needToSet;
+    public bool notMove;
 
 
     [Header("Automatic Dialogue")]
@@ -58,6 +59,14 @@ public class DialogueTrigger : Interactable
 
     public void TriggerDialogue(bool value)
     {
+        if(notMove == true)
+        {
+            manager.Manager.player.canMove = false;
+        }
+        else
+        {
+            manager.Manager.player.canMove = true;
+        }
         manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue);
     }

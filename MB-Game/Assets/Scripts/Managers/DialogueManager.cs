@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
         dialogueCanvas.SetActive(false);
+        Manager = gameObject.GetComponent<GameManager>();
     }
 
     void Update()
@@ -72,6 +73,10 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        if(Manager.player.canMove == false)
+        {
+            Manager.player.canMove = true;
+        }
         onDialogue = false;
         dialogueCanvas.SetActive(onDialogue);
 
