@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -62,6 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence()
     {
+        print(sentences.Count);
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -79,6 +81,8 @@ public class DialogueManager : MonoBehaviour
         }
         onDialogue = false;
         dialogueCanvas.SetActive(onDialogue);
+
+        //Aqui ira a logica do Pensamento
 
         /*if (cameraManager.CameraTarget != null)
         {

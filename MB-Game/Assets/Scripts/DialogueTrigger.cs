@@ -25,11 +25,11 @@ public class DialogueTrigger : Interactable
     {
         if (collided)
         {
-            print("Entrou");
             if (autoDialogue)
             {
                 TriggerDialogue(true);
-                needToSet.enabled = false;
+                if (needToSet != null)
+                    needToSet.enabled = false;
                 collided = false;
             }
         }

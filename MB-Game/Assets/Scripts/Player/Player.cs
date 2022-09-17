@@ -67,9 +67,7 @@ public class Player : MonoBehaviour
         if (canMove)
         {
             Movimente();
-
         }
-        
         
         Correr();
         Abaixar();

@@ -2,21 +2,16 @@ using UnityEngine;
 
 public class Cards : Interactable
 {
+    public BoxCollider Dialogue;
     private GameManager manager;
     public bool reading = false;
 
     public override void Interact()
     {
-        manager.player.lanternMode = InputLanternMode.OnClick;
-        if (reading)
-        {
-            return;
-        }
         manager.Cards = this;
         CallCardsTrigger();
         reading = true;
         manager.Letter(reading);
-
     }
 
     void Start()
@@ -29,10 +24,22 @@ public class Cards : Interactable
     {
         if (reading == true && Input.GetKeyDown(KeyCode.Mouse1))
         {
+            if (Dialogue == null)
+                return;
+           
             manager.Letter(false);
             reading = false;
+            Dialogue.enabled = true;
+            
         }
-
+        if (reading == true)
+        {
+            manager.player.canMove = false;
+        }
+        else
+        {
+            manager.player.canMove = true;
+        }
     }
 
     public int CallCardsTrigger()
