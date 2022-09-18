@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Cards : Interactable
 {
-    public BoxCollider Dialogue;
     private GameManager manager;
     public bool reading = false;
 
@@ -23,14 +22,9 @@ public class Cards : Interactable
     void Update()
     {
         if (reading == true && Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if (Dialogue == null)
-                return;
-           
+        {          
             manager.Letter(false);
             reading = false;
-            Dialogue.enabled = true;
-            
         }
         if (reading == true)
         {
