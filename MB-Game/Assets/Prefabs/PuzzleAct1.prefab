@@ -218,10 +218,9 @@ GameObject:
   - component: {fileID: 2051680615901155389}
   - component: {fileID: 3984611849397990148}
   - component: {fileID: 5712223487036363538}
-  - component: {fileID: 1493429440817705665}
   m_Layer: 8
   m_Name: Encrenqueiro
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,19 +288,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1493429440817705665
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409467862148726583}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2302977, y: 0.14632232, z: 0.025000002}
-  m_Center: {x: -0.63055605, y: 0.049271874, z: 0.012500955}
 --- !u!1 &1788163143249802639
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +301,7 @@ GameObject:
   - component: {fileID: 7325110080398554855}
   m_Layer: 8
   m_Name: Inutil
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +382,7 @@ GameObject:
   - component: {fileID: 2998760770007016222}
   m_Layer: 8
   m_Name: Lixo
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,7 +463,7 @@ GameObject:
   - component: {fileID: 1995258949507426463}
   m_Layer: 8
   m_Name: Pivete
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -675,7 +661,7 @@ GameObject:
   - component: {fileID: 3454414609190991766}
   m_Layer: 8
   m_Name: Inteligente
-  m_TagString: Untagged
+  m_TagString: godWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -786,7 +772,7 @@ GameObject:
   - component: {fileID: 1880313782424402108}
   m_Layer: 8
   m_Name: "Esperan\xE7oso"
-  m_TagString: Untagged
+  m_TagString: godWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -897,11 +883,11 @@ GameObject:
   - component: {fileID: 3723520577282614638}
   m_Layer: 8
   m_Name: Corajoso
-  m_TagString: Untagged
+  m_TagString: godWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4334232489500763852
 Transform:
   m_ObjectHideFlags: 0
@@ -910,7 +896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4334232489500763853}
   m_LocalRotation: {x: 0, y: 0.73621523, z: 0, w: 0.67674744}
-  m_LocalPosition: {x: -63.6, y: 9.55, z: 34.41}
+  m_LocalPosition: {x: -63.6, y: 8.84, z: 34.41}
   m_LocalScale: {x: 20, y: 20, z: 10}
   m_Children:
   - {fileID: 1070406808}
@@ -1041,7 +1027,7 @@ GameObject:
   - component: {fileID: 6643930362376679582}
   m_Layer: 8
   m_Name: Imundo
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1124,7 +1110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7677923095118172382
 Transform:
   m_ObjectHideFlags: 0
@@ -1160,7 +1146,7 @@ GameObject:
   - component: {fileID: 1906613767189552115}
   m_Layer: 8
   m_Name: Fracassado
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1241,7 +1227,7 @@ GameObject:
   - component: {fileID: 3450103157375830855}
   m_Layer: 8
   m_Name: Idiota
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1322,7 +1308,7 @@ GameObject:
   - component: {fileID: 6632034280597521848}
   m_Layer: 8
   m_Name: "Insupot\xE1vel"
-  m_TagString: Untagged
+  m_TagString: badWord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1334,13 +1320,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8768362091008553356}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.99, y: 0, z: -76.67}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -17.63, y: 0, z: -64.64}
   m_LocalScale: {x: 10, y: 8.08, z: 10}
   m_Children: []
   m_Father: {fileID: 7677923095118172382}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &1087868145264459438
 MeshFilter:
   m_ObjectHideFlags: 0

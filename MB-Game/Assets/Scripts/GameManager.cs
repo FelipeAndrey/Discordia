@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [Header("SavePoint")]
     public Vector3 lastCheckPoint;
 
+    [Header("PuzzleOne")]
+    public int puzzleValueFinal; 
+
     void Start()
     {
         Card = new CardsTrigger();
@@ -66,4 +69,6 @@ public class GameManager : MonoBehaviour
     {
         player.canMove = value;
     }
+
+
 }

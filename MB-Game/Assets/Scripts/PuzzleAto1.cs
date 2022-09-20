@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Unity.Mathematics;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class PuzzleAto1 : Interactable
 {
     private GameManager manager;
-
     public PuzzleTrigger trigger;
+
+    private int puzzleValue;
 
     public override void Interact()
     {
@@ -16,7 +17,8 @@ public class PuzzleAto1 : Interactable
             return;
         else if (manager.player.lantern.luzAtiva == true)
         {
-            RemoveGoodWord();
+            RemoveWord();
+            print(puzzleValue);
         }
         else
             return;
@@ -30,16 +32,25 @@ public class PuzzleAto1 : Interactable
 
     private void Update()
     {
-        if (trigger.puzzleInteract.Count == 0)
-        {
-            //Destroy(door);
-        }
+
     }
 
-    public void RemoveGoodWord()
+    public void RemoveWord()
     {
         if (trigger.puzzleInteract.Contains(this.gameObject))
         {
+            if (gameObject.CompareTag("godWord"))
+            {
+                puzzleValue = UnityEngine.Random.Range(1, 10);
+                manager.puzzleValueFinal += puzzleValue;
+                
+            }
+            else if (gameObject.CompareTag("badWord"))
+            {
+                puzzleValue = UnityEngine.Random.Range(-5,0);
+                manager.puzzleValueFinal += puzzleValue;
+            }
+
             trigger.puzzleInteract.Remove(gameObject);
             Destroy(gameObject);
         }
