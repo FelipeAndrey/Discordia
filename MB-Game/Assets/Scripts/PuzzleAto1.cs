@@ -25,7 +25,7 @@ public class PuzzleAto1 : Interactable
 
     private void Update()
     {
-       
+
     }
 
     public void RemoveWord()

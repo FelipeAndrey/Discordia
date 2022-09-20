@@ -3,7 +3,7 @@ using UnityEngine;
 public class DialogueTrigger : Interactable
 {
     [Header("Dialogue Settings")]
-    public DialogueStructure dialogue;
+    public DialogueStructure[] dialogue;
     public DialogueManager manager;
     public Camera targetCamera;
     public BoxCollider needToSet;
@@ -51,11 +51,11 @@ public class DialogueTrigger : Interactable
         }
     }
 
-    private void TradeCamera()
-    {
-        trade = !trade;
-        TriggerDialogue(trade);
-    }
+    //private void TradeCamera()
+    //{
+    //    trade = !trade;
+    //    TriggerDialogue(trade);
+    //}
 
     public void TriggerDialogue(bool value)
     {
@@ -67,7 +67,9 @@ public class DialogueTrigger : Interactable
         {
             manager.Manager.player.canMove = true;
         }
+
         manager.canNext = nextDialogue;
-        manager.Dialogue(value, dialogue);
+        manager.Dialogue(value,dialogue);
+
     }
 }

@@ -550,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &59225909
 Transform:
   m_ObjectHideFlags: 0
@@ -579,14 +579,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputLanternMode: 0
   dialogue:
-    name: ...
+  - name: ...
     sentence:
-    - "Nunca tiveram motivos\u2026\r\n\r\r\n\n"
-    - "Eu n\xE3o fiz nada para ele.\r\r"
-    - "Ent\xE3o por que me culpar por tudo?\r\n\n"
-    - 'O que eu fui pra ele?
-
-'
+    - XD
+    - aa
+    - sd
+  - name: asdasd
+    sentence:
+    - sdf
+    - sdfsd
+    - asdasd
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 59225911}
@@ -664,11 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: PENSAMENTO Santos
-    sentence:
-    - "\u201C\xC9 um fardo muito grande."
-    - "Preciso encontrar algo que me fa\xE7a sair daqui depressa."
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 65490950}
@@ -684,7 +682,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1990998663, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.2000122
+      value: 0.20007324
       objectReference: {fileID: 0}
     - target: {fileID: 1990998663, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -694,6 +692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThoughtsCanvasGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 1995369745, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5102732117926774930, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_Texture
       value: 
@@ -702,6 +704,10 @@ PrefabInstance:
       propertyPath: mouseSens
       value: 
       objectReference: {fileID: 841295497}
+    - target: {fileID: 5536428409263063917, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5536428409353452360, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_Name
       value: UI
@@ -758,6 +764,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5536428409640965179, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5536428409888622044, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -769,6 +779,30 @@ PrefabInstance:
     - target: {fileID: 5536428409888622044, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410502153246, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344679, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.00030589104
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410783069340, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
@@ -1579,12 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - Mas o que?
-    - "O que isso est\xE1 fazendo aqui?"
-    - "Isso \xE9\u2026"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 178240416}
@@ -1744,12 +1773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - "Espera\u2026\r\n"
-    - "Mas acabei de passar por aqui e n\xE3o tinha nada\u2026"
-    - "Mas o que est\xE1 acontecendo com esse lugar?"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 190205802}
@@ -2681,15 +2705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: ...
-    sentence:
-    - Onde estou?
-    - "Que caverna \xE9 essa?"
-    - "Eu estava andando e de repente\u2026"
-    - "Aquele buraco no teto, foi de l\xE1 que eu ca\xED!"
-    - Mas como algo desse tamanho estava no meio do caminho?
-    - "E pior, como eu n\xE3o vi?\u201D"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 267308488}
@@ -3574,19 +3590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - "Talvez se seguir por esse caminho eu consiga encontrar passagens que me levem
-      at\xE9 a sa\xEDda desse lugar."
-    - "\u2026"
-    - "\u2026"
-    - "Como eu n\xE3o vi o buraco no ch\xE3o?"
-    - "Estava t\xE3o distra\xEDdo"
-    - Mas onde eu estava indo mesmo?
-    - "O que eu estava fazendo para n\xE3o prestar aten\xE7\xE3o por onde andava?"
-    - "Preciso achar outra forma de sair daqui, mas s\xF3 h\xE1 pedras por todo o
-      lado."
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 395981610}
@@ -3635,7 +3639,7 @@ PrefabInstance:
       objectReference: {fileID: 820894659}
     - target: {fileID: 3249606369000162972, guid: 6256366d78f8d364f841a54d9a140604, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3249606369000162972, guid: 6256366d78f8d364f841a54d9a140604, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5513,12 +5517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - Que lugar tenebroso.
-    - Tem estalactite por todo lado.
-    - "Tomara que n\xE3o caia nenhuma delas em mim."
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 672751490}
@@ -5616,10 +5615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: ...
-    sentence:
-    - Achei!
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 696604835}
@@ -5915,12 +5911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 1
-  dialogue:
-    name: Santos
-    sentence:
-    - "Porcaria! Minha mochila rasgou e minhas coisas est\xE3o todas espalhadas.\r\n"
-    - "E tamb\xE9m a minha lanterna n\xE3o est\xE1 aqui."
-    - "Preciso acha-la logo.\u201D"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 0}
@@ -6505,7 +6496,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6019152300529337610, guid: 12bcebf519760ba4497acce16a889f21, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6019152300529337610, guid: 12bcebf519760ba4497acce16a889f21, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7074,10 +7065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - "Que bom que a lanterna ainda est\xE1 funcionando."
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 896953383}
@@ -7980,11 +7968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - "Voltar agora tamb\xE9m n\xE3o vai adiantar nada."
-    - "Preciso encontrar algo que me fa\xE7a sair daqui depressa."
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1085749488}
@@ -8205,13 +8189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - "Parece que\u2026 tudo sumiu.\n"
-    - "Por que isso est\xE1 se repetindo?"
-    - "Eu n\xE3o sou nada disso."
-    - "Por que voc\xEA teve que me insultar tanto dessa forma?\""
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1110669792}
@@ -8358,20 +8336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: ...
-    sentence:
-    - SOCORRO!
-    - SOCORRO!
-    - "TEM ALGU\xC9M A\xCD?"
-    - "ALGU\xC9M ME ESCUTA?"
-    - "\u2026"
-    - "\u2026"
-    - "Mas que droga! N\xE3o tem ningu\xE9m."
-    - "Infelizmente, n\xE3o trouxe nada comigo que possa me ajudar a "
-    - escalar de volta.
-    - "Espera\u2026"
-    - "Cad\xEA as minhas coisas?"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1121975011}
@@ -8656,11 +8621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 1
-  dialogue:
-    name: Santos
-    sentence:
-    - "De quem esse bilhete est\xE1 falando?"
-    - "Ser\xE1 que ele caiu aqui tamb\xE9m?"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 0}
@@ -9597,13 +9558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - 'Ahn?
-
-'
-    - "O que ser\xE1 aquilo?"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1253670943}
@@ -10154,11 +10109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - "\u2018Por que?\u2019.\n"
-    - "Mas o que \xE9 isso."
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1307269624}
@@ -10403,12 +10354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: '[PENSAMENTO]Santos'
-    sentence:
-    - "a tortura\u2026"
-    - "Essa era a sua\u2026"
-    - ARMA!"
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1322303276}
@@ -11867,11 +11813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - Encontrei
-    - Espero que esteja funcionando.
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1467762472}
@@ -12666,72 +12608,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c652d9a218db567428542ed285d5d711, type: 3}
---- !u!1 &1632377544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1632377547}
-  - component: {fileID: 1632377546}
-  - component: {fileID: 1632377545}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1632377545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632377544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1632377546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632377544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1632377547
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632377544}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1635132247
 GameObject:
   m_ObjectHideFlags: 0
@@ -19144,7 +19020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19152,7 +19028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 916.07
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19319,6 +19195,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841678022}
   m_Mesh: {fileID: -4716889597045178651, guid: 95419c4acaf97b744952b78723aecf07, type: 3}
+--- !u!1 &1849524074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849524077}
+  - component: {fileID: 1849524076}
+  - component: {fileID: 1849524075}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1849524075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849524074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+--- !u!114 &1849524076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849524074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1849524077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849524074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875024500
 GameObject:
   m_ObjectHideFlags: 0
@@ -19377,10 +19328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: Santos
-    sentence:
-    - A porta abriu...
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1875024502}
@@ -20069,9 +20017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-    name: 
-    sentence: []
+  dialogue: []
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
   needToSet: {fileID: 1949497871}
