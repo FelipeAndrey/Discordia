@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         {
             Movimente();
         }
-        
+
         Correr();
         Abaixar();
         Interacte();

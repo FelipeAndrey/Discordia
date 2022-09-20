@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -63,7 +62,6 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence()
     {
-        print(sentences.Count);
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -75,7 +73,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        if(Manager.player.canMove == false)
+        if (Manager.player.canMove == false)
         {
             Manager.player.canMove = true;
         }

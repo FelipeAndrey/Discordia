@@ -59,7 +59,7 @@ public class DialogueTrigger : Interactable
 
     public void TriggerDialogue(bool value)
     {
-        if(notMove == true)
+        if (notMove == true)
         {
             manager.Manager.player.canMove = false;
         }

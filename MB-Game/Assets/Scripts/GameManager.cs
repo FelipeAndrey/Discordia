@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public Vector3 lastCheckPoint;
 
     [Header("PuzzleOne")]
-    public int puzzleValueFinal; 
+    public int puzzleValueFinal;
 
     void Start()
     {
@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
         cameraAtual = Camera.main;
     }
 
+    private void Update()
+    {
+        print(puzzleValueFinal);
+    }
     public Camera GetCamera()
     {
         return cameraAtual;

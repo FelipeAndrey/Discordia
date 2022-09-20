@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OpenDoor : Interactable
@@ -11,7 +10,8 @@ public class OpenDoor : Interactable
 
     public void DestroyDoor()
     {
-
+        gameObject.SetActive(false);
         Destroy(Door);
+
     }
 }

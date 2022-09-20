@@ -22,7 +22,7 @@ public class Cards : Interactable
     void Update()
     {
         if (reading == true && Input.GetKeyDown(KeyCode.Mouse1))
-        {          
+        {
             manager.Letter(false);
             reading = false;
         }

@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
@@ -17,6 +16,6 @@ public class AnimationTrigger : MonoBehaviour
 
     public void CallAnimation()
     {
-        
+
     }
 }
