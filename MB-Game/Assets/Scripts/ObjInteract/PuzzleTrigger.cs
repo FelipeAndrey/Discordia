@@ -7,7 +7,7 @@ public class PuzzleTrigger : Interactable
 
     public GameObject Words;
     public GameObject door;
-    public List<GameObject> puzzleInteract;
+    [HideInInspector]public List<GameObject> puzzleInteract;
 
     private bool puzzleSpawn;
 
@@ -22,7 +22,6 @@ public class PuzzleTrigger : Interactable
                 this.gameObject.GetComponent<BoxCollider>().enabled = false;
                 this.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 Words.SetActive(true);
-                //TriggerPuzzle();
                 puzzleSpawn = true;
             }
         }
@@ -48,9 +47,5 @@ public class PuzzleTrigger : Interactable
         }
     }
 
-    public void TriggerPuzzle()
-    {
-
-    }
 }
 
