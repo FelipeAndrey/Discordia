@@ -75,7 +75,8 @@ public class GameManager : MonoBehaviour
 
     public void TradeCamera() 
     {
-        
+        cameraAtual.gameObject.SetActive(false);
+        tradeCamaera.gameObject.SetActive(true);
     }
 
 }
