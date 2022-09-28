@@ -15,7 +15,7 @@ public class PixelatedCamera : MonoBehaviour
 
     public static PixelatedCamera main;
 
-    private Camera renderCamera;
+    public Camera renderCamera;
     private RenderTexture renderTexture;
     private int screenWidth, screenHeight;
 

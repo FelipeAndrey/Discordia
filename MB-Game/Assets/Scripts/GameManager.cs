@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public AnimationTrigger animationTrigger;
 
     [Header("Camera")]
+    //private IEnumerator coroutine;
     public Camera cameraAtual;
     public Camera tradeCamaera;
 
@@ -75,8 +77,22 @@ public class GameManager : MonoBehaviour
 
     public void TradeCamera() 
     {
-        cameraAtual.gameObject.SetActive(false);
-        tradeCamaera.gameObject.SetActive(true);
+        StartCoroutine(TradeCameraTime(3.0f));
     }
 
+    private IEnumerator TradeCameraTime(float time)
+    {
+        yield return new WaitForSeconds(0.3f);
+        cameraAtual.gameObject.SetActive(false);
+        tradeCamaera.gameObject.SetActive(true);
+        cameraAtual.GetComponent<PixelatedCamera>().renderCamera = tradeCamaera;
+        player.canMove = false;
+        yield return new WaitForSeconds(time);
+        cameraAtual.gameObject.SetActive(true);
+        tradeCamaera.gameObject.SetActive(false);
+        cameraAtual.GetComponent<PixelatedCamera>().renderCamera = cameraAtual;
+        player.canMove = true;
+        yield return null;
+
+    }
 }

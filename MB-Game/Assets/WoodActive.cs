@@ -15,10 +15,7 @@ public class WoodActive : Interactable
         {
             puzzleLabirinto.invisibleWall.enabled = false;
         }
-    }
-    private void Update()
-    {
-        print(puzzleLabirinto.cont);
+        puzzleLabirinto.manager.TradeCamera();
     }
 
     public void CameraBridgeWood() 
