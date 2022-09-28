@@ -7,16 +7,10 @@ public class Cards : Interactable
 
     public override void Interact()
     {
-        manager.player.lanternMode = InputLanternMode.OnClick;
-        if (reading)
-        {
-            return;
-        }
         manager.Cards = this;
         CallCardsTrigger();
         reading = true;
         manager.Letter(reading);
-
     }
 
     void Start()
@@ -32,7 +26,14 @@ public class Cards : Interactable
             manager.Letter(false);
             reading = false;
         }
-
+        if (reading == true)
+        {
+            manager.player.canMove = false;
+        }
+        else
+        {
+            manager.player.canMove = true;
+        }
     }
 
     public int CallCardsTrigger()

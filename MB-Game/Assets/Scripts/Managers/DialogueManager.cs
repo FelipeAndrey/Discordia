@@ -9,19 +9,23 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueCanvas;
     public TextMeshProUGUI TMPName;
     public TextMeshProUGUI TMPSentence;
-    private Queue<string> sentences;
-    private bool onDialogue;
+    public Queue<string> sentences;
+    private int index;
+    private DialogueStructure[] structureArray;
+    public bool onDialogue { get; set; } = false;
+    public bool canNext { get; set; } = false;
 
 
     void Start()
     {
         sentences = new Queue<string>();
         dialogueCanvas.SetActive(false);
+        Manager = gameObject.GetComponent<GameManager>();
     }
 
     void Update()
     {
-        if (onDialogue)
+        if (onDialogue && canNext)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -30,18 +34,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void Dialogue(bool value, DialogueStructure dialogue)
+    public void Dialogue(bool value, DialogueStructure [] dialogues)
     {
+        index = 0;
+        structureArray = dialogues;
         this.gameObject.SetActive(value);
-        if (value)
-        {
-            onDialogue = true;
-            StartDialogue(dialogue);
-        }
-        else
-        {
-            EndDialogue();
-        }
+        onDialogue = true;
+        StartDialogue(structureArray[0]);
+
     }
 
     public void StartDialogue(DialogueStructure dialogue)
@@ -62,7 +62,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            index++;
+            if (index >= structureArray.Length)
+            {
+                EndDialogue();
+                return;
+            }
+            StartDialogue(structureArray[index]);
             return;
         }
         string displaySentence = sentences.Dequeue();
@@ -71,8 +77,14 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        if (Manager.player.canMove == false)
+        {
+            Manager.player.canMove = true;
+        }
         onDialogue = false;
         dialogueCanvas.SetActive(onDialogue);
+
+        //Aqui ira a logica do Pensamento
 
         /*if (cameraManager.CameraTarget != null)
         {

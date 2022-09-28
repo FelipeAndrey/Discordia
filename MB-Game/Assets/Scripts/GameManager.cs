@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [Header("Player")]
-    [HideInInspector] public Moviment player;
+    public Player player;
+    public Animator Animator;
+    public AnimationTrigger animationTrigger;
 
     [Header("Camera")]
     public Camera cameraAtual;
@@ -22,18 +24,19 @@ public class GameManager : MonoBehaviour
     [Header("SavePoint")]
     public Vector3 lastCheckPoint;
 
+    [Header("PuzzleOne")]
+    public int puzzleValueFinal;
+
     void Start()
     {
-        player = GameObject.FindObjectOfType<Moviment>();
         Card = new CardsTrigger();
         cameraAtual = Camera.main;
     }
 
-    void Update()
+    private void Update()
     {
-
+        print(puzzleValueFinal);
     }
-
     public Camera GetCamera()
     {
         return cameraAtual;
@@ -61,6 +64,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Breathing()
+    {
+        //Animator.enabled = !player.isMoving;
+    }
+
+    public void SetMoving(bool value)
+    {
+        player.canMove = value;
+    }
 
 
 }

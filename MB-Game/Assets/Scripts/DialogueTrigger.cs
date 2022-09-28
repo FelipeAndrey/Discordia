@@ -1,17 +1,25 @@
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : Interactable
 {
     [Header("Dialogue Settings")]
-    public DialogueStructure dialogue;
+    public DialogueStructure[] dialogue;
     public DialogueManager manager;
     public Camera targetCamera;
+    public BoxCollider needToSet;
+    public bool notMove;
+
 
     [Header("Automatic Dialogue")]
+    public bool nextDialogue;
     public bool autoDialogue;
-    private bool collided;
+    [System.NonSerialized] public bool collided;
 
     private bool trade = false;
+    public override void Interact()
+    {
+        TriggerDialogue(true);
+    }
 
     void Update()
     {
@@ -20,14 +28,9 @@ public class DialogueTrigger : MonoBehaviour
             if (autoDialogue)
             {
                 TriggerDialogue(true);
+                if (needToSet != null)
+                    needToSet.enabled = false;
                 collided = false;
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    print("Trocou De Camera");
-                }
             }
         }
     }
@@ -48,14 +51,25 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void TradeCamera()
-    {
-        trade = !trade;
-        TriggerDialogue(trade);
-    }
+    //private void TradeCamera()
+    //{
+    //    trade = !trade;
+    //    TriggerDialogue(trade);
+    //}
 
     public void TriggerDialogue(bool value)
     {
-        manager.Dialogue(value, dialogue);
+        if (notMove == true)
+        {
+            manager.Manager.player.canMove = false;
+        }
+        else
+        {
+            manager.Manager.player.canMove = true;
+        }
+
+        manager.canNext = nextDialogue;
+        manager.Dialogue(value,dialogue);
+
     }
 }

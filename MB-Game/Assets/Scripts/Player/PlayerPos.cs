@@ -13,13 +13,10 @@ public class PlayerPos : MonoBehaviour
 
     void FixedUpdate()
     {
-        AAAA();
+        //NewSavePosition();
     }
-    private void AAAA()
+    private void NewSavePosition()
     {
-        if (Input.GetKey(KeyCode.Z))
-        {
-            transform.position = gameManager.lastCheckPoint;
-        }
+        transform.position = gameManager.lastCheckPoint;
     }
 }

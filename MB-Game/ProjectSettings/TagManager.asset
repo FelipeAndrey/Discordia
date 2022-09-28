@@ -8,6 +8,8 @@ TagManager:
   - Letter
   - ObsCabeca
   - Interact
+  - godWord
+  - badWord
   layers:
   - Default
   - TransparentFX

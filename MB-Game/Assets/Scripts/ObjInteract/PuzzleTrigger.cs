@@ -5,11 +5,9 @@ public class PuzzleTrigger : Interactable
 {
     private GameManager manager;
 
-    public GameObject badWords;
-
+    public GameObject Words;
     public GameObject door;
-
-    public List<GameObject> puzzleInteract;
+    [HideInInspector]public List<GameObject> puzzleInteract;
 
     private bool puzzleSpawn;
 
@@ -17,15 +15,13 @@ public class PuzzleTrigger : Interactable
     {
         if (manager.player.lantern == null)
             return;
-        else if (manager.player.lantern.luzAtiva == true) 
+        else if (manager.player.lantern.luzAtiva == true)
         {
-
             if (!puzzleSpawn)
             {
                 this.gameObject.GetComponent<BoxCollider>().enabled = false;
                 this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                badWords.SetActive(true);
-                TriggerPuzzle();
+                Words.SetActive(true);
                 puzzleSpawn = true;
             }
         }
@@ -43,19 +39,13 @@ public class PuzzleTrigger : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (puzzleInteract.Count == 0)
+        if (puzzleInteract.Count == 3)
         {
+            Words.SetActive(false);
+            puzzleSpawn = false;
             Destroy(door);
         }
     }
 
-    public void TriggerPuzzle()
-    {
-        for (int i = 0; i < puzzleInteract.Count; i++)
-        {
-            puzzleInteract[i].SetActive(true);
-        }
-
-    }
 }
 
