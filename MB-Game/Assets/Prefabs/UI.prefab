@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1995369744}
   - component: {fileID: 1995369745}
   m_Layer: 0
-  m_Name: ' thoughtsCanvasGroup'
+  m_Name: ThoughtsCanvasGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1453290653648053750
 GameObject:
@@ -193,7 +193,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7840570399085182171}
   - component: {fileID: 2599658571440241281}
-  - component: {fileID: 7011752705524915193}
   - component: {fileID: 3913436210576262636}
   m_Layer: 0
   m_Name: CanvasCamera
@@ -259,14 +258,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7011752705524915193
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486816623678842726}
-  m_Enabled: 1
 --- !u!114 &3913436210576262636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,7 +1757,7 @@ GameObject:
   - component: {fileID: 5536428409640965178}
   - component: {fileID: 5536428409640965180}
   - component: {fileID: 5536428409640965181}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2375,7 +2366,7 @@ GameObject:
   - component: {fileID: 5536428410502153233}
   - component: {fileID: 5536428410502153235}
   - component: {fileID: 5536428410502153232}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2646,7 +2637,7 @@ GameObject:
   - component: {fileID: 5536428410762344699}
   - component: {fileID: 5536428410762344696}
   - component: {fileID: 5536428410762344697}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2733,7 +2724,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.23921569}
+    m_HighlightedColor: {r: 0.00030589104, g: 1, b: 0, a: 0.23921569}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.3137255}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2779,7 +2770,7 @@ GameObject:
   - component: {fileID: 5536428410783069328}
   - component: {fileID: 5536428410783069329}
   - component: {fileID: 5536428410783069342}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Voltar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3137,7 +3128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213411968587, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 16
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213581305720, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_Name
@@ -3258,15 +3249,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2367526213411968586, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -48.6719
+      value: -112.498
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213411968586, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -31.9026
+      value: -31.903
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213411968586, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.96591187
+      value: -0.9660034
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213411968586, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3310,7 +3301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213411968587, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 16
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213581305720, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: m_Name
@@ -3410,10 +3401,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367526213581305724, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
       propertyPath: properts.text
-      value: "Hoje acordei de um longo pesadelo. O mundo est\xE1 colorido hoje, mas
-        nem sempre foi assim. Minha mente e pensamentos n\xE3o eram meus de verdade,
-        e vejo nesse momento que eu n\xE3o fui o \xFAnico a pensar assim sobre mim.
-        Bem, tomaram uma boa decis\xE3o."
+      value: "Jamais vou aceitar o que fizeram comigo. N\xE3o \xE9 justo com algu\xE9m
+        que dedicou a vida a ajudar o pr\xF3ximo, acabar assim\u2026"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38ff4499c775aaa43b764cd558d6659b, type: 3}
