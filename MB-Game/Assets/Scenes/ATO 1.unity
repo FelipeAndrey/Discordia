@@ -9955,7 +9955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &529729446
 Light:
   m_ObjectHideFlags: 0
@@ -18568,6 +18568,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7134784830194392778, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1012328850}
     - target: {fileID: 7134784830194392778, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: intencidade
       value: 65
@@ -28864,7 +28868,7 @@ GameObject:
   - component: {fileID: 1462791150}
   - component: {fileID: 1462791149}
   - component: {fileID: 1462791148}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40559,7 +40563,7 @@ GameObject:
   - component: {fileID: 2070445210}
   - component: {fileID: 2070445209}
   - component: {fileID: 2070445208}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain_(-298.0, 0.0, 1325.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
