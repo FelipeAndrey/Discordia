@@ -15,7 +15,7 @@ public class DialogueTrigger : Interactable
     public bool autoDialogue;
     [System.NonSerialized] public bool collided;
 
-    private bool trade = false;
+    //private bool trade = false;
     public override void Interact()
     {
         TriggerDialogue(true);

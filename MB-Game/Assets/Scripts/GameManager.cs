@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        print(puzzleValueFinal);
     }
     public Camera GetCamera()
     {
@@ -74,5 +73,9 @@ public class GameManager : MonoBehaviour
         player.canMove = value;
     }
 
+    public void TradeCamera() 
+    {
+        
+    }
 
 }

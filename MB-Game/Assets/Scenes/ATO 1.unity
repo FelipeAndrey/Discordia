@@ -6315,6 +6315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315552829}
+  - component: {fileID: 315552830}
   m_Layer: 0
   m_Name: Madeiras
   m_TagString: Untagged
@@ -6336,9 +6337,29 @@ Transform:
   - {fileID: 968303672}
   - {fileID: 1416567389}
   - {fileID: 1291134714}
+  - {fileID: 1317632813}
   m_Father: {fileID: 578639884}
-  m_RootOrder: 162
+  m_RootOrder: 161
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &315552830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315552828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69399146cd3b137418eda4f66283350a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  wood:
+  - {fileID: 968303671}
+  - {fileID: 1416567388}
+  - {fileID: 1291134713}
+  invisibleWall: {fileID: 1317632814}
+  cont: 0
 --- !u!1 &320066646
 GameObject:
   m_ObjectHideFlags: 0
@@ -10049,7 +10070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &529729446
 Light:
   m_ObjectHideFlags: 0
@@ -11350,7 +11371,6 @@ Transform:
   - {fileID: 831895969}
   - {fileID: 1393643384}
   - {fileID: 875477685}
-  - {fileID: 1317632813}
   - {fileID: 315552829}
   m_Father: {fileID: 0}
   m_RootOrder: 19
@@ -15336,7 +15356,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25470
+  m_Name: pb_Mesh75946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19317,6 +19337,7 @@ GameObject:
   - component: {fileID: 1021753454}
   - component: {fileID: 1021753453}
   - component: {fileID: 1021753452}
+  - component: {fileID: 1021753455}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -19332,8 +19353,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021753450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.76, y: 38.8, z: -17.4}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -20.76, y: 37.38, z: -17.4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 175321056}
   m_RootOrder: 0
@@ -19400,6 +19421,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021753450}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1021753455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021753450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df6f31e8991f474388b5487acd8bba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputLanternMode: 1
+  puzzleLabirinto: {fileID: 315552830}
 --- !u!1 &1023272736
 GameObject:
   m_ObjectHideFlags: 0
@@ -20967,6 +21002,7 @@ GameObject:
   - component: {fileID: 1105639201}
   - component: {fileID: 1105639200}
   - component: {fileID: 1105639199}
+  - component: {fileID: 1105639202}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -20982,8 +21018,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105639197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 684, y: 38.8, z: 555.1}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 684, y: 39, z: 555.1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 175321056}
   m_RootOrder: 2
@@ -21050,6 +21086,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105639197}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1105639202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105639197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df6f31e8991f474388b5487acd8bba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputLanternMode: 1
+  puzzleLabirinto: {fileID: 315552830}
 --- !u!1 &1118867951
 GameObject:
   m_ObjectHideFlags: 0
@@ -25193,12 +25243,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317632812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -151.4, y: 42, z: 368.8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.39997864, y: 11.799999, z: 26.699951}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 578639884}
-  m_RootOrder: 161
+  m_Father: {fileID: 315552829}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1317632814
 BoxCollider:
@@ -25211,7 +25261,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 31.4, y: 20, z: 20}
+  m_Size: {x: 32.49, y: 20, z: 20.6}
   m_Center: {x: 0, y: 0, z: -16.241516}
 --- !u!1 &1322303274
 GameObject:
@@ -32692,6 +32742,7 @@ GameObject:
   - component: {fileID: 1710351767}
   - component: {fileID: 1710351766}
   - component: {fileID: 1710351765}
+  - component: {fileID: 1710351768}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -32707,8 +32758,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710351763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 289, y: 38.8, z: -99}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 289, y: 39, z: -99}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 175321056}
   m_RootOrder: 1
@@ -32775,6 +32826,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710351763}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1710351768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710351763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df6f31e8991f474388b5487acd8bba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputLanternMode: 1
+  puzzleLabirinto: {fileID: 315552830}
 --- !u!1 &1712896595
 GameObject:
   m_ObjectHideFlags: 0
