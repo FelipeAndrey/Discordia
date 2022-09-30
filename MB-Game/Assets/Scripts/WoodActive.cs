@@ -20,6 +20,6 @@ public class WoodActive : Interactable
 
     public void CameraBridgeWood() 
     {
-        //puzzleLabirinto.manager
+        //puzzleLabirinto.manager.TradeCamera();
     }
 }

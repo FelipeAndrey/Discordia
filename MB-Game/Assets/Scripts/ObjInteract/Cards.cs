@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Cards : Interactable
 {
     private GameManager manager;
-    public bool reading = false;
+    public bool reading;
 
     public override void Interact()
     {
+        manager.SetMoving(false);
         manager.Cards = this;
         CallCardsTrigger();
         reading = true;
@@ -16,23 +18,17 @@ public class Cards : Interactable
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
+
     }
 
 
     void Update()
     {
-        if (reading == true && Input.GetKeyDown(KeyCode.Mouse1))
+        if (reading == true && Input.GetMouseButtonDown(1))
         {
             manager.Letter(false);
             reading = false;
-        }
-        if (reading == true)
-        {
-            manager.player.canMove = false;
-        }
-        else
-        {
-            manager.player.canMove = true;
+            manager.SetMoving(true);
         }
     }
 
@@ -42,4 +38,6 @@ public class Cards : Interactable
 
         return id;
     }
+
+    
 }

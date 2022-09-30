@@ -134,6 +134,7 @@ public class Player : MonoBehaviour
         {
             move = Orientetion.right * x + Orientetion.forward * z;
             move = new Vector3(move.x, velocity.y, move.z);
+            move = new Vector3(move.x, 0, move.z).normalized;
             isMoving = true;
 
         }

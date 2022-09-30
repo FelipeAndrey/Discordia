@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        print(player.canMove);
+
     }
     public Camera GetCamera()
     {
@@ -84,11 +84,15 @@ public class GameManager : MonoBehaviour
     //private IEnumerator TradeCameraTime(float time)
     //{
     //    yield return new WaitForSeconds(0.3f);
+    //    cameraAtual.tag = "CameraTemp";
+    //    tradeCamaera.tag = "MainCamera";
     //    cameraAtual.gameObject.SetActive(false);
     //    tradeCamaera.gameObject.SetActive(true);
     //    cameraAtual.GetComponent<PixelatedCamera>().renderCamera = tradeCamaera;
     //    player.canMove = false;
     //    yield return new WaitForSeconds(time);
+    //    cameraAtual.tag = "MainCamera";
+    //    tradeCamaera.tag = "CameraTemp";
     //    cameraAtual.gameObject.SetActive(true);
     //    tradeCamaera.gameObject.SetActive(false);
     //    cameraAtual.GetComponent<PixelatedCamera>().renderCamera = cameraAtual;
