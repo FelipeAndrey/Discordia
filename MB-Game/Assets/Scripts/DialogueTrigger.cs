@@ -61,11 +61,7 @@ public class DialogueTrigger : Interactable
     {
         if (notMove == true)
         {
-            manager.Manager.player.canMove = false;
-        }
-        else
-        {
-            manager.Manager.player.canMove = true;
+            manager.Manager.SetMoving(false);
         }
 
         manager.canNext = nextDialogue;

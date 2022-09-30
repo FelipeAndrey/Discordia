@@ -79,7 +79,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (Manager.player.canMove == false)
         {
-            Manager.player.canMove = true;
+            Manager.SetMoving(true);
         }
         onDialogue = false;
         dialogueCanvas.SetActive(onDialogue);

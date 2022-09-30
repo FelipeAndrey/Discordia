@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        print(player.canMove);
     }
     public Camera GetCamera()
     {
@@ -77,22 +78,22 @@ public class GameManager : MonoBehaviour
 
     public void TradeCamera() 
     {
-        StartCoroutine(TradeCameraTime(3.0f));
+        //StartCoroutine(TradeCameraTime(3.0f));
     }
 
-    private IEnumerator TradeCameraTime(float time)
-    {
-        yield return new WaitForSeconds(0.3f);
-        cameraAtual.gameObject.SetActive(false);
-        tradeCamaera.gameObject.SetActive(true);
-        cameraAtual.GetComponent<PixelatedCamera>().renderCamera = tradeCamaera;
-        player.canMove = false;
-        yield return new WaitForSeconds(time);
-        cameraAtual.gameObject.SetActive(true);
-        tradeCamaera.gameObject.SetActive(false);
-        cameraAtual.GetComponent<PixelatedCamera>().renderCamera = cameraAtual;
-        player.canMove = true;
-        yield return null;
+    //private IEnumerator TradeCameraTime(float time)
+    //{
+    //    yield return new WaitForSeconds(0.3f);
+    //    cameraAtual.gameObject.SetActive(false);
+    //    tradeCamaera.gameObject.SetActive(true);
+    //    cameraAtual.GetComponent<PixelatedCamera>().renderCamera = tradeCamaera;
+    //    player.canMove = false;
+    //    yield return new WaitForSeconds(time);
+    //    cameraAtual.gameObject.SetActive(true);
+    //    tradeCamaera.gameObject.SetActive(false);
+    //    cameraAtual.GetComponent<PixelatedCamera>().renderCamera = cameraAtual;
+    //    player.canMove = true;
+    //    yield return null;
 
-    }
+    //}
 }
