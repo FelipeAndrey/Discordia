@@ -27,13 +27,11 @@ public class LanternRaycast : MonoBehaviour
             {
                 //luz.intensity = math.lerp(valueIntencMin, valueIntencMax, 5 * Time.deltaTime);
                 Mesh.luz.intensity = valueIntencMin;
-                Debug.Log("Abaixou");
             }
             else
             {
                 //luz.intensity = math.lerp(valueIntencMax, valueIntencMin, 1 * Time.deltaTime);
                 Mesh.luz.intensity = valueIntencMax;
-                Debug.Log("DURO");
             }
 
         }
