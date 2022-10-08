@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class DialogueTrigger : Interactable
@@ -7,6 +9,7 @@ public class DialogueTrigger : Interactable
     public DialogueManager manager;
     public Camera targetCamera;
     public BoxCollider needToSet;
+    public float waitAnimate;
     public bool notMove;
 
 
@@ -18,20 +21,22 @@ public class DialogueTrigger : Interactable
     //private bool trade = false;
     public override void Interact()
     {
-        TriggerDialogue(true);
+        TriggerDialogue(true, 0);
     }
 
     void Update()
     {
-        if (collided)
+        waitAnimate = manager.time;
+        if (collided && autoDialogue)
         {
-            if (autoDialogue)
+            if (waitAnimate > 0)
             {
-                TriggerDialogue(true);
-                if (needToSet != null)
-                    needToSet.enabled = false;
-                collided = false;
+                StartCoroutine(EventAfterAnimation(waitAnimate));
             }
+            TriggerDialogue(true, 0);
+            if (needToSet != null)
+                needToSet.enabled = false;
+            collided = false;
         }
     }
 
@@ -57,7 +62,7 @@ public class DialogueTrigger : Interactable
     //    TriggerDialogue(trade);
     //}
 
-    public void TriggerDialogue(bool value)
+    public void TriggerDialogue(bool value, float time)
     {
         if (notMove == true)
         {
@@ -65,7 +70,16 @@ public class DialogueTrigger : Interactable
         }
 
         manager.canNext = nextDialogue;
-        manager.Dialogue(value,dialogue);
+        manager.Dialogue(value, dialogue);
 
+    }
+
+    IEnumerator EventAfterAnimation(float value) 
+    {
+        print("Entrou");
+        yield return new WaitForSeconds(value + 2f);
+        TriggerDialogue(true, value);
+        manager.time = 0f;
+        yield return null;
     }
 }

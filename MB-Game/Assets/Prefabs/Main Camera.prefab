@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7134784828773753101}
+  - component: {fileID: 109918511}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -33,6 +34,21 @@ Transform:
   m_Father: {fileID: 7134784828837346913}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -6.438, y: -9.829, z: 0}
+--- !u!114 &109918511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134784828773753330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a830aca3b6e45d4e88d0dcf889f8628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  Mesh: {fileID: 7134784830194392778}
+  distanceToInteract: 10
 --- !u!1 &7134784828837346923
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +78,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7134784828837346923}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -80,7 +96,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.103773594, g: 0.10034711, b: 0.10034711, a: 0}
+  m_BackGroundColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -101,7 +117,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 991
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -166,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a571b0cbe49ecda4c8f786a2dc13cbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 50
+  mouseSensitivity: 150
   xRotation: 0
   yRotation: 0
   orientetion: {fileID: 0}
@@ -183,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  smoothSpped: 1
+  smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &653437321640025695
 MonoBehaviour:
@@ -197,10 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278460a3247f5b34ca03bc1f19dee001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderCamera: {fileID: 0}
   mode: 0
   targetScreenSize:
-    width: 256
-    height: 144
+    width: 160
+    height: 160
   screenScaleFactor: 1
   display: {fileID: 0}
 --- !u!1 &7134784828892458319
@@ -244,7 +261,7 @@ GameObject:
   - component: {fileID: 7134784830088176571}
   - component: {fileID: 7134784830088176568}
   m_Layer: 9
-  m_Name: Point Light
+  m_Name: Point Light Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,10 +293,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9341038, b: 0.6839622, a: 1}
-  m_Intensity: 1
-  m_Range: 25
-  m_SpotAngle: 68.611336
-  m_InnerSpotAngle: 60.41341
+  m_Intensity: 300
+  m_Range: 150
+  m_SpotAngle: 50
+  m_InnerSpotAngle: 0
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -345,7 +362,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7134784830194392776
 Transform:
   m_ObjectHideFlags: 0
@@ -424,8 +441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1b2b716d46038419964820ae1be8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   luz: {fileID: 7134784830088176568}
-  intencidade: 20
+  intencidade: 65
   luzAtiva: 0
 --- !u!64 &7134784830194392779
 MeshCollider:
@@ -435,7 +453,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7134784830194392777}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1

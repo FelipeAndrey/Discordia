@@ -3,23 +3,23 @@ using UnityEngine;
 public class Look : MonoBehaviour
 {
     public float mouseSensitivity;
-
     public float xRotation = 0f;
     public float yRotation = 0f;
-    //public GameObject playerBody;
+    public bool canLook { get; set; } = true;
 
     [SerializeField] Transform orientetion;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        //playerBody = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CamereLook();
+        if (canLook) 
+        {
+            CamereLook();
+        }
     }
 
     private void CamereLook()

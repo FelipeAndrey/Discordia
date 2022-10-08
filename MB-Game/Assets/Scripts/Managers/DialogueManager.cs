@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueStructure[] structureArray;
     public bool onDialogue { get; set; } = false;
     public bool canNext { get; set; } = false;
+    public float time { get; set; }
 
 
     void Start()
@@ -41,7 +42,6 @@ public class DialogueManager : MonoBehaviour
         this.gameObject.SetActive(value);
         onDialogue = true;
         StartDialogue(structureArray[0]);
-
     }
 
     public void StartDialogue(DialogueStructure dialogue)
