@@ -43,7 +43,7 @@ public class DialogueTrigger : Interactable
             }
             TriggerDialogue(true, 0);
             if (needToSet != null)
-                needToSet.enabled = false;
+                needToSet.gameObject.SetActive(false);
             collided = false;
         }
     }

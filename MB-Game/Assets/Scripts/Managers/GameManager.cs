@@ -1,3 +1,4 @@
+using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     [Header("PuzzleOne")]
     public int puzzleValueFinal;
 
+    public Thoughts thoughts;
+
     void Start()
     {
         Card = new CardsTrigger();
@@ -36,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        print(thoughts.type);
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
         {
             animator.SetBool("isAwaking", false);
