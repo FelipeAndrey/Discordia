@@ -9,29 +9,37 @@ public class DialogueTrigger : Interactable
     public DialogueManager manager;
     public Camera targetCamera;
     public BoxCollider needToSet;
-    public float waitAnimate;
-    public bool notMove;
-
+    public float waitTime = 0f;
 
     [Header("Automatic Dialogue")]
     public bool nextDialogue;
     public bool autoDialogue;
+
+    [Header("Set Player")]
+    public bool notMove;
+    public bool activeAnimation;
+    public string parameter;
+
     [System.NonSerialized] public bool collided;
 
     //private bool trade = false;
     public override void Interact()
     {
-        TriggerDialogue(true, 0);
+        if (waitTime > 0)
+        {
+            StartCoroutine(EventAfterAnimation(waitTime));
+        }
+        TriggerDialogue(true, waitTime);
     }
 
     void Update()
     {
-        waitAnimate = manager.time;
+        waitTime = manager.time;
         if (collided && autoDialogue)
         {
-            if (waitAnimate > 0)
+            if (waitTime > 0)
             {
-                StartCoroutine(EventAfterAnimation(waitAnimate));
+                StartCoroutine(EventAfterAnimation(waitTime));
             }
             TriggerDialogue(true, 0);
             if (needToSet != null)
@@ -69,6 +77,11 @@ public class DialogueTrigger : Interactable
             manager.Manager.SetMoving(false);
         }
 
+        if (activeAnimation && parameter != null)
+        {
+            manager.Manager.animator.SetBool(parameter, true);
+        }
+
         manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue);
 
@@ -76,7 +89,6 @@ public class DialogueTrigger : Interactable
 
     IEnumerator EventAfterAnimation(float value) 
     {
-        print("Entrou");
         yield return new WaitForSeconds(value + 2f);
         TriggerDialogue(true, value);
         manager.time = 0f;

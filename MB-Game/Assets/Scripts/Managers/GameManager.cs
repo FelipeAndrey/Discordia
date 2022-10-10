@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     [Header("Managers")]
-    public DialogueManager DialogueManager;
+    public DialogueManager dialogueManager;
 
     [Header("Player")]
     public Player player;
@@ -30,15 +30,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Card = new CardsTrigger();
-        cameraAtual = Camera.main;
         cameraAtual.GetComponent<Look>().canLook = false;
         animator.SetBool("isAwaking", true);
-        DialogueManager.time = animator.GetCurrentAnimatorStateInfo(0).length;
     }
 
     private void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0)) 
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
         {
             animator.SetBool("isAwaking", false);
             cameraAtual.GetComponent<Look>().canLook = true;
