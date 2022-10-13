@@ -12,10 +12,9 @@ public class Thoughts : MonoBehaviour
     [TextArea(1, 3)]
     public string[] thoughts;
     public Queue<string> sentence;
-    public float speed = 1f;
-    public float betweenSentence = 0f;
     public TextMeshProUGUI TMP;
     public Animator animatorController;
+    private int index = 0;
 
     [Header("Thoughts Type")]
     public ThingType type;
@@ -25,9 +24,6 @@ public class Thoughts : MonoBehaviour
         whenCall
     }
 
-    [Header("In Call Case")]
-    public GameObject trigger;
-
     [Header("Set Player")]
     public bool notMove;
 
@@ -35,22 +31,7 @@ public class Thoughts : MonoBehaviour
     {
         sentence = new Queue<string>();
         TMP.enabled = false;
-        speed = animatorController.speed;
-        if(type == ThingType.whenCall)
-        {
-            GetComponent<BoxCollider>().enabled = false;
-        }
-    }
-
-    private void Update()
-    {
-        if(type == ThingType.whenCall && !trigger.activeSelf)
-        {
-            print("entrou");
-            GetComponent<BoxCollider>().enabled = true;
-            StartThoughts();
-        }
-    }
+    }    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -62,9 +43,11 @@ public class Thoughts : MonoBehaviour
 
     public void StartThoughts()
     {
+        print("Startou Pensamento");
         TMP.enabled = true;
         foreach (var think in thoughts)
         {
+            print("Entrou o: " + think);
             sentence.Enqueue(think);
         }
 
@@ -80,10 +63,17 @@ public class Thoughts : MonoBehaviour
     {
         if(sentence.Count == 0)
         {
-            EndThoughts();
+            index++;
+            if(index == thoughts.Length - 1)
+            {
+                EndThoughts();
+                return;
+            }
+            return;
         }
 
         string displaySentence = sentence.Dequeue();
+        print("Saiu o: " + displaySentence);
         TMP.text = displaySentence;
 
         CallAnimation();
@@ -91,27 +81,14 @@ public class Thoughts : MonoBehaviour
 
     private void CallAnimation()
     {
+        print("Chamou Animação");
         animatorController.SetBool("isThinking", true);
-        if(animatorController.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animatorController.IsInTransition(0) && betweenSentence <= 0.1)
-        {
-            animatorController.SetBool("isThinking", false);
-        }
-        else
-        {
-            StartCoroutine(WaitBetweenSentence(betweenSentence));
-        }
-    }
-
-    private IEnumerator WaitBetweenSentence(float value)
-    {
-        animatorController.SetBool("isThinking", false);
-        yield return new WaitForSeconds(value);
-        CallAnimation();
-        yield return null;
     }
 
     private void EndThoughts()
     {
+        print("Entrou no sair");
+        animatorController.SetBool("isThinking", false);
         this.gameObject.SetActive(false);
         manager.player.canMove = true;
     }

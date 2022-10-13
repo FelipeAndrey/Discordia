@@ -20,16 +20,21 @@ public class DialogueTrigger : Interactable
     public bool activeAnimation;
     public string parameter;
 
+    [Header("Have Thoughts")]
+    public Thoughts thoughts;
+    public float waitForThoughts = 0f;
+
     [System.NonSerialized] public bool collided;
 
     //private bool trade = false;
+
     public override void Interact()
     {
         if (waitTime > 0)
         {
-            StartCoroutine(EventAfterAnimation(waitTime));
+            StartCoroutine(AfterEvent(waitTime));
         }
-        TriggerDialogue(true, waitTime);
+        TriggerDialogue(true);
     }
 
     void Update()
@@ -39,14 +44,39 @@ public class DialogueTrigger : Interactable
         {
             if (waitTime > 0)
             {
-                StartCoroutine(EventAfterAnimation(waitTime));
+                StartCoroutine(AfterEvent(waitTime));
             }
-            TriggerDialogue(true, 0);
+            TriggerDialogue(true);
             if (needToSet != null)
                 needToSet.gameObject.SetActive(false);
             collided = false;
         }
     }
+
+    public void TriggerDialogue(bool value)
+    {
+        if (notMove == true)
+            manager.Manager.SetMoving(false);
+
+        if (activeAnimation && parameter != null)
+            manager.Manager.animator.SetBool(parameter, true);
+
+        if (thoughts != null)
+            manager.thoughts = thoughts;
+
+        manager.canNext = nextDialogue;
+        manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
+    }
+
+    IEnumerator AfterEvent(float value) 
+    {
+        yield return new WaitForSeconds(value + 2f);
+        TriggerDialogue(true);
+        manager.time = 0f;
+        yield return null;
+    }
+
+    #region OnTriggers
 
     private void OnTriggerEnter(Collider other)
     {
@@ -54,7 +84,6 @@ public class DialogueTrigger : Interactable
         {
             collided = true;
         }
-
     }
     private void OnTriggerExit(Collider other)
     {
@@ -63,35 +92,11 @@ public class DialogueTrigger : Interactable
             collided = false;
         }
     }
+    #endregion
 
     //private void TradeCamera()
     //{
     //    trade = !trade;
     //    TriggerDialogue(trade);
     //}
-
-    public void TriggerDialogue(bool value, float time)
-    {
-        if (notMove == true)
-        {
-            manager.Manager.SetMoving(false);
-        }
-
-        if (activeAnimation && parameter != null)
-        {
-            manager.Manager.animator.SetBool(parameter, true);
-        }
-
-        manager.canNext = nextDialogue;
-        manager.Dialogue(value, dialogue);
-
-    }
-
-    IEnumerator EventAfterAnimation(float value) 
-    {
-        yield return new WaitForSeconds(value + 2f);
-        TriggerDialogue(true, value);
-        manager.time = 0f;
-        yield return null;
-    }
 }
