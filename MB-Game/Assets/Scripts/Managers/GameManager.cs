@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Card = new CardsTrigger();
-        cameraAtual.GetComponent<Look>().canLook = false;
+        //cameraAtual.GetComponent<Look>().canLook = false;
         animator.SetBool("isAwaking", true);
     }
 
