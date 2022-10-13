@@ -38,7 +38,7 @@ public class PuzzleAto1 : Interactable
         {
             puzzleValue -= UnityEngine.Random.Range(1, 6);
         }
-        manager.puzzleValueFinal += puzzleValue;
+        //manager.puzzleValueFinal += puzzleValue;
         trigger.puzzleInteract.Add(gameObject);
         gameObject.SetActive(false);
 
