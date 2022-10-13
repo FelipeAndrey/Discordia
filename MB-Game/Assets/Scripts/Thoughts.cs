@@ -63,12 +63,12 @@ public class Thoughts : MonoBehaviour
     {
         if(sentence.Count == 0)
         {
+            index++;
             if(index == thoughts.Length - 1)
             {
                 EndThoughts();
                 return;
             }
-            index++;
             return;
         }
 
