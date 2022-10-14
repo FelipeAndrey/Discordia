@@ -1,5 +1,3 @@
-using Packages.Rider.Editor.UnitTesting;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -29,7 +27,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Card = new CardsTrigger();
-        cameraAtual.GetComponent<Look>().canLook = false;
+        //cameraAtual.GetComponent<Look>().canLook = false;
         animator.SetBool("isAwaking", true);
     }
 
