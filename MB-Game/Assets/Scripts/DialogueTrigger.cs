@@ -72,6 +72,14 @@ public class DialogueTrigger : Interactable
     {
         yield return new WaitForSeconds(value + 2f);
         TriggerDialogue(true);
+        if (gameObject.name == "Porta de Escritório")
+        {
+            manager.Manager.puzzleValueFinal = 2;
+        } 
+        else if (gameObject.name == "Porta de Leito") 
+        {
+            manager.Manager.puzzleValueFinal = 1;
+        }
         manager.time = 0f;
         yield return null;
     }
