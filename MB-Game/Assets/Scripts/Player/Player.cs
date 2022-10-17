@@ -39,9 +39,9 @@ public class Player : MonoBehaviour
 
     [Header("Bool")]
     //Boleana
-    /*[HideInInspector]*/
+    [HideInInspector]
     public bool crouch = false;
-    /*[HideInInspector]*/
+    [HideInInspector]
     public bool running;
     [HideInInspector] public bool hasRegenStamina;
     public bool isMoving { get; set; }
