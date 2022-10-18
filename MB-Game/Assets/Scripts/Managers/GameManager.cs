@@ -21,20 +21,25 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Cards Cards;
     private CardsTrigger Card;
 
-    [Header("PuzzleOne")]
+    [Header("aaaaaaaa")]
     public int puzzleValueFinal;
+    public bool turOffAnimation;
 
     void Start()
     {
-        Card = new CardsTrigger();
-        cameraAtual.GetComponent<Look>().canLook = false;
-        player.canMove = false;
-        animator.SetBool("isAwaking", true);
+        if (!turOffAnimation)
+        {
+            Card = new CardsTrigger();
+            cameraAtual.GetComponent<Look>().canLook = false;
+            player.canMove = false;
+            animator.SetBool("isAwaking", true);
+        }
+        
     }
 
     private void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0) && animator.GetBool("isAwaking") == true)
         {
             animator.SetBool("isAwaking", false);
             cameraAtual.GetComponent<Look>().canLook = true;
