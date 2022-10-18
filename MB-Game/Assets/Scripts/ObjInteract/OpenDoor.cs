@@ -19,14 +19,12 @@ public class OpenDoor : Interactable
 
     public void DestroyDoor()
     {
+        Destroy(Door);
         if (!needToInteract)
         {
             Destroy(this.gameObject);
             return;
         }
-        
-        gameObject.SetActive(false);
-        Destroy(Door);
 
         if(needHideAnything != null)
             needHideAnything.SetActive(false);
