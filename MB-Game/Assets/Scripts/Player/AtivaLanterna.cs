@@ -3,7 +3,6 @@ using UnityEngine;
 public class AtivaLanterna : Interactable
 {
     public GameObject lantern;
-
     public GameObject Door;
 
     public void Ativação()

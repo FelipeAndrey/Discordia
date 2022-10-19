@@ -24,6 +24,10 @@ public class DialogueTrigger : Interactable
     public Thoughts thoughts;
     public float waitForThoughts = 0f;
 
+    [Header("Final Level")]
+    public bool isDialogueToFinal;
+    public GameObject doorOne, doorTwo;
+
     [System.NonSerialized] public bool collided;
 
     //private bool trade = false;
@@ -39,6 +43,15 @@ public class DialogueTrigger : Interactable
 
     void Update()
     {
+        if (doorOne == null || doorTwo == null)
+            return;
+        else if (isDialogueToFinal) 
+        {
+            print("Oi");
+            doorOne.SetActive(false);
+            doorTwo.SetActive(false);
+        }
+        
         waitTime = manager.time;
         if (collided && autoDialogue)
         {

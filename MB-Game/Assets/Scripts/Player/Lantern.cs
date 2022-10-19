@@ -21,11 +21,13 @@ public class Lantern : MonoBehaviour
     {
         //RaycastHit hitInfo;
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            luzAtiva = !luzAtiva;
-            luz.gameObject.SetActive(luzAtiva);
-        }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                luzAtiva = !luzAtiva;
+                luz.gameObject.SetActive(luzAtiva);
+            }
+        
+
         //if (luzAtiva)
         //{
         //    if (Physics.Raycast(manager.cameraAtual.transform.position, manager.cameraAtual.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Ground")))

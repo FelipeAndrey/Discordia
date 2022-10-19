@@ -5,6 +5,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class WoodActive : Interactable
 {
+    public GameObject lantern;
     public GameManager manager;
     public Transform spotBrigeCamera, oldPlayerPosition;
 
@@ -34,12 +35,14 @@ public class WoodActive : Interactable
         manager.cameraAtual.transform.position = spotBrigeCamera.position;
         manager.cameraAtual.transform.rotation = spotBrigeCamera.rotation;
         manager.cameraAtual.GetComponent<CameraFollow>().enabled = false;
+        lantern.SetActive(false);
         yield return new WaitForSeconds(5f);
         manager.player.canMove = true;
         manager.cameraAtual.GetComponent<Look>().canLook = true;
         manager.cameraAtual.transform.position = oldPlayerPosition.transform.position;
         manager.cameraAtual.transform.rotation = oldPlayerPosition.transform.rotation;
         manager.cameraAtual.GetComponent<CameraFollow>().enabled = true;
+        lantern.SetActive(true);
         yield return null;
     }
 }
