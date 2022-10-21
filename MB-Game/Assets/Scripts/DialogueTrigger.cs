@@ -41,17 +41,21 @@ public class DialogueTrigger : Interactable
         TriggerDialogue(true);
     }
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
         if (doorOne == null || doorTwo == null)
             return;
-        else if (isDialogueToFinal) 
+        else if (isDialogueToFinal)
         {
-            print("Oi");
             doorOne.SetActive(false);
             doorTwo.SetActive(false);
         }
-        
+    }
+
+
+    
+    void Update()
+    {
         waitTime = manager.time;
         if (collided && autoDialogue)
         {
@@ -96,28 +100,4 @@ public class DialogueTrigger : Interactable
         manager.time = 0f;
         yield return null;
     }
-
-    #region OnTriggers
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            collided = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            collided = false;
-        }
-    }
-    #endregion
-
-    //private void TradeCamera()
-    //{
-    //    trade = !trade;
-    //    TriggerDialogue(trade);
-    //}
 }
