@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -81,5 +82,10 @@ public class GameManager : MonoBehaviour
     public void SetMoving(bool value)
     {
         player.canMove = value;
+    }
+
+    public void LoadLevel(string level) 
+    {
+        SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
     }
 }

@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/ATO 1.unity
     guid: c29d1d424b1d22f4d92aa9585ebdca78
   - enabled: 1
+    path: Assets/Scenes/ATO 2.unity
+    guid: 56437d52057750f4a8a5d3c8efa5eba8
+  - enabled: 1
+    path: Assets/Scenes/ATO 3.unity
+    guid: 321c3ef4502cfb640878968654c9d78e
+  - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 687c3e401e29b2542a475eee40e342ca
   - enabled: 1

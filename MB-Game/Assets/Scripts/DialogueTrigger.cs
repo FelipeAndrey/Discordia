@@ -32,6 +32,10 @@ public class DialogueTrigger : Interactable
 
     //private bool trade = false;
 
+    private void Start()
+    {
+        manager = GameObject.FindObjectOfType<DialogueManager>();
+    }
     public override void Interact()
     {
         if (waitTime > 0)
@@ -51,8 +55,6 @@ public class DialogueTrigger : Interactable
             doorTwo.SetActive(false);
         }
     }
-
-
     
     void Update()
     {
