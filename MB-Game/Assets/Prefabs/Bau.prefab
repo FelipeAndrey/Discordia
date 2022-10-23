@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2696094412472237006}
+  - component: {fileID: 4306070552964768944}
   m_Layer: 0
   m_Name: Bau
   m_TagString: Untagged
@@ -115,6 +116,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4306070552964768944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324117469259555188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.910015, y: 2.7523956, z: 3.715765}
+  m_Center: {x: -0.5614147, y: 0.8761978, z: -1.3578825}
 --- !u!1 &7583667475502539480
 GameObject:
   m_ObjectHideFlags: 0

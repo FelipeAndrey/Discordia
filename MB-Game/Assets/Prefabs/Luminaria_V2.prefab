@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1871334012171738381}
   - component: {fileID: 3339291356162249384}
   - component: {fileID: 699039265623221858}
+  - component: {fileID: -399005954968517052}
   m_Layer: 0
   m_Name: Luminaria_V2
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-399005954968517052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347562490672318391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1048.9191, y: 547.53687, z: 201.67194}
+  m_Center: {x: 0, y: 0.000015258789, z: 0}
