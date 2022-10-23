@@ -36,6 +36,7 @@ public class DialogueTrigger : Interactable
     {
         manager = GameObject.FindObjectOfType<DialogueManager>();
     }
+
     public override void Interact()
     {
         if (waitTime > 0)
@@ -45,17 +46,6 @@ public class DialogueTrigger : Interactable
         TriggerDialogue(true);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (doorOne == null || doorTwo == null)
-            return;
-        else if (isDialogueToFinal)
-        {
-            doorOne.SetActive(false);
-            doorTwo.SetActive(false);
-        }
-    }
-    
     void Update()
     {
         waitTime = manager.time;
@@ -102,4 +92,24 @@ public class DialogueTrigger : Interactable
         manager.time = 0f;
         yield return null;
     }
+
+    #region OnTriggers
+    private void OnTriggerEnter(Collider other)
+    {
+        collided = true;
+
+        if (doorOne == null || doorTwo == null)
+            return;
+        else if (isDialogueToFinal)
+        {
+            doorOne.SetActive(false);
+            doorTwo.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        collided = false;
+    }
+    #endregion
 }
