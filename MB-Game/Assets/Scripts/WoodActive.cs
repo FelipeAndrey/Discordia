@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
 public class WoodActive : Interactable
 {
-    public GameObject lantern;
+    public GameObject lantern, oldPlayerPosition;
     public GameManager manager;
-    public Transform spotBrigeCamera, oldPlayerPosition;
+    public Transform spotBrigeCamera;
 
     public PuzzleLabirinto puzzleLabirinto;
     public ParticleSystem Fire;
 
-    
+    private void Start()
+    {
+        manager = GameObject.FindObjectOfType<GameManager>();
+        lantern = GameObject.FindGameObjectWithTag("Lantern");
+        oldPlayerPosition = GameObject.FindGameObjectWithTag("Orientention");
+    }
     public override void Interact()
     {
         Fire.Play();
@@ -23,6 +29,7 @@ public class WoodActive : Interactable
   
         if (puzzleLabirinto.cont == 3)
         {
+            puzzleLabirinto.LoadAct3.SetActive(true);
             puzzleLabirinto.invisibleWall.enabled = false;
         }
 

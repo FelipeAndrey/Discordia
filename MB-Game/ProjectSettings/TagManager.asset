@@ -9,6 +9,7 @@ TagManager:
   - ObsCabeca
   - Interact
   - CameraTemp
+  - Orientention
   layers:
   - Default
   - TransparentFX
