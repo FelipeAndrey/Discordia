@@ -174,7 +174,8 @@ MonoBehaviour:
     - "Isso \xE9..."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: []
+  needToSet:
+  - {fileID: 950425}
   waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
@@ -5245,7 +5246,8 @@ MonoBehaviour:
     - "O que isso est\xE1 fazendo aqui?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: []
+  needToSet:
+  - {fileID: 219540937}
   waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
@@ -7467,7 +7469,8 @@ MonoBehaviour:
     - "Tomara que n\xE3o caia sobre mim."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: []
+  needToSet:
+  - {fileID: 285295208}
   waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
@@ -65238,7 +65241,8 @@ MonoBehaviour:
     - Preciso continuar.
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: []
+  needToSet:
+  - {fileID: 1102970048}
   waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
@@ -66000,7 +66004,8 @@ MonoBehaviour:
     - "Grrrrr\u2026\n"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: []
+  needToSet:
+  - {fileID: 1122652466}
   waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
@@ -66351,7 +66356,8 @@ MonoBehaviour:
     - "Esse lugar me passa uma sensa\xE7\xE3o de solid\xE3o."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: []
+  needToSet:
+  - {fileID: 1144114875}
   waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
@@ -79801,7 +79807,8 @@ MonoBehaviour:
     - "OL\xC1!"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: []
+  needToSet:
+  - {fileID: 1636203742}
   waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
