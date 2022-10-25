@@ -7,8 +7,8 @@ public class DialogueTrigger : Interactable
     public DialogueStructure[] dialogue;
     public DialogueManager manager;
     public Camera targetCamera;
-    public BoxCollider[] needToSet;
-    public float waitTime = 0f;
+    public BoxCollider thisObj;
+    public TriggersStructur[] needToSet;
     public bool needToSetValue;
 
     [Header("Automatic Dialogue")]
@@ -16,6 +16,7 @@ public class DialogueTrigger : Interactable
     public bool autoDialogue;
 
     [Header("Set Player")]
+    public float waitTime = 0f;
     public bool notMove;
     public bool activeAnimation;
     public string parameter;
@@ -34,6 +35,7 @@ public class DialogueTrigger : Interactable
 
     private void Start()
     {
+        thisObj = gameObject.GetComponent<BoxCollider>();
         manager = GameObject.FindObjectOfType<DialogueManager>();
     }
 
@@ -57,15 +59,18 @@ public class DialogueTrigger : Interactable
             }
             TriggerDialogue(true);
 
+            if(thisObj == null)
+                return;
+            thisObj.gameObject.SetActive(false);
+
             if (needToSet != null)
             {
                 foreach (var set in needToSet)
                 {
                     if (set != null)
-                        set.gameObject.SetActive(needToSetValue);
+                        set.elemento.enabled = set.setValue;
                 }
             }
-
 
             collided = false;
         }
