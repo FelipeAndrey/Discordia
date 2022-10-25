@@ -14,19 +14,19 @@ public class Lantern : MonoBehaviour
     private void Start()
     {
         GetComponentInChildren<Light>();
-        
+
     }
     // Update is called once per frame
     void Update()
     {
         //RaycastHit hitInfo;
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                luzAtiva = !luzAtiva;
-                luz.gameObject.SetActive(luzAtiva);
-            }
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            luzAtiva = !luzAtiva;
+            luz.gameObject.SetActive(luzAtiva);
+        }
+
 
         //if (luzAtiva)
         //{

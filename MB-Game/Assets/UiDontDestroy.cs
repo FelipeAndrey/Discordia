@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UiDontDestroy : MonoBehaviour
@@ -10,9 +8,4 @@ public class UiDontDestroy : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

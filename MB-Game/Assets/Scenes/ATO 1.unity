@@ -174,8 +174,9 @@ MonoBehaviour:
     - "Isso \xE9..."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 950425}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -1893,8 +1894,9 @@ MonoBehaviour:
     - O que aconteceu?
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 59225911}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -2333,6 +2335,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -1030
       objectReference: {fileID: 0}
+    - target: {fileID: 1995369743, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995369745, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453290653648053750, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1486816623678842726, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2406,8 +2420,12 @@ PrefabInstance:
       value: teste
       objectReference: {fileID: 0}
     - target: {fileID: 5423382627594649459, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423382627594649459, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_fontSize
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5423382627594649459, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_margin.w
@@ -2423,11 +2441,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5423382627594649459, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_fontSizeBase
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5423382627594649459, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423382627594649459, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409148709232, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 79066625}
+    - target: {fileID: 5536428409148709232, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGameBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428409148709232, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GerenciadordeInterface, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5536428409245421219, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: mouseSens
@@ -2541,6 +2575,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 215
       objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 79066625}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MenuBTN
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GerenciadordeInterface, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410762344697, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410783069342, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 79066627}
+    - target: {fileID: 5536428410783069342, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536428410783069342, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6406815870409995468, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 490
@@ -2587,7 +2653,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71025247}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7376129f9c25ab44c894b86238bdd03f, type: 3}
   m_Name: 
@@ -2688,6 +2754,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74838770}
   m_Mesh: {fileID: -4716889597045178651, guid: 95419c4acaf97b744952b78723aecf07, type: 3}
+--- !u!1 &79066624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5536428409245421228, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+  m_PrefabInstance: {fileID: 71025246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &79066625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79066624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cae0a6315055a4daa6f1c2555769f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause: {fileID: 79066627}
+  menus: {fileID: 79066624}
+  loading: {fileID: 0}
+--- !u!114 &79066627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5536428409245421219, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+  m_PrefabInstance: {fileID: 71025246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79066624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3903cd3fb272d4ca3cf9dba5c88e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &83007231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,8 +3127,10 @@ MonoBehaviour:
     - "Era s\xF3 continuar seguindo a vida."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 102740261}
+  needToSet:
+  - {fileID: 102740261}
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 0
@@ -3591,8 +3690,10 @@ MonoBehaviour:
     - "E pior, como eu n\xE3o vi?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 137430737}
+  needToSet:
+  - {fileID: 137430737}
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 0
@@ -5144,8 +5245,9 @@ MonoBehaviour:
     - "O que isso est\xE1 fazendo aqui?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 219540937}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -7365,8 +7467,9 @@ MonoBehaviour:
     - "Tomara que n\xE3o caia sobre mim."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 285295208}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 0
@@ -11489,7 +11592,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -16872,10 +16975,10 @@ RectTransform:
   m_Father: {fileID: 457133179}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 259}
-  m_SizeDelta: {x: 1800, y: 120}
+  m_SizeDelta: {x: -120, y: -960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &670954637
 CanvasRenderer:
@@ -18807,8 +18910,11 @@ MonoBehaviour:
     - Preciso acha-la logo.
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 0}
+  needToSet:
+  - {fileID: 0}
+  - {fileID: 0}
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 0
   notMove: 1
@@ -65132,8 +65238,9 @@ MonoBehaviour:
     - Preciso continuar.
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 1102970048}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 0
@@ -65815,8 +65922,10 @@ MonoBehaviour:
     - Encontrei!
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 1121975011}
+  needToSet:
+  - {fileID: 1121975011}
   waitTime: 2
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -65891,8 +66000,9 @@ MonoBehaviour:
     - "Grrrrr\u2026\n"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 1122652466}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -66241,8 +66351,9 @@ MonoBehaviour:
     - "Esse lugar me passa uma sensa\xE7\xE3o de solid\xE3o."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 1144114875}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 0
@@ -66590,8 +66701,10 @@ MonoBehaviour:
     - "Mas\u2026 o que \xE9 isso?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 1161897738}
+  needToSet:
+  - {fileID: 1161897738}
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -74957,8 +75070,10 @@ MonoBehaviour:
     - Espero que ainda esteja funcionando.
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 1467762472}
+  needToSet:
+  - {fileID: 1467762472}
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -78085,8 +78200,9 @@ MonoBehaviour:
     - "Cad\xEA as minhas coisas?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 0}
+  needToSet: []
   waitTime: 2
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -79685,8 +79801,9 @@ MonoBehaviour:
     - "OL\xC1!"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet: {fileID: 1636203742}
+  needToSet: []
   waitTime: 0
+  needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
   notMove: 1
@@ -83836,19 +83953,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7582623
+      value: 0.78723085
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.039676555
+      value: 0.12864237
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6498215
+      value: 0.5951906
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.034584742
+      value: -0.09729846
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -88945,7 +89062,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh529182
+  m_Name: pb_Mesh288348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using UnityEditor;
+using UnityEngine;
 
 public class Thoughts : MonoBehaviour
 {
@@ -31,7 +29,7 @@ public class Thoughts : MonoBehaviour
     {
         sentence = new Queue<string>();
         TMP.enabled = false;
-    }    
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -43,11 +41,9 @@ public class Thoughts : MonoBehaviour
 
     public void StartThoughts()
     {
-        print("Startou Pensamento");
         TMP.enabled = true;
         foreach (var think in thoughts)
         {
-            print("Entrou o: " + think);
             sentence.Enqueue(think);
         }
 
@@ -59,11 +55,11 @@ public class Thoughts : MonoBehaviour
         NextThinking();
     }
 
-    private void NextThinking() 
+    private void NextThinking()
     {
-        if(sentence.Count == 0)
+        if (sentence.Count == 0)
         {
-            if(index == thoughts.Length - 1)
+            if (index == thoughts.Length - 1)
             {
                 EndThoughts();
                 return;
@@ -73,7 +69,6 @@ public class Thoughts : MonoBehaviour
         }
 
         string displaySentence = sentence.Dequeue();
-        print("Saiu o: " + displaySentence);
         TMP.text = displaySentence;
 
         CallAnimation();
@@ -81,13 +76,11 @@ public class Thoughts : MonoBehaviour
 
     private void CallAnimation()
     {
-        print("Chamou Animação");
         animatorController.SetBool("isThinking", true);
     }
 
     private void EndThoughts()
     {
-        print("Entrou no sair");
         animatorController.SetBool("isThinking", false);
         this.gameObject.SetActive(false);
         manager.player.canMove = true;

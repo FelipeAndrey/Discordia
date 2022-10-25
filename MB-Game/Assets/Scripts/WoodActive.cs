@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class WoodActive : Interactable
 {
@@ -26,7 +23,7 @@ public class WoodActive : Interactable
         puzzleLabirinto.cont++;
         StartCoroutine(CameraBridgeTime());
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
-  
+
         if (puzzleLabirinto.cont == 3)
         {
             puzzleLabirinto.LoadAct3.SetActive(true);
@@ -35,7 +32,7 @@ public class WoodActive : Interactable
 
     }
 
-    IEnumerator CameraBridgeTime() 
+    IEnumerator CameraBridgeTime()
     {
         manager.cameraAtual.GetComponent<Look>().canLook = false;
         manager.player.canMove = false;

@@ -31,7 +31,7 @@ public class Bilboard : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
     }
 
-    private void Temp() 
+    private void Temp()
     {
 
         Cam = Camera.main;

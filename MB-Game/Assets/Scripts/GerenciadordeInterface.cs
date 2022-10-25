@@ -4,13 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class GerenciadordeInterface : MonoBehaviour
 {
+    public PauseMenu pause;
     public GameObject menus;
     public GameObject loading;
     public void NewGameBtN(string newGameLevel)
     {
         menus.SetActive(false);
+        if (loading == null)
+            return;
         loading.SetActive(true);
         SceneManager.LoadScene(newGameLevel);
+    }
+    public void MenuBTN(string MenuLVL)
+    {
+        SceneManager.LoadScene(MenuLVL);
     }
     public void CreditsBTN(string CreditsLVL)
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadSceneTrigger : MonoBehaviour
@@ -21,6 +19,6 @@ public class LoadSceneTrigger : MonoBehaviour
             if (door == null)
                 return;
             door.SetActive(false);
-        } 
+        }
     }
 }

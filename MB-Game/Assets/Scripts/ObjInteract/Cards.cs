@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Cards : Interactable
 {
@@ -24,7 +23,7 @@ public class Cards : Interactable
 
     void Update()
     {
-        if (reading == true && Input.GetMouseButtonDown(1))
+        if (reading == true && Input.GetKeyDown(KeyCode.Mouse1))
         {
             manager.Letter(false);
             reading = false;
@@ -39,5 +38,5 @@ public class Cards : Interactable
         return id;
     }
 
-    
+
 }

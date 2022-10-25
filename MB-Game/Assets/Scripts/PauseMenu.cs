@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GamePause = false;
+    public bool IsNotInGame;
 
     public CanvasGroup pauseMenuUI;
 
@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     public void Resume()
@@ -39,18 +40,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GamePause = true;
         Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void LoadMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Menu");
-    }
-
-    public void QuitGame()
-    {
-        print("Saiu do Game...");
-        Application.Quit();
     }
 
     public void SetNewSensitivity(float value)

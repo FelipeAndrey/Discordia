@@ -16,7 +16,7 @@ public class Look : MonoBehaviour
 
     void Update()
     {
-        if (canLook) 
+        if (canLook)
         {
             CamereLook();
         }

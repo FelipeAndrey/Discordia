@@ -7,7 +7,7 @@ public class PuzzleTrigger : Interactable
 
     public GameObject Words;
     public GameObject door;
-    [HideInInspector]public List<GameObject> puzzleInteract;
+    [HideInInspector] public List<GameObject> puzzleInteract;
 
     private bool puzzleSpawn;
 

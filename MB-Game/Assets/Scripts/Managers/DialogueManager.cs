@@ -14,7 +14,8 @@ public class DialogueManager : MonoBehaviour
     private int index;
     private DialogueStructure[] structureArray;
     private GameObject target;
-    /*[System.NonSerialized]*/ public Thoughts thoughts;
+    /*[System.NonSerialized]*/
+    public Thoughts thoughts;
     private float waitForThoughts;
     public bool onDialogue { get; set; } = false;
     public bool canNext { get; set; } = false;
@@ -39,7 +40,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void Dialogue(bool value, DialogueStructure [] dialogues, GameObject objectTarget, float waitForThoughtsTarget)
+    public void Dialogue(bool value, DialogueStructure[] dialogues, GameObject objectTarget, float waitForThoughtsTarget)
     {
         target = objectTarget;
         waitForThoughts = waitForThoughtsTarget;
@@ -101,7 +102,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator CallEvent(float value) 
+    private IEnumerator CallEvent(float value)
     {
         yield return new WaitForSeconds(value);
         if (thoughts != null)

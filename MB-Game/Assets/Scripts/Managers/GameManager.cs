@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
             player.canMove = false;
             animator.SetBool("isAwaking", true);
         }
-        
+
     }
 
     private void Update()
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         player.canMove = value;
     }
 
-    public void LoadLevel(string level) 
+    public void LoadLevel(string level)
     {
         SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
     }

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Threading;
 using UnityEngine;
 
 public class DialogueTrigger : Interactable
@@ -8,8 +7,9 @@ public class DialogueTrigger : Interactable
     public DialogueStructure[] dialogue;
     public DialogueManager manager;
     public Camera targetCamera;
-    public BoxCollider needToSet;
+    public BoxCollider[] needToSet;
     public float waitTime = 0f;
+    public bool needToSetValue;
 
     [Header("Automatic Dialogue")]
     public bool nextDialogue;
@@ -56,8 +56,17 @@ public class DialogueTrigger : Interactable
                 StartCoroutine(AfterEvent(waitTime));
             }
             TriggerDialogue(true);
+
             if (needToSet != null)
-                needToSet.gameObject.SetActive(false);
+            {
+                foreach (var set in needToSet)
+                {
+                    if (set != null)
+                        set.gameObject.SetActive(needToSetValue);
+                }
+            }
+
+
             collided = false;
         }
     }
@@ -77,15 +86,15 @@ public class DialogueTrigger : Interactable
         manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
     }
 
-    IEnumerator AfterEvent(float value) 
+    IEnumerator AfterEvent(float value)
     {
         yield return new WaitForSeconds(value + 2f);
         TriggerDialogue(true);
         if (gameObject.name == "Porta de Escritório")
         {
             manager.Manager.puzzleValueFinal = 2;
-        } 
-        else if (gameObject.name == "Porta de Leito") 
+        }
+        else if (gameObject.name == "Porta de Leito")
         {
             manager.Manager.puzzleValueFinal = 1;
         }

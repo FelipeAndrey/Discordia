@@ -26,12 +26,12 @@ public class OpenDoor : Interactable
             return;
         }
 
-        if(needHideAnything != null)
+        if (needHideAnything != null)
             needHideAnything.SetActive(false);
     }
 
-    public void ChangeMapIMG() 
+    public void ChangeMapIMG()
     {
-    
+
     }
 }
