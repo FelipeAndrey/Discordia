@@ -174,12 +174,14 @@ MonoBehaviour:
     - "Isso \xE9..."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 950425}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -1895,11 +1897,12 @@ MonoBehaviour:
     - O que aconteceu?
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet: []
-  waitTime: 0
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -3128,12 +3131,14 @@ MonoBehaviour:
     - "Era s\xF3 continuar seguindo a vida."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 102740261}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 0
   activeAnimation: 0
   parameter: 
@@ -3691,12 +3696,14 @@ MonoBehaviour:
     - "E pior, como eu n\xE3o vi?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 137430737}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 0
   activeAnimation: 0
   parameter: 
@@ -4159,6 +4166,7 @@ Transform:
   - {fileID: 1121975009}
   - {fileID: 1467762470}
   - {fileID: 1161897736}
+  - {fileID: 2123817204}
   m_Father: {fileID: 831957986}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5246,12 +5254,14 @@ MonoBehaviour:
     - "O que isso est\xE1 fazendo aqui?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 219540937}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -7469,12 +7479,14 @@ MonoBehaviour:
     - "Tomara que n\xE3o caia sobre mim."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 285295208}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 0
   activeAnimation: 0
   parameter: 
@@ -12846,6 +12858,95 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501095326}
   m_Mesh: {fileID: -6556349919438820068, guid: df0433d460f14384e93cf1df623b34d8, type: 3}
+--- !u!1 &506872423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506872424}
+  - component: {fileID: 506872426}
+  - component: {fileID: 506872425}
+  - component: {fileID: 506872427}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &506872424
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506872423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1553033731}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.2}
+  m_SizeDelta: {x: 0.2, y: 0.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &506872425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506872423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4b22ef338dca7ea4da2afd0734889d26, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &506872426
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506872423}
+  m_CullTransparentMesh: 1
+--- !u!114 &506872427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506872423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c6501b8dcf5f54c89fd21fee7f007d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useStaticBillboard: 1
 --- !u!1 &511439015
 GameObject:
   m_ObjectHideFlags: 0
@@ -18913,13 +19014,12 @@ MonoBehaviour:
     - Preciso acha-la logo.
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet:
-  - {fileID: 0}
-  - {fileID: 0}
-  waitTime: 0
+  thisObj: {fileID: 0}
+  needToSet: []
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 0
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -23779,7 +23879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7134784828837346913, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.42
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7134784828837346913, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23846,6 +23946,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7134784830088176568, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
+      propertyPath: m_Intensity
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134784830088176568, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
+      propertyPath: m_SpotAngle
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134784830088176568, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134784830088176568, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 0
       objectReference: {fileID: 0}
@@ -23857,13 +23969,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7134784830088176569, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7134784830194392777, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: m_Name
       value: MeshLantern
       objectReference: {fileID: 0}
     - target: {fileID: 7134784830194392777, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7134784830194392778, guid: abbdf67bbcecf354b8fcf7a7a1417458, type: 3}
       propertyPath: manager
@@ -65241,12 +65357,14 @@ MonoBehaviour:
     - Preciso continuar.
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 1102970048}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 0
   activeAnimation: 0
   parameter: 
@@ -65926,12 +66044,12 @@ MonoBehaviour:
     - Encontrei!
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet:
-  - {fileID: 1121975011}
-  waitTime: 2
+  thisObj: {fileID: 0}
+  needToSet: []
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 2
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -66004,12 +66122,14 @@ MonoBehaviour:
     - "Grrrrr\u2026\n"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 1122652466}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -66356,12 +66476,14 @@ MonoBehaviour:
     - "Esse lugar me passa uma sensa\xE7\xE3o de solid\xE3o."
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 1144114875}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 0
   activeAnimation: 0
   parameter: 
@@ -66707,16 +66829,18 @@ MonoBehaviour:
     - "Mas\u2026 o que \xE9 isso?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 1161897738}
-  waitTime: 0
+  - setValue: 1
+    elemento: {fileID: 1722835140}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
-  thoughts: {fileID: 1722835142}
+  thoughts: {fileID: 0}
   waitForThoughts: 0
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
@@ -68441,156 +68565,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230418977}
   m_Mesh: {fileID: -6556349919438820068, guid: df0433d460f14384e93cf1df623b34d8, type: 3}
---- !u!1 &1233096956
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1233096957}
-  - component: {fileID: 1233096960}
-  - component: {fileID: 1233096959}
-  - component: {fileID: 1233096958}
-  m_Layer: 0
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1233096957
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233096956}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1553033731}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1233096958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233096956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c6501b8dcf5f54c89fd21fee7f007d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useStaticBillboard: 1
---- !u!114 &1233096959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233096956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: '[LMB]
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 97.515205, y: 22.489628, z: 97.516846, w: 23.030436}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1233096960
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233096956}
-  m_CullTransparentMesh: 1
 --- !u!1 &1233733582
 GameObject:
   m_ObjectHideFlags: 0
@@ -71552,6 +71526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputLanternMode: 1
   reading: 0
+  needToSet: []
 --- !u!65 &1346919595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75076,12 +75051,12 @@ MonoBehaviour:
     - Espero que ainda esteja funcionando.
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
-  needToSet:
-  - {fileID: 1467762472}
-  waitTime: 0
+  thisObj: {fileID: 0}
+  needToSet: []
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -75101,8 +75076,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.8476286, y: 1.5117931, z: 4.046681}
-  m_Center: {x: -2.3553448, y: 0.10220814, z: 0.99530464}
+  m_Size: {x: 7.486993, y: 1.5117931, z: 4.8089566}
+  m_Center: {x: -2.1123552, y: 0.10220814, z: 0.6141698}
 --- !u!1 &1472104314
 GameObject:
   m_ObjectHideFlags: 0
@@ -77601,7 +77576,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -0.195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1233096957}
+  - {fileID: 506872424}
   m_Father: {fileID: 774590069}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78147,7 +78122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566375756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -13.09}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 948325981}
@@ -78206,11 +78181,12 @@ MonoBehaviour:
     - "Cad\xEA as minhas coisas?"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet: []
-  waitTime: 2
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 2
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -79807,12 +79783,14 @@ MonoBehaviour:
     - "OL\xC1!"
   manager: {fileID: 1652724937}
   targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
   needToSet:
-  - {fileID: 1636203742}
-  waitTime: 0
+  - setValue: 0
+    elemento: {fileID: 0}
   needToSetValue: 0
   nextDialogue: 1
   autoDialogue: 1
+  waitTime: 0
   notMove: 1
   activeAnimation: 0
   parameter: 
@@ -82626,10 +82604,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1012328850}
   thoughts:
-  - Como se houvesse outra escolha.
+  - "Como se houvesse outra escolha para voc\xEA."
+  - "Suas atitudes, suas escolhas obrigam voc\xEA a estar onde est\xE1."
   TMP: {fileID: 670954638}
   animatorController: {fileID: 1722835141}
-  type: 1
+  type: 0
+  needToSet:
+  - setValue: 1
+    elemento: {fileID: 2123817202}
   notMove: 0
 --- !u!1 &1726862395
 GameObject:
@@ -83960,19 +83942,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.78723085
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12864237
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5951906
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09729846
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793462, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -89069,7 +89051,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh288348
+  m_Name: pb_Mesh59270
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -110962,6 +110944,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119846546}
   m_Mesh: {fileID: -4716889597045178651, guid: 95419c4acaf97b744952b78723aecf07, type: 3}
+--- !u!1 &2123817201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123817204}
+  - component: {fileID: 2123817202}
+  - component: {fileID: 2123817203}
+  m_Layer: 0
+  m_Name: "Indaga\xE7\xE3o Nota 1"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2123817202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123817201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 57.373215, y: 23.96994, z: 1.3734394}
+  m_Center: {x: -2.520344, y: 9.48497, z: -5.5849085}
+--- !u!114 &2123817203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123817201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d09b98ec1fb539439d7fdcd7c580594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputLanternMode: 1
+  dialogue:
+  - name: Santos
+    sentence:
+    - "Mas\u2026 que mensagem era aquela?"
+    - "Ser\xE1 que essa pessoa caiu aqui tamb\xE9m?"
+  manager: {fileID: 1652724937}
+  targetCamera: {fileID: 0}
+  thisObj: {fileID: 0}
+  needToSet: []
+  needToSetValue: 0
+  nextDialogue: 1
+  autoDialogue: 1
+  waitTime: 0
+  notMove: 1
+  activeAnimation: 0
+  parameter: 
+  thoughts: {fileID: 0}
+  waitForThoughts: 0
+  isDialogueToFinal: 0
+  doorOne: {fileID: 0}
+  doorTwo: {fileID: 0}
+--- !u!4 &2123817204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123817201}
+  m_LocalRotation: {x: -0, y: 0.25883383, z: -0, w: 0.9659219}
+  m_LocalPosition: {x: -14.1, y: -17.99, z: 104.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 167151012}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 30.002, z: 0}
 --- !u!1 &2125138459
 GameObject:
   m_ObjectHideFlags: 0
@@ -111814,6 +111875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputLanternMode: 1
   reading: 0
+  needToSet: []
 --- !u!65 &2871529303682347773
 BoxCollider:
   m_ObjectHideFlags: 0
