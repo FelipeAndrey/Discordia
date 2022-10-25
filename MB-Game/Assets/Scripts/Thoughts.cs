@@ -6,7 +6,7 @@ public class Thoughts : MonoBehaviour
 {
     public GameManager manager;
 
-    [Header("Thoughts Settigns")]
+    [Header("Thoughts Settings")]
     [TextArea(1, 3)]
     public string[] thoughts;
     public Queue<string> sentence;
@@ -16,6 +16,10 @@ public class Thoughts : MonoBehaviour
 
     [Header("Thoughts Type")]
     public ThingType type;
+
+    [Header("Setting Triggers")]
+    public TriggersStructur[] needToSet;
+
     public enum ThingType
     {
         whenCollider,
@@ -29,6 +33,18 @@ public class Thoughts : MonoBehaviour
     {
         sentence = new Queue<string>();
         TMP.enabled = false;
+    }
+
+    void Update()
+    {
+        if (needToSet != null)
+        {
+            foreach (var set in needToSet)
+            {
+                if (set != null)
+                    set.elemento.enabled = set.setValue;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,7 +75,7 @@ public class Thoughts : MonoBehaviour
     {
         if (sentence.Count == 0)
         {
-            if (index == thoughts.Length - 1)
+            if (index == thoughts.Length - 2)
             {
                 EndThoughts();
                 return;

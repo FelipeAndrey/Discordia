@@ -5,6 +5,9 @@ public class Cards : Interactable
     private GameManager manager;
     public bool reading;
 
+    [Header("Setting Triggers")]
+    public TriggersStructur[] needToSet;
+
     public override void Interact()
     {
         manager.SetMoving(false);
@@ -28,6 +31,15 @@ public class Cards : Interactable
             manager.Letter(false);
             reading = false;
             manager.SetMoving(true);
+        }
+
+        if (needToSet != null)
+        {
+            foreach (var set in needToSet)
+            {
+                if (set != null)
+                    set.elemento.enabled = set.setValue;
+            }
         }
     }
 
