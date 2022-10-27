@@ -110,6 +110,10 @@ public class Thoughts : MonoBehaviour
     {
         animatorController.SetBool("isThinking", false);
         this.gameObject.SetActive(false);
-        manager.player.canMove = true;
+        if (notMove)
+        {
+            manager.player.canMove = true;
+            notMove = false;
+        }        
     }
 }
