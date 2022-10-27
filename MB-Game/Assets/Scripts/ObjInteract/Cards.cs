@@ -3,7 +3,7 @@ using UnityEngine;
 public class Cards : Interactable
 {
     private GameManager manager;
-    public bool reading;
+    public bool reading, read = false;
 
     [Header("Setting Triggers")]
     public TriggersStructur[] needToSet;
@@ -14,15 +14,14 @@ public class Cards : Interactable
         manager.Cards = this;
         CallCardsTrigger();
         reading = true;
+        read = true;
         manager.Letter(reading);
     }
 
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
-
     }
-
 
     void Update()
     {
@@ -33,7 +32,7 @@ public class Cards : Interactable
             manager.SetMoving(true);
         }
 
-        if (needToSet != null)
+        if (needToSet != null && read)
         {
             foreach (var set in needToSet)
             {

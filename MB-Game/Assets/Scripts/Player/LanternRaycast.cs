@@ -6,7 +6,7 @@ public class LanternRaycast : MonoBehaviour
     public Lantern Mesh;
     public float distanceToInteract = 10;
     private float valueRangeMax = 50;
-    private float valueIntencMax = 1000;
+    private float valueIntencMax = 300;
     private float valueIntencMin = 50;
 
     // Start is called before the first frame update

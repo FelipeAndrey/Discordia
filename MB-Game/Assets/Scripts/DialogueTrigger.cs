@@ -9,15 +9,16 @@ public class DialogueTrigger : Interactable
     public Camera targetCamera;
     public BoxCollider thisObj;
     public TriggersStructur[] needToSet;
-    public bool needToSetValue;
 
     [Header("Automatic Dialogue")]
     public bool nextDialogue;
     public bool autoDialogue;
 
     [Header("Set Player")]
-    public float waitTime = 0f;
     public bool notMove;
+
+    [Header("Have Animation")]
+    public float waitTime = 0f;
     public bool activeAnimation;
     public string parameter;
 
@@ -30,8 +31,6 @@ public class DialogueTrigger : Interactable
     public GameObject doorOne, doorTwo;
 
     [System.NonSerialized] public bool collided;
-
-    //private bool trade = false;
 
     private void Start()
     {
@@ -57,10 +56,12 @@ public class DialogueTrigger : Interactable
             {
                 StartCoroutine(AfterEvent(waitTime));
             }
+
             TriggerDialogue(true);
 
             if(thisObj == null)
                 return;
+
             thisObj.gameObject.SetActive(false);
 
             if (needToSet != null)

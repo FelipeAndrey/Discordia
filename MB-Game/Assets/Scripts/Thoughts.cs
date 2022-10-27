@@ -13,6 +13,7 @@ public class Thoughts : MonoBehaviour
     public TextMeshProUGUI TMP;
     public Animator animatorController;
     private int index = 0;
+    [System.NonSerialized] public bool collided, isCalled;
 
     [Header("Thoughts Type")]
     public ThingType type;
@@ -37,26 +38,36 @@ public class Thoughts : MonoBehaviour
 
     void Update()
     {
-        if (needToSet != null)
+        if (collided || isCalled)
         {
-            foreach (var set in needToSet)
+            if (needToSet != null)
             {
-                if (set != null)
-                    set.elemento.enabled = set.setValue;
+                foreach (var set in needToSet)
+                {
+                    if (set != null)
+                        set.elemento.enabled = set.setValue;
+                }
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        collided = true;
         if (type == ThingType.whenCollider)
         {
             StartThoughts();
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        collided = false;
+    }
+
     public void StartThoughts()
     {
+        isCalled = true;
         TMP.enabled = true;
         foreach (var think in thoughts)
         {
@@ -75,7 +86,7 @@ public class Thoughts : MonoBehaviour
     {
         if (sentence.Count == 0)
         {
-            if (index == thoughts.Length - 2)
+            if (index <= thoughts.Length)
             {
                 EndThoughts();
                 return;
