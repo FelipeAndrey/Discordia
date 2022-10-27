@@ -10,6 +10,9 @@ public class WoodActive : Interactable
     public PuzzleLabirinto puzzleLabirinto;
     public ParticleSystem Fire;
 
+    [Header("Setting Triggers")]
+    public TriggersStructur[] needToSet;
+
     private void Start()
     {
         manager = GameObject.FindObjectOfType<GameManager>();
@@ -47,6 +50,14 @@ public class WoodActive : Interactable
         manager.cameraAtual.transform.rotation = oldPlayerPosition.transform.rotation;
         manager.cameraAtual.GetComponent<CameraFollow>().enabled = true;
         lantern.SetActive(true);
+        if (needToSet != null)
+        {
+            foreach (var set in needToSet)
+            {
+                if (set != null)
+                    set.elemento.enabled = set.setValue;
+            }
+        }
         yield return null;
     }
 }
