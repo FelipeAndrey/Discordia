@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     public float speedCrounch = 3f;
     public float speedRunning = 15;
     public float normalSpeed = 8;
-    public float currentScale = 3.5f;
+    public float currentScale;
     private float scalePlayer, currentSpeed;
 
     [Header("Bool")]
@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             crouch = false;
-            scalePlayer = 3.5f;
+            scalePlayer = currentScale;
             //Orientetion.transform.position = new Vector3(0, 3.5f, 0);
         }
         if (crouch && controller.height > scalePlayer)
@@ -186,7 +186,7 @@ public class Player : MonoBehaviour
             currentSpeed = normalSpeed;
         }
 
-        Orientetion.localPosition = new Vector3(0, scalePlayer == 0.5f ? 0.5f : 1.44f, 0);
+        Orientetion.localPosition = new Vector3(0, scalePlayer == 0.5f ? 0.5f : 2f, 0);
     }
 
     private void Correr()
