@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        print(player.canMove);
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0) && animator.GetBool("isAwaking") == true)
         {
             animator.SetBool("isAwaking", false);

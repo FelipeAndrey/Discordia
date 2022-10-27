@@ -25,12 +25,10 @@ public class LanternRaycast : MonoBehaviour
         {
             if (Physics.Raycast(manager.cameraAtual.transform.position, manager.cameraAtual.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Ground")))
             {
-                //luz.intensity = math.lerp(valueIntencMin, valueIntencMax, 5 * Time.deltaTime);
                 Mesh.luz.intensity = valueIntencMin;
             }
             else
             {
-                //luz.intensity = math.lerp(valueIntencMax, valueIntencMin, 1 * Time.deltaTime);
                 Mesh.luz.intensity = valueIntencMax;
             }
 

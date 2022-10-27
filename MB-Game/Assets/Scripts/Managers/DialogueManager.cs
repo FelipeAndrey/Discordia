@@ -110,23 +110,4 @@ public class DialogueManager : MonoBehaviour
         yield return null;
     }
 
-    /*
-    #region Trade Camera On/Off
-    /// <summary>
-    /// ActiveCameraTrade: Ativa ou desativa a troca de câmera.
-    /// </summary>
-    /// <returns>Recebe um valor: <c>True ou False</c></returns>
-    public void ActiveCameraTrade(bool value)
-    {
-        cameraManager.Trade(value);
-    }
-    /// <summary>
-    /// TargetCameraTrade: Referencia a câmera alvo para troca de cena.
-    /// </summary>
-    /// <returns>Recebe um valor do tipo: <c>Camera</c></returns>
-    public void TargetCameraTrade(Camera target)
-    {
-        cameraManager.CameraTarget = target;
-    }
-    #endregion*/
 }
