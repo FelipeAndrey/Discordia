@@ -7841,7 +7841,7 @@ GameObject:
   - component: {fileID: 388376895}
   - component: {fileID: 388376894}
   - component: {fileID: 388376893}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Mapa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13027,7 +13027,7 @@ GameObject:
   - component: {fileID: 467883940}
   - component: {fileID: 467883939}
   - component: {fileID: 467883941}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Palavra Final - Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56564,7 +56564,7 @@ GameObject:
   - component: {fileID: 1812691483}
   - component: {fileID: 1812691482}
   - component: {fileID: 1812691484}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Palavra Final - Click (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
