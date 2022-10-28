@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Thoughts : MonoBehaviour
 {
-    public GameManager manager;
+    private GameManager manager;
 
     [Header("Thoughts Settings")]
     [TextArea(1, 3)]
@@ -32,6 +32,7 @@ public class Thoughts : MonoBehaviour
 
     void Start()
     {
+        manager = GameObject.FindObjectOfType<GameManager>();
         sentence = new Queue<string>();
         TMP.enabled = false;
     }
