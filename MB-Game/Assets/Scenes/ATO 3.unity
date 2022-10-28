@@ -44540,11 +44540,7 @@ MonoBehaviour:
     - "Essa \xE9\u2026"
     - "a ficha de interna\xE7\xE3o do meu pai.\r"
     - Agora me lembro.
-    - 'Aqui foi onde o deixei.
-
-
-
-'
+    - Aqui foi onde o deixei.
     - "Preciso ir at\xE9 o quarto dele."
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
@@ -53187,7 +53183,7 @@ MonoBehaviour:
   activeAnimation: 0
   parameter: 
   thoughts: {fileID: 777133035}
-  waitForThoughts: 1
+  waitForThoughts: 0
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
