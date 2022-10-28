@@ -7,12 +7,6 @@ public class Lantern : MonoBehaviour
     public float intencidade = 1;
     public bool luzAtiva;
 
-
-    private void Start()
-    {
-        GetComponentInChildren<Light>();
-
-    }
     // Update is called once per frame
     void Update()
     {
