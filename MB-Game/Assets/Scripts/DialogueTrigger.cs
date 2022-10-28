@@ -45,6 +45,13 @@ public class DialogueTrigger : Interactable
             StartCoroutine(AfterEvent(waitTime));
         }
         TriggerDialogue(true);
+
+        if (doorOne == null && doorTwo == null)
+            return;
+        else if (isDialogueToFinal)
+        {
+            doorOne.SetActive(false);
+        }
     }
 
     void Update()

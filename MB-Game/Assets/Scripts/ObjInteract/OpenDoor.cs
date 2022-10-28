@@ -6,7 +6,9 @@ public class OpenDoor : Interactable
     [Header("Porta")]
     public GameObject Door;
     public GameObject needHideAnything;
-    public bool needToInteract, interacted = false;
+    public bool needToInteract;
+    [HideInInspector]
+    public bool interacted = false;
 
     [Header("ImagemMap")]
     public Image newImage;
