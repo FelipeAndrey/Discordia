@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Managers")]
     public DialogueManager dialogueManager;
+    public AudioManager audioManager; 
 
     [Header("Player")]
     public Player player;

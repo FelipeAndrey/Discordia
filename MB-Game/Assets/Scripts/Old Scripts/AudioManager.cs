@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,8 +9,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("BrownNoise");
-        StartCoroutine(WaterDrop());
+        
     }
 
     public void Awake()
@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
             s.AudioSource.volume = s.Volume;
             s.AudioSource.pitch = s.Pitch;
             s.AudioSource.loop = s.Loop;
+            s.AudioSource.outputAudioMixerGroup = s.output;
         }
     }
 
