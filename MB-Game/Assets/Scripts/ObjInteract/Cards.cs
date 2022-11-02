@@ -3,7 +3,7 @@ using UnityEngine;
 public class Cards : Interactable
 {
     private GameManager manager;
-    public bool reading, read = false;
+    [HideInInspector] public bool reading, read = false;
 
     [Header("Setting Triggers")]
     public TriggersStructur[] needToSet;
@@ -16,6 +16,22 @@ public class Cards : Interactable
         reading = true;
         read = true;
         manager.Letter(reading);
+
+        //if (needToSet != null && read)
+        //{
+        //    foreach (var set in needToSet)
+        //    {
+        //        if (set.elemento != null)
+        //        {
+        //            set.elemento.enabled = set.setValueBoxCollider;
+
+        //        }
+        //        if (set.gameObject != null)
+        //        {
+        //            set.gameObject.SetActive(set.setValueGameObject);
+        //        }
+        //    }
+        //}
     }
 
     void Start()
@@ -36,8 +52,15 @@ public class Cards : Interactable
         {
             foreach (var set in needToSet)
             {
-                if (set != null)
-                    set.elemento.enabled = set.setValue;
+                if (set.elemento != null)
+                {
+                    set.elemento.enabled = set.setValueBoxCollider;
+                    
+                }
+                if (set.gameObject != null)
+                {
+                    set.gameObject.SetActive(set.setValueGameObject);
+                }
             }
         }
     }

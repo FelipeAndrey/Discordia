@@ -52,6 +52,21 @@ public class DialogueTrigger : Interactable
         {
             doorOne.SetActive(false);
         }
+        if (needToSet != null)
+        {
+            foreach (var set in needToSet)
+            {
+                if (set.elemento != null)
+                {
+
+                    set.elemento.enabled = set.setValueBoxCollider;
+                }
+                if (set.gameObject != null)
+                {
+                    set.gameObject.SetActive(set.setValueGameObject);
+                }
+            }
+        }
     }
 
     void Update()
@@ -75,8 +90,14 @@ public class DialogueTrigger : Interactable
             {
                 foreach (var set in needToSet)
                 {
-                    if (set != null)
-                        set.elemento.enabled = set.setValue;
+                    if (set.elemento != null)
+                    {
+                        set.elemento.enabled = set.setValueBoxCollider;
+                    }
+                    if (set.gameObject != null)
+                    {
+                        set.gameObject.SetActive(set.setValueGameObject);
+                    }
                 }
             }
 

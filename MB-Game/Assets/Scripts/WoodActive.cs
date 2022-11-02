@@ -8,7 +8,7 @@ public class WoodActive : Interactable
     public Transform spotBrigeCamera;
 
     public PuzzleLabirinto puzzleLabirinto;
-    public ParticleSystem Fire;
+    public ParticleSystem Fire1,Fire2;
 
     [Header("Setting Triggers")]
     public TriggersStructur[] needToSet;
@@ -21,7 +21,8 @@ public class WoodActive : Interactable
     }
     public override void Interact()
     {
-        Fire.Play();
+        Fire1.Play();
+        Fire2.Play();
         puzzleLabirinto.wood[puzzleLabirinto.cont].SetActive(true);
         puzzleLabirinto.cont++;
         StartCoroutine(CameraBridgeTime());
@@ -54,8 +55,14 @@ public class WoodActive : Interactable
         {
             foreach (var set in needToSet)
             {
-                if (set != null)
-                    set.elemento.enabled = set.setValue;
+                if (set.elemento != null)
+                {
+                    set.elemento.enabled = set.setValueBoxCollider;
+                }
+                if (set.gameObject != null)
+                {
+                    set.gameObject.SetActive(set.setValueGameObject);
+                }
             }
         }
         yield return null;

@@ -39,8 +39,14 @@ public class OpenDoor : Interactable
         {
             foreach (var set in needToSet)
             {
-                if (set != null)
-                    set.elemento.enabled = set.setValue;
+                if (set.elemento != null)
+                {
+                    set.elemento.enabled = set.setValueBoxCollider;
+                }
+                if (set.gameObject != null)
+                {
+                    set.gameObject.SetActive(set.setValueGameObject);
+                }
             }
         }
     }
