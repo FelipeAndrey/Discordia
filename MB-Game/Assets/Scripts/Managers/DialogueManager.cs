@@ -49,14 +49,15 @@ public class DialogueManager : MonoBehaviour
         this.gameObject.SetActive(value);
         onDialogue = true;
         StartDialogue(structureArray[0]);
+
     }
 
     public void StartDialogue(DialogueStructure dialogue)
     {
+        
         dialogueCanvas.SetActive(onDialogue);
         TMPName.text = dialogue.name;
         sentences.Clear();
-
         foreach (string sentence in dialogue.sentence)
         {
             sentences.Enqueue(sentence);

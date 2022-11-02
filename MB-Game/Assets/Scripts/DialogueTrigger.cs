@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -118,6 +119,15 @@ public class DialogueTrigger : Interactable
 
         manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
+
+        //manager.Manager.audioManager.Play(dialogue[0].audio);
+        //foreach (var audio in dialogue)
+        //{
+        //    print("entrou");
+        //    audio.audio.AudioSource.Play(audio.audio.Name);
+        //    print("saiu");
+        //}
+
     }
 
     IEnumerator AfterEvent(float value)
