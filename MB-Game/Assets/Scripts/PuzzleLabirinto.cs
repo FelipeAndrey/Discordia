@@ -7,6 +7,6 @@ public class PuzzleLabirinto : MonoBehaviour
     public List<GameObject> wood;
     public BoxCollider invisibleWall;
     public GameObject LoadAct3;
-    /*[HideInInspector]*/
+    [HideInInspector]
     public int cont = 0;
 }
