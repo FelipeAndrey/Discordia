@@ -752,6 +752,7 @@ MonoBehaviour:
     - Aqui parece onde meu pai trabalhava.
     - Onde ele dedicou anos da sua vida.
     - Mas ele perdeu tudo no dia do seu incidente.
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -1218,7 +1219,7 @@ Transform:
   m_LocalScale: {x: 419.48026, y: 472.4143, z: 236.20718}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 31.993, y: 104.566, z: -29.397}
 --- !u!64 &71425906
 MeshCollider:
@@ -1826,7 +1827,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -10.293, y: 104.267, z: -21.081}
 --- !u!64 &90712973
 MeshCollider:
@@ -2018,7 +2019,7 @@ Transform:
   m_LocalScale: {x: 160.63565, y: 160.63565, z: 554.4892}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: -78.146, y: -19.324, z: 358.964}
 --- !u!64 &91307998
 MeshCollider:
@@ -2354,7 +2355,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh50152
+  m_Name: pb_Mesh716640
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2562,6 +2563,7 @@ MonoBehaviour:
     sentence:
     - Outro labirinto?
     - "Espero n\xE3o andar tanto dessa vez."
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -3069,7 +3071,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -116.753, y: 218.281, z: 121.961}
 --- !u!64 &146378243
 MeshCollider:
@@ -3165,7 +3167,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: -10.293, y: 104.267, z: -21.081}
 --- !u!64 &146419202
 MeshCollider:
@@ -3830,7 +3832,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 49
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: -5.105, y: -70.245, z: -17.124}
 --- !u!64 &205207063
 MeshCollider:
@@ -5719,7 +5721,7 @@ Transform:
   m_LocalScale: {x: 61.947903, y: 61.947906, z: 61.94788}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 57.914, y: 359.505, z: 17.549}
 --- !u!23 &305856419
 MeshRenderer:
@@ -5801,7 +5803,7 @@ Transform:
   m_LocalScale: {x: 187.67065, y: 187.67058, z: 418.5045}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: -83.756, y: 151.051, z: 187.083}
 --- !u!64 &310036316
 MeshCollider:
@@ -7544,7 +7546,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: -116.652, y: 277.579, z: 115.438}
 --- !u!64 &402776494
 MeshCollider:
@@ -7735,7 +7737,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: -122.599, y: 90.481, z: 120.82}
 --- !u!64 &418343979
 MeshCollider:
@@ -8183,6 +8185,7 @@ MonoBehaviour:
   - name: Santos
     sentence:
     - "Deve haver algu\xE9m aqui que possa me ajudar."
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -13375,7 +13378,7 @@ Transform:
   m_LocalScale: {x: 519.87244, y: 492.8963, z: 1897.0773}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 79.9, y: -319.775, z: -91.343}
 --- !u!64 &538059979
 MeshCollider:
@@ -13905,7 +13908,7 @@ Transform:
   m_LocalScale: {x: 174.25351, y: 174.25342, z: 912.1581}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 74.198, y: -332.45, z: -117.886}
 --- !u!64 &570860594
 MeshCollider:
@@ -14374,7 +14377,7 @@ Transform:
   m_LocalScale: {x: 223.10498, y: 223.10498, z: 770.12354}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: -39.708, y: 74.678, z: 77.771}
 --- !u!64 &602924023
 MeshCollider:
@@ -14493,7 +14496,7 @@ Transform:
   m_LocalScale: {x: 249.8255, y: 281.3508, z: 140.6754}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: -5.036, y: -72.167, z: -17.21}
 --- !u!64 &607804579
 MeshCollider:
@@ -15666,7 +15669,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 41
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: -10.483, y: 97.734, z: -20.761}
 --- !u!64 &707644337
 MeshCollider:
@@ -17173,6 +17176,8 @@ GameObject:
   - component: {fileID: 783412330}
   - component: {fileID: 783412334}
   - component: {fileID: 783412333}
+  - component: {fileID: 783412332}
+  - component: {fileID: 783412331}
   m_Layer: 8
   m_Name: "Bilboard Assombrac\xE3o (1)"
   m_TagString: Untagged
@@ -17192,8 +17197,36 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -5.302, y: -1.389, z: -4.178}
+--- !u!114 &783412331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783412329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6700c9f088e15d4fb0e199eda599dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformRef: {fileID: 1624626730}
+  valueOfView: 5
+  smoothSpeed: 0.125
+--- !u!65 &783412332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783412329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 26.242838, y: 10.884434, z: 22.487835}
+  m_Center: {x: -0.4722633, y: 2.4822109, z: -5.049262}
 --- !u!212 &783412333
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17559,7 +17592,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: -122.599, y: 90.481, z: 120.82}
 --- !u!64 &787331550
 MeshCollider:
@@ -18653,7 +18686,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: -116.652, y: 277.579, z: 115.438}
 --- !u!64 &852084435
 MeshCollider:
@@ -19620,7 +19653,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 48
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: -122.402, y: 98.203, z: 121.629}
 --- !u!64 &929813082
 MeshCollider:
@@ -23395,7 +23428,7 @@ Transform:
   m_LocalScale: {x: 758.52655, y: 1064.7281, z: 2148.1914}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 114.61099, y: 78.018, z: 108.976}
 --- !u!64 &942097375
 MeshCollider:
@@ -23637,7 +23670,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: -122.451996, y: 96.427, z: 121.447}
 --- !u!64 &949930940
 MeshCollider:
@@ -24012,7 +24045,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 50
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: -122.402, y: 98.203, z: 121.629}
 --- !u!64 &982871319
 MeshCollider:
@@ -25607,7 +25640,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 45
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: -4.827, y: -78.616, z: -17.514}
 --- !u!64 &1032170489
 MeshCollider:
@@ -30194,7 +30227,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2435114461987643644, guid: edd0b7219da8bea4692621fcfcfde1de, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2435114461987643644, guid: edd0b7219da8bea4692621fcfcfde1de, type: 3}
       propertyPath: m_LocalScale.x
@@ -31391,7 +31424,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -10.293, y: 104.267, z: -21.081}
 --- !u!64 &1150793722
 MeshCollider:
@@ -32082,7 +32115,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: -116.652, y: 277.579, z: 115.438}
 --- !u!64 &1193377582
 MeshCollider:
@@ -33016,7 +33049,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: -10.293, y: 104.267, z: -21.081}
 --- !u!64 &1228610039
 MeshCollider:
@@ -34207,7 +34240,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 38
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: -4.827, y: -78.616, z: -17.514}
 --- !u!64 &1278281585
 MeshCollider:
@@ -35124,7 +35157,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 40
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: -116.501, y: 270.432, z: 116.19}
 --- !u!64 &1313419936
 MeshCollider:
@@ -36084,7 +36117,7 @@ Transform:
   m_LocalScale: {x: 61.399284, y: 61.399345, z: 61.399284}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 40.126, y: 471.021, z: 21.784}
 --- !u!23 &1338777904
 MeshRenderer:
@@ -36768,7 +36801,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 44
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: -122.599, y: 90.481, z: 120.82}
 --- !u!64 &1397771514
 MeshCollider:
@@ -36959,7 +36992,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: -5.036, y: -72.167, z: -17.21}
 --- !u!64 &1404191045
 MeshCollider:
@@ -37055,7 +37088,7 @@ Transform:
   m_LocalScale: {x: 421.25632, y: 399.39737, z: 1537.2152}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 65.342, y: -431.752, z: -204.771}
 --- !u!64 &1407073745
 MeshCollider:
@@ -37461,7 +37494,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: -122.599, y: 90.481, z: 120.82}
 --- !u!64 &1452240462
 MeshCollider:
@@ -37665,6 +37698,7 @@ MonoBehaviour:
   - name: Santos
     sentence:
     - "Deve haver algu\xE9m aqui que possa me ajudar."
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -37784,6 +37818,7 @@ MonoBehaviour:
     sentence:
     - "Hum\u2026\r"
     - "Deve haver algu\xE9m aqui que possa me ajudar."
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -38249,7 +38284,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: -5.036, y: -72.167, z: -17.21}
 --- !u!64 &1508807611
 MeshCollider:
@@ -38559,7 +38594,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh50396
+  m_Name: pb_Mesh716884
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -38930,6 +38965,7 @@ MonoBehaviour:
   - name: Santos
     sentence:
     - "Essa \xE1rea \xE9 mais isolada do que as outras."
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -39133,7 +39169,7 @@ Transform:
   m_LocalScale: {x: 509.04343, y: 509.04346, z: 1785.1558}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: -54.545, y: 159.694, z: 19.391}
 --- !u!64 &1536648208
 MeshCollider:
@@ -40027,6 +40063,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622945815}
   m_Mesh: {fileID: -2356633879075672669, guid: 59478972e51fbf04da5cfcf4660e5efe, type: 3}
+--- !u!1 &1624626729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624626730}
+  m_Layer: 0
+  m_Name: RefLookAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624626730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624626729}
+  m_LocalRotation: {x: -0.011361343, y: -0.1473344, z: 0.039634462, w: 0.988227}
+  m_LocalPosition: {x: -20.687, y: 7.517, z: 65.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1903265134}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626961338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6218749934574486521, guid: 4adf6acabdd1d084ca1579b4b906cb70, type: 3}
@@ -40970,7 +41036,7 @@ Transform:
   m_LocalScale: {x: 249.8255, y: 281.3508, z: 140.6754}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 43
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: -4.827, y: -78.616, z: -17.514}
 --- !u!64 &1646262866
 MeshCollider:
@@ -41161,7 +41227,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -0.617, y: -16.985, z: 4.686}
 --- !u!65 &1652042967
 BoxCollider:
@@ -41194,20 +41260,25 @@ MonoBehaviour:
     sentence:
     - Pai!
     - "Eu sei que \xE9 voc\xEA..."
+    audio: []
   - name: Sombra
     sentence:
     - ...
+    audio: []
   - name: Santos
     sentence:
     - "Que lugar \xE9 esse?"
     - "Por que voc\xEA nunca se revelou para mim?"
     - Por qual motivo estou aqui?
+    audio: []
   - name: Sombra
     sentence:
     - ...
+    audio: []
   - name: Santos
     sentence:
     - ME RESPONDA!
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -41254,7 +41325,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: -122.451996, y: 96.427, z: 121.447}
 --- !u!64 &1652811689
 MeshCollider:
@@ -41350,7 +41421,7 @@ Transform:
   m_LocalScale: {x: 442.43817, y: 498.2693, z: 249.13472}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0.88, y: 156.268, z: 1.49}
 --- !u!64 &1652998707
 MeshCollider:
@@ -41638,7 +41709,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: -116.652, y: 277.579, z: 115.438}
 --- !u!64 &1680440752
 MeshCollider:
@@ -41849,6 +41920,7 @@ MonoBehaviour:
     - "Mas\u2026 n\xE3o tem ningu\xE9m."
     - "O que est\xE1 acontecendo com esse lugar?"
     - "Por que esse pesadelo n\xE3o acaba?"
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -41940,7 +42012,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: -122.451996, y: 96.427, z: 121.447}
 --- !u!64 &1692297359
 MeshCollider:
@@ -43277,7 +43349,7 @@ Transform:
   m_LocalScale: {x: 210.84676, y: 210.84665, z: 1103.7113}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 51
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 70.089, y: -266.06702, z: -51.696}
 --- !u!64 &1740427465
 MeshCollider:
@@ -43546,7 +43618,7 @@ Transform:
   m_LocalScale: {x: 249.8255, y: 281.3508, z: 140.6754}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 47
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: -5.105, y: -70.245, z: -17.124}
 --- !u!64 &1754488618
 MeshCollider:
@@ -43617,7 +43689,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49494
+  m_Name: pb_Mesh715982
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44162,6 +44234,7 @@ MonoBehaviour:
     - "Mas\u2026"
     - "Este lugar \xE9 o\u2026\r\n"
     - "Por que esse lugar est\xE1 dentro da cl\xEDnica?\n"
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -44395,7 +44468,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: -10.293, y: 104.267, z: -21.081}
 --- !u!64 &1800954575
 MeshCollider:
@@ -44466,7 +44539,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52042
+  m_Name: pb_Mesh718530
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44692,7 +44765,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 42
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: -116.501, y: 270.432, z: 116.19}
 --- !u!64 &1822167132
 MeshCollider:
@@ -44910,7 +44983,7 @@ Transform:
   m_LocalScale: {x: 46.460926, y: 46.46093, z: 46.46091}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 53
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 61.383, y: 291.248, z: 15.77}
 --- !u!23 &1830427350
 MeshRenderer:
@@ -46284,6 +46357,7 @@ Transform:
   m_Children:
   - {fileID: 1159259982}
   - {fileID: 2119212705}
+  - {fileID: 1624626730}
   - {fileID: 1652042966}
   - {fileID: 783412330}
   - {fileID: 2030082943}
@@ -51213,7 +51287,7 @@ Transform:
   m_Children:
   - {fileID: 1634830860}
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -91.713, z: 0}
 --- !u!1001 &1985560853
 PrefabInstance:
@@ -52116,7 +52190,7 @@ Transform:
   - {fileID: 1192227972}
   - {fileID: 1554885671}
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -0.557, y: -181.431, z: 2.358}
 --- !u!1 &2042663126
 GameObject:
@@ -52182,7 +52256,7 @@ Transform:
   m_LocalScale: {x: 248.31073, y: 351.61197, z: 116.081894}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: -122.451996, y: 96.427, z: 121.447}
 --- !u!64 &2043760159
 MeshCollider:
@@ -52590,7 +52664,7 @@ Transform:
   m_LocalScale: {x: 136.43433, y: 193.19319, z: 63.781193}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 52
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: -135.923, y: 238.271, z: 74.334}
 --- !u!64 &2056468846
 MeshCollider:
@@ -54013,6 +54087,7 @@ MonoBehaviour:
   - name: Santos
     sentence:
     - VAI EMBORA!
+    audio: []
   manager: {fileID: 0}
   targetCamera: {fileID: 0}
   thisObj: {fileID: 0}
@@ -54327,7 +54402,7 @@ Transform:
   m_LocalScale: {x: 210.55669, y: 237.12668, z: 118.56334}
   m_Children: []
   m_Father: {fileID: 1903265134}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: -5.036, y: -72.167, z: -17.21}
 --- !u!64 &2120878084
 MeshCollider:
