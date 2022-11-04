@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -30,6 +29,17 @@ public class DialogueTrigger : Interactable
     [Header("Final Level")]
     public bool isDialogueToFinal;
     public GameObject doorOne, doorTwo;
+
+    [Header("Zoom")]
+    public Transform transformRef;
+    public float valueOfView;
+    private float temp = 0;
+    private bool zoom = false;
+
+    [Header("Som")]
+    public AudioManager som;
+    public string nomeSom;
+
 
     [System.NonSerialized] public bool collided;
 
@@ -73,6 +83,12 @@ public class DialogueTrigger : Interactable
     void Update()
     {
         waitTime = manager.time;
+
+        if (zoom)
+        {
+            Zoom();
+        }
+
         if (collided && autoDialogue)
         {
             if (waitTime > 0)
@@ -82,10 +98,12 @@ public class DialogueTrigger : Interactable
 
             TriggerDialogue(true);
 
-            if(thisObj == null)
+            if (thisObj == null)
                 return;
 
-            thisObj.gameObject.SetActive(false);
+            thisObj.enabled = false;
+            
+        
 
             if (needToSet != null)
             {
@@ -119,12 +137,17 @@ public class DialogueTrigger : Interactable
 
         manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
+        // zoom = true;
 
-        //manager.Manager.audioManager.Play(dialogue[0].audio);
+        som.Play(nomeSom);
+
+
+
+        //}
         //foreach (var audio in dialogue)
         //{
         //    print("entrou");
-        //    audio.audio.AudioSource.Play(audio.audio.Name);
+        //    audio.audio[0].AudioSource.Play(audio.audio[0].Name);
         //    print("saiu");
         //}
 
@@ -138,10 +161,32 @@ public class DialogueTrigger : Interactable
         yield return null;
     }
 
+    public void Zoom() 
+    {
+        if (transformRef == null)
+            return;
+
+        print(manager.onDialogue);
+        if (temp < 1.0f && manager.onDialogue)
+        {
+            temp += Time.deltaTime * 0.5f;
+            manager.Manager.cameraAtual.GetComponent<Look>().canLook = false;
+            manager.Manager.cameraAtual.transform.LookAt(transformRef);
+            manager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
+        }
+        else if (!manager.onDialogue && temp > 0f)
+        {
+            temp -= Time.deltaTime * 0.5f;
+            manager.Manager.cameraAtual.GetComponent<Look>().canLook = true;
+            manager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
+        }
+    }
+
     #region OnTriggers
     private void OnTriggerEnter(Collider other)
     {
         collided = true;
+        zoom = true;
 
         if (doorOne == null || doorTwo == null)
             return;

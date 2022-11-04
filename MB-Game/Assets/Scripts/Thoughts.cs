@@ -121,6 +121,6 @@ public class Thoughts : MonoBehaviour
         {
             manager.player.canMove = true;
             notMove = false;
-        }        
+        }
     }
 }

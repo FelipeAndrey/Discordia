@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Managers")]
     public DialogueManager dialogueManager;
-    public AudioManager audioManager; 
+    public AudioManager audioManager;
 
     [Header("Player")]
     public Player player;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [Header("aaaaaaaa")]
     public int puzzleValueFinal;
     public bool turOffAnimation;
+
 
     void Start()
     {

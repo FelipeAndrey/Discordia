@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     public void Awake()

@@ -56,7 +56,7 @@ public class Cards : Interactable
                 if (set.elemento != null)
                 {
                     set.elemento.enabled = set.setValueBoxCollider;
-                    
+
                 }
                 if (set.gameObject != null)
                 {

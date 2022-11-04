@@ -768,6 +768,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &38118352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2579,6 +2581,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &120970136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8201,6 +8205,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &428799684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17176,8 +17182,6 @@ GameObject:
   - component: {fileID: 783412330}
   - component: {fileID: 783412334}
   - component: {fileID: 783412333}
-  - component: {fileID: 783412332}
-  - component: {fileID: 783412331}
   m_Layer: 8
   m_Name: "Bilboard Assombrac\xE3o (1)"
   m_TagString: Untagged
@@ -17199,34 +17203,6 @@ Transform:
   m_Father: {fileID: 1903265134}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -5.302, y: -1.389, z: -4.178}
---- !u!114 &783412331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783412329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6700c9f088e15d4fb0e199eda599dde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transformRef: {fileID: 1624626730}
-  valueOfView: 5
-  smoothSpeed: 0.125
---- !u!65 &783412332
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783412329}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 26.242838, y: 10.884434, z: 22.487835}
-  m_Center: {x: -0.4722633, y: 2.4822109, z: -5.049262}
 --- !u!212 &783412333
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37714,6 +37690,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &1464432478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37834,6 +37812,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &1485807863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38981,6 +38961,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &1529943851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41294,6 +41276,8 @@ MonoBehaviour:
   isDialogueToFinal: 1
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 1624626730}
+  valueOfView: 10
 --- !u!1 &1652811687
 GameObject:
   m_ObjectHideFlags: 0
@@ -41936,6 +41920,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &1683034559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44250,6 +44236,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &1773622960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54103,6 +54091,8 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
 --- !u!65 &2115690235
 BoxCollider:
   m_ObjectHideFlags: 0

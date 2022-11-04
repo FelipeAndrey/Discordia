@@ -6,5 +6,5 @@ public class DialogueStructure
     public string name;
     [TextArea(1, 3)]
     public string[] sentence;
-    public string [] audio;
+    //public Sound[] audio;
 }

@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
     //Stamina
     public float stamina = 100f;
     [SerializeField] private float maxStamina = 100f;
-    [Range(0, 50)][SerializeField] private float decriStamina = 0.5f;
-    [Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
+    [Range(0, 50)] [SerializeField] private float decriStamina = 0.5f;
+    [Range(0, 50)] [SerializeField] private float staminaRegen = 0.5f;
 
     [Header("Speed")]
     //Velocidades

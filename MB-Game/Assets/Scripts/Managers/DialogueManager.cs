@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI TMPSentence;
     public Queue<string> sentences;
     private int index;
+    [HideInInspector]
     private DialogueStructure[] structureArray;
     private GameObject target;
     /*[System.NonSerialized]*/
@@ -31,6 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+
         if (onDialogue && canNext)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -54,7 +56,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueStructure dialogue)
     {
-        
         dialogueCanvas.SetActive(onDialogue);
         TMPName.text = dialogue.name;
         sentences.Clear();
@@ -87,7 +88,7 @@ public class DialogueManager : MonoBehaviour
     {
         onDialogue = false;
         dialogueCanvas.SetActive(onDialogue);
-        target.gameObject.GetComponent<DialogueTrigger>().enabled = onDialogue;
+        //target.gameObject.GetComponent<DialogueTrigger>().enabled = onDialogue;
 
         if (Manager.player.canMove == false)
         {
