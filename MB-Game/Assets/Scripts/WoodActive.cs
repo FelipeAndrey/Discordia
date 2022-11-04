@@ -8,7 +8,7 @@ public class WoodActive : Interactable
     public Transform spotBrigeCamera;
 
     public PuzzleLabirinto puzzleLabirinto;
-    public ParticleSystem Fire1;//s,Fire2;
+    public ParticleSystem Fire1, Fire2;
 
     [Header("Setting Triggers")]
     public TriggersStructur[] needToSet;
@@ -22,7 +22,7 @@ public class WoodActive : Interactable
     public override void Interact()
     {
         Fire1.Play();
-        //Fire2.Play();
+        Fire2.Play();
         puzzleLabirinto.wood[puzzleLabirinto.cont].GetComponent<Animator>().SetBool("Up", true);
         puzzleLabirinto.cont++;
         StartCoroutine(CameraBridgeTime());

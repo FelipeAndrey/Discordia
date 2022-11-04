@@ -138,8 +138,8 @@ public class DialogueTrigger : Interactable
         manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
         // zoom = true;
-
-        som.Play(nomeSom);
+        if(som != null)
+            som.Play(nomeSom);
 
 
 
