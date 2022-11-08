@@ -14,6 +14,7 @@ public class Lantern : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            FindObjectOfType<AudioManager>().Play("Click");
             luzAtiva = !luzAtiva;
             luz.gameObject.SetActive(luzAtiva);
         }

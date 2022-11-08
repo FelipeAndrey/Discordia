@@ -137,19 +137,9 @@ public class DialogueTrigger : Interactable
 
         manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
-        // zoom = true;
+
         if(som != null)
             som.Play(nomeSom);
-
-
-
-        //}
-        //foreach (var audio in dialogue)
-        //{
-        //    print("entrou");
-        //    audio.audio[0].AudioSource.Play(audio.audio[0].Name);
-        //    print("saiu");
-        //}
 
     }
 
