@@ -6,6 +6,7 @@ public class WoodActive : Interactable
     public GameObject lantern, oldPlayerPosition;
     public GameManager manager;
     public Transform spotBrigeCamera;
+    public GameObject PlacaExit;
 
     public PuzzleLabirinto puzzleLabirinto;
     public ParticleSystem Fire1, Fire2;
@@ -30,6 +31,7 @@ public class WoodActive : Interactable
 
         if (puzzleLabirinto.cont == 3)
         {
+            PlacaExit.SetActive(true);
             puzzleLabirinto.LoadAct3.SetActive(true);
             puzzleLabirinto.invisibleWall.enabled = false;
         }

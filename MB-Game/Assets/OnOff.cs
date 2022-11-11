@@ -7,13 +7,12 @@ public class OnOff : MonoBehaviour
 {
     private Light light;
     private bool lights;
-    // Start is called before the first frame update
+
     void Start()
     {
         light = GetComponentInChildren<Light>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         StartCoroutine(LightBroken(2f));
