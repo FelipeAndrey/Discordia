@@ -10,7 +10,7 @@ public class Cards : Interactable
 
     public override void Interact()
     {
-        manager.audioManager.Play("WaterDrop");
+        manager.audioManager.Play("Folha");
         manager.SetMoving(false);
         manager.Cards = this;
         CallCardsTrigger();

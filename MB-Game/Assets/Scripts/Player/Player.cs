@@ -128,6 +128,7 @@ public class Player : MonoBehaviour
 
         if (Mathf.Abs(x) < 0.1 && Mathf.Abs(z) < 0.1)
         {
+            gameManager.audioManager.Play("Pasos");
             isMoving = false;
         }
         else
@@ -138,7 +139,6 @@ public class Player : MonoBehaviour
             isMoving = true;
 
         }
-
         controller.Move(move * speed * Time.deltaTime);
         controller.Move(velocity * Time.deltaTime);
     }
