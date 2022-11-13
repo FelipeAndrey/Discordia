@@ -36,23 +36,32 @@ public class AudioManager : MonoBehaviour
     #region Audio Settings Methods
     public void Play(string Name)
     {
+
         Sound s = Array.Find(sounds, sound => sound.Name == Name);
+        if (s == null)
+            return;
         s.AudioSource.Play();
         //s.AudioSource.PlayOneShot(s.AudioSource.clip);
     }
     public void Stop(string Name)
     {
         Sound s = Array.Find(sounds, sound => sound.Name == Name);
+        if (s == null)
+            return;
         s.AudioSource.Stop();
     }
     public void Pitch(string Name, float value)
     {
         Sound s = Array.Find(sounds, sound => sound.Name == Name);
+        if (s == null)
+            return;
         s.AudioSource.pitch = value;
     }
     public void Volume(string Name, float value)
     {
         Sound s = Array.Find(sounds, sound => sound.Name == Name);
+        if (s == null)
+            return;
         s.AudioSource.volume = value;
     }
     #endregion

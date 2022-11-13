@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     /*[System.NonSerialized]*/
     public Thoughts thoughts;
     private float waitForThoughts;
+
     public bool onDialogue { get; set; } = false;
     public bool canNext { get; set; } = false;
     public float time { get; set; }

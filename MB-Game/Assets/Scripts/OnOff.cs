@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class OnOff : MonoBehaviour
 {
+    public float temp;
     private Light light;
     private bool lights;
 
@@ -15,9 +14,9 @@ public class OnOff : MonoBehaviour
 
     void FixedUpdate()
     {
-        StartCoroutine(LightBroken(2f));
+        StartCoroutine(LightBroken(temp));
     }
-    private IEnumerator LightBroken(float value) 
+    private IEnumerator LightBroken(float value)
     {
         if (lights)
         {
@@ -30,7 +29,7 @@ public class OnOff : MonoBehaviour
             light.enabled = true;
             lights = true;
         }
-        yield return null;  
-        
+        yield return null;
+
     }
 }

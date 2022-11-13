@@ -36,9 +36,10 @@ public class DialogueTrigger : Interactable
     private float temp = 0;
     private bool zoom = false;
 
+
     [Header("Som")]
-    public AudioManager som;
     public string nomeSom;
+    private AudioManager som;
 
 
     [System.NonSerialized] public bool collided;
@@ -47,6 +48,7 @@ public class DialogueTrigger : Interactable
     {
         thisObj = gameObject.GetComponent<BoxCollider>();
         manager = GameObject.FindObjectOfType<DialogueManager>();
+        som = GameObject.FindObjectOfType<AudioManager>();
     }
 
     public override void Interact()
@@ -91,6 +93,7 @@ public class DialogueTrigger : Interactable
 
         if (collided && autoDialogue)
         {
+
             if (waitTime > 0)
             {
                 StartCoroutine(AfterEvent(waitTime));
@@ -102,8 +105,8 @@ public class DialogueTrigger : Interactable
                 return;
 
             thisObj.enabled = false;
-            
-        
+
+
 
             if (needToSet != null)
             {
@@ -138,7 +141,7 @@ public class DialogueTrigger : Interactable
         manager.canNext = nextDialogue;
         manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
 
-        if(som != null)
+        if (som != null)
             som.Play(nomeSom);
 
     }
@@ -151,12 +154,12 @@ public class DialogueTrigger : Interactable
         yield return null;
     }
 
-    public void Zoom() 
+    public void Zoom()
     {
         if (transformRef == null)
             return;
 
-        print(manager.onDialogue);
+
         if (temp < 1.0f && manager.onDialogue)
         {
             temp += Time.deltaTime * 0.5f;
@@ -169,7 +172,13 @@ public class DialogueTrigger : Interactable
             temp -= Time.deltaTime * 0.5f;
             manager.Manager.cameraAtual.GetComponent<Look>().canLook = true;
             manager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
+
         }
+        else if (!manager.onDialogue && temp < 0f)
+        {
+            this.gameObject.SetActive(false);
+        }
+
     }
 
     #region OnTriggers
@@ -177,7 +186,7 @@ public class DialogueTrigger : Interactable
     {
         collided = true;
         zoom = true;
-
+       
         if (doorOne == null || doorTwo == null)
             return;
         else if (isDialogueToFinal)
@@ -185,6 +194,7 @@ public class DialogueTrigger : Interactable
             doorOne.SetActive(false);
             doorTwo.SetActive(false);
         }
+        manager.Manager.audioManager.Stop("Pasos");
     }
 
     private void OnTriggerExit(Collider other)
