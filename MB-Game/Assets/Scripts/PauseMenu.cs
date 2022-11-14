@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
     public bool IsNotInGame;
 
     public CanvasGroup pauseMenuUI;
-
+    public CanvasGroup optionsGame;
     public Look mouseSens;
 
     // Update is called once per frame
@@ -37,9 +37,18 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.alpha = 1;
+        optionsGame.alpha = 0;
+        optionsGame.blocksRaycasts = false;
         Time.timeScale = 0f;
         GamePause = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void SetOpitions() 
+    {
+        pauseMenuUI.alpha = 0;
+        optionsGame.blocksRaycasts = true;
+        optionsGame.alpha = 1;
     }
 
     public void SetNewSensitivity(float value)

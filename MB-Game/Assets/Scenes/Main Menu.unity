@@ -1259,8 +1259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04cae0a6315055a4daa6f1c2555769f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menus: {fileID: 363060601}
-  loading: {fileID: 226962293}
+  pause: {fileID: 0}
+  menus: {fileID: 1137755937}
+  loading: {fileID: 0}
 --- !u!4 &1768881968
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,7 +1361,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1768881967}
         m_TargetAssemblyTypeName: GerenciadordeInterface, Assembly-CSharp
-        m_MethodName: CreditsBTN
+        m_MethodName: OptionsBTN
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
