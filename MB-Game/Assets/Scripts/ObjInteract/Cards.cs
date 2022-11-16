@@ -8,6 +8,10 @@ public class Cards : Interactable
     [Header("Setting Triggers")]
     public TriggersStructur[] needToSet;
 
+    [Header("Som")]
+    public string nomeSom;
+    private AudioManager som;
+
     public override void Interact()
     {
         manager.audioManager.Play("Folha");
@@ -17,6 +21,8 @@ public class Cards : Interactable
         reading = true;
         read = true;
         manager.Letter(reading);
+        if (som != null)
+            som.Play(nomeSom);
 
         if (needToSet != null && read)
         {
@@ -37,6 +43,7 @@ public class Cards : Interactable
 
     void Start()
     {
+        som = GameObject.FindObjectOfType<AudioManager>();
         manager = FindObjectOfType<GameManager>();
     }
 

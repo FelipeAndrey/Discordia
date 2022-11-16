@@ -17,6 +17,15 @@ public class OpenDoor : Interactable
     [Header("Setting Triggers")]
     public TriggersStructur[] needToSet;
 
+    [Header("Som")]
+    public string nomeSom;
+    private AudioManager som;
+
+    private void Start()
+    {
+        som = GameObject.FindObjectOfType<AudioManager>();
+
+    }
     public override void Interact()
     {
         interacted = true;
@@ -31,6 +40,9 @@ public class OpenDoor : Interactable
             Destroy(this.gameObject);
             return;
         }
+
+        if (som != null)
+            som.Play(nomeSom);
 
         if (needHideAnything != null)
             needHideAnything.SetActive(false);
