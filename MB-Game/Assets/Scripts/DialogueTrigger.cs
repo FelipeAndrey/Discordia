@@ -35,6 +35,7 @@ public class DialogueTrigger : Interactable
     public float valueOfView;
     private float temp = 0;
     private bool zoom = false;
+    public GameObject billboard;
 
 
     [Header("Som")]
@@ -158,7 +159,8 @@ public class DialogueTrigger : Interactable
     {
         if (transformRef == null)
             return;
-
+        if (billboard == null)
+            return;
 
         if (temp < 1.0f && manager.onDialogue)
         {
@@ -172,6 +174,7 @@ public class DialogueTrigger : Interactable
             temp -= Time.deltaTime * 0.5f;
             manager.Manager.cameraAtual.GetComponent<Look>().canLook = true;
             manager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
+            billboard.SetActive(false);
 
         }
         else if (!manager.onDialogue && temp < 0f)
