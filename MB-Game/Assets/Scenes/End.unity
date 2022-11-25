@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04cae0a6315055a4daa6f1c2555769f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
   menus: {fileID: 1963011466}
   loading: {fileID: 1728116345}
 --- !u!4 &1178604076

@@ -10,9 +10,6 @@ public class GerenciadordeInterface : MonoBehaviour
     public void NewGameBtN(string newGameLevel)
     {
         menus.SetActive(false);
-        if (loading == null)
-            return;
-        loading.SetActive(true);
         SceneManager.LoadScene(newGameLevel);
     }
     public void MenuBTN(string MenuLVL)

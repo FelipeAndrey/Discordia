@@ -35,8 +35,9 @@ public class DialogueTrigger : Interactable
     public float valueOfView;
     private float temp = 0;
     private bool zoom = false;
-    public GameObject billboard;
-
+    public SpriteRenderer sprite;
+    public float fadeOutTime;
+    private Color color;
 
     [Header("Som")]
     public string nomeSom;
@@ -104,8 +105,10 @@ public class DialogueTrigger : Interactable
 
             if (thisObj == null)
                 return;
-
-            thisObj.enabled = false;
+            if (!zoom)
+            {
+                thisObj.enabled = false;
+            }
 
 
 
@@ -159,7 +162,7 @@ public class DialogueTrigger : Interactable
     {
         if (transformRef == null)
             return;
-        if (billboard == null)
+        if (sprite == null)
             return;
 
         if (temp < 1.0f && manager.onDialogue)
@@ -174,14 +177,30 @@ public class DialogueTrigger : Interactable
             temp -= Time.deltaTime * 0.5f;
             manager.Manager.cameraAtual.GetComponent<Look>().canLook = true;
             manager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
-            billboard.SetActive(false);
-
+            StartCoroutine(SpriteFadeOut());
         }
         else if (!manager.onDialogue && temp < 0f)
         {
             this.gameObject.SetActive(false);
         }
 
+    }
+    IEnumerator SpriteFadeOut() 
+    {
+        color = sprite.color;
+        while (color.a > 0f)
+        {
+            print("entrou");
+            color.a -= Time.deltaTime / fadeOutTime;
+            sprite.color = color;
+            print(sprite.color.a);
+            if (color.a <= 0f)
+            {
+                color.a = 0.0f;
+            }
+            yield return null;
+        }
+        sprite.color = color;
     }
 
     #region OnTriggers

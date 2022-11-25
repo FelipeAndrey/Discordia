@@ -1672,6 +1672,10 @@ MonoBehaviour:
   isDialogueToFinal: 0
   doorOne: {fileID: 0}
   doorTwo: {fileID: 0}
+  transformRef: {fileID: 0}
+  valueOfView: 0
+  billboard: {fileID: 0}
+  nomeSom: 
 --- !u!4 &830505672
 Transform:
   m_ObjectHideFlags: 0
@@ -2320,6 +2324,7 @@ MonoBehaviour:
   oldPlayerPosition: {fileID: 0}
   manager: {fileID: 0}
   spotBrigeCamera: {fileID: 0}
+  PlacaExit: {fileID: 0}
   puzzleLabirinto: {fileID: 0}
   Fire1: {fileID: 0}
   Fire2: {fileID: 0}
@@ -2533,6 +2538,7 @@ MonoBehaviour:
   oldPlayerPosition: {fileID: 0}
   manager: {fileID: 0}
   spotBrigeCamera: {fileID: 0}
+  PlacaExit: {fileID: 0}
   puzzleLabirinto: {fileID: 0}
   Fire1: {fileID: 0}
   Fire2: {fileID: 0}
@@ -3414,6 +3420,7 @@ MonoBehaviour:
   oldPlayerPosition: {fileID: 0}
   manager: {fileID: 0}
   spotBrigeCamera: {fileID: 0}
+  PlacaExit: {fileID: 0}
   puzzleLabirinto: {fileID: 0}
   Fire1: {fileID: 0}
   Fire2: {fileID: 0}
@@ -4538,6 +4545,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 83160503, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 83160503, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 83160503, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 751794857, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 751794857, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 505185608622710015, guid: 82798fc1573412d4dba3aa891c3b4e6c, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
