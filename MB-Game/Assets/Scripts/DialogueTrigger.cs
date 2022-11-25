@@ -187,13 +187,11 @@ public class DialogueTrigger : Interactable
     }
     IEnumerator SpriteFadeOut() 
     {
-        color = sprite.color;
         while (color.a > 0f)
         {
             print("entrou");
             color.a -= Time.deltaTime / fadeOutTime;
             sprite.color = color;
-            print(sprite.color.a);
             if (color.a <= 0f)
             {
                 color.a = 0.0f;
