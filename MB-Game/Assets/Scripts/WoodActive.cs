@@ -22,6 +22,7 @@ public class WoodActive : Interactable
     }
     public override void Interact()
     {
+        manager.audioManager.Stop("Pasos");
         Fire1.Play();
         Fire2.Play();
         puzzleLabirinto.wood[puzzleLabirinto.cont].GetComponent<Animator>().SetBool("Up", true);

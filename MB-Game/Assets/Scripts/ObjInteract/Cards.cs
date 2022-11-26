@@ -14,6 +14,7 @@ public class Cards : Interactable
 
     public override void Interact()
     {
+        manager.audioManager.Stop("Pasos");
         manager.audioManager.Play("Folha");
         manager.SetMoving(false);
         manager.Cards = this;

@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     //Velocidades
     public float speedCrounch = 3f;
     public float speedRunning = 15;
-    public float normalSpeed = 12;
+    public float normalSpeed = 8;
     public float currentScale;
     private float scalePlayer, currentSpeed;
 
@@ -227,22 +227,22 @@ public class Player : MonoBehaviour
     //        running = false;
     //    }
     //}
-    private void drainStamina()
-    {
-        if (running)
-        {
-            stamina -= decriStamina * Time.deltaTime;
-        }
-    }
+    //private void drainStamina()
+    //{
+    //    if (running)
+    //    {
+    //        stamina -= decriStamina * Time.deltaTime;
+    //    }
+    //}
 
-    private void gainStamina()
-    {
-        if (!running && stamina <= maxStamina - 0.01f)
-        {
-            stamina += staminaRegen * Time.deltaTime;
-            updateStamina(1);
-        }
-    }
+    //private void gainStamina()
+    //{
+    //    if (!running && stamina <= maxStamina - 0.01f)
+    //    {
+    //        stamina += staminaRegen * Time.deltaTime;
+    //        updateStamina(1);
+    //    }
+    //}
 
     private void updateStamina(int value)
     {
@@ -261,7 +261,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Get & Set
-    private float speed { get; set; } = 12;
+    private float speed { get; set; } = 8;
     #endregion
 }
 
