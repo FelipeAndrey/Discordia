@@ -105,12 +105,8 @@ public class DialogueTrigger : Interactable
 
             if (thisObj == null)
                 return;
-            if (!zoom)
-            {
-                thisObj.enabled = false;
-            }
 
-
+            thisObj.enabled = false;
 
             if (needToSet != null)
             {
@@ -133,8 +129,12 @@ public class DialogueTrigger : Interactable
 
     public void TriggerDialogue(bool value)
     {
+
         if (notMove == true)
+        {
             manager.Manager.SetMoving(false);
+            manager.Manager.audioManager.Stop("Pasos");
+        }
 
         if (activeAnimation && parameter != null)
             manager.Manager.animator.SetBool(parameter, true);

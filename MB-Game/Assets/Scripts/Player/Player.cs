@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     //Velocidades
     public float speedCrounch = 3f;
     public float speedRunning = 15;
-    public float normalSpeed = 8;
+    public float normalSpeed = 12;
     public float currentScale;
     private float scalePlayer, currentSpeed;
 
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
             Movimente();
         }
 
-        Correr();
+        //Correr();
         Abaixar();
         Interacte();
         gameManager.Breathing();
@@ -189,44 +189,44 @@ public class Player : MonoBehaviour
         Orientetion.localPosition = new Vector3(0, scalePlayer == 0.5f ? 0.5f : 2f, 0);
     }
 
-    private void Correr()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0.1f && controller.height >= 3.4f)
-        {
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
-            {
-                currentSpeed = speedRunning;
-                running = true;
-                drainStamina();
-                updateStamina(1);
-            }
-            else
-            {
-                currentSpeed = normalSpeed;
-                running = false;
-                gainStamina();
+    //private void Correr()
+    //{
+    //    if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0.1f && controller.height >= 3.4f)
+    //    {
+    //        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
+    //        {
+    //            currentSpeed = speedRunning;
+    //            running = true;
+    //            drainStamina();
+    //            updateStamina(1);
+    //        }
+    //        else
+    //        {
+    //            currentSpeed = normalSpeed;
+    //            running = false;
+    //            gainStamina();
 
-                if (stamina >= maxStamina - 0.1f)
-                {
-                    updateStamina(0);
-                }
-            }
-        }
-        else
-        {
-            gainStamina();
+    //            if (stamina >= maxStamina - 0.1f)
+    //            {
+    //                updateStamina(0);
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        gainStamina();
 
-            if (stamina >= maxStamina - 0.1f)
-            {
-                updateStamina(0);
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && controller.height >= 3.4f || stamina < 0.1f)
-        {
-            currentSpeed = normalSpeed;
-            running = false;
-        }
-    }
+    //        if (stamina >= maxStamina - 0.1f)
+    //        {
+    //            updateStamina(0);
+    //        }
+    //    }
+    //    if (Input.GetKeyUp(KeyCode.LeftShift) && controller.height >= 3.4f || stamina < 0.1f)
+    //    {
+    //        currentSpeed = normalSpeed;
+    //        running = false;
+    //    }
+    //}
     private void drainStamina()
     {
         if (running)
@@ -261,7 +261,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Get & Set
-    private float speed { get; set; } = 8;
+    private float speed { get; set; } = 12;
     #endregion
 }
 
