@@ -13,10 +13,10 @@ public class Player : MonoBehaviour
     public Image crossHair;
 
     [Header("Objetos")]
-    private new Camera camera;
     public GameManager gameManager;
     public CharacterController controller;
     public InputLanternMode lanternMode;
+    private new Camera camera;
 
     [Header("Moviment")]
     public float gravity = -9.81f;
@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
     //Stamina
     public float stamina = 100f;
     [SerializeField] private float maxStamina = 100f;
-    [Range(0, 50)][SerializeField] private float decriStamina = 0.5f;
-    [Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
+    //[Range(0, 50)][SerializeField] private float decriStamina = 0.5f;
+    //[Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
 
     [Header("Speed")]
     //Velocidades
@@ -261,7 +261,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Get & Set
-    private float speed { get; set; } = 8;
+    private float speed { get; set; } = 12;
     #endregion
 }
 

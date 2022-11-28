@@ -5,7 +5,7 @@ public class EndGame : Interactable
 {
     public override void Interact()
     {
-        SceneManager.LoadScene("End");
+        SceneManager.LoadScene("Main Menu");
         Cursor.lockState = CursorLockMode.None;
     }
 
