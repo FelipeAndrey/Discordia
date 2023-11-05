@@ -95,9 +95,9 @@ public class Player : MonoBehaviour
                         return;
                     }
                 }
-
+        
                 obj.Interact();
-
+        
             }
         }
     }
