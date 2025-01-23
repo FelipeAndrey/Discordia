@@ -4,67 +4,66 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public Lantern lantern;
-    public Transform lanterRef;
+    //public Lantern lantern;
+    //public Transform lanterRef;
 
     [SerializeField] Transform Orientetion;
 
     [Header("Canvas")]
-    public Image crossHair;
+    [SerializeField] private Image p_crossHair;
 
     [Header("Objetos")]
-    public GameManager gameManager;
-    public CharacterController controller;
-    public InputLanternMode lanternMode;
+    private GameManager p_gameManager;
+    private CharacterController p_controller;
+    [SerializeField] private InputLanternMode lanternMode;
     private new Camera camera;
 
     [Header("Moviment")]
-    public float gravity = -9.81f;
-    private Vector3 velocity;
+    [SerializeField] private float p_gravity = -9.81f;
+    private Vector3 p_velocity;
 
     [Header("Stamina")]
     //Stamina
-    public float stamina = 100f;
-    [SerializeField] private float maxStamina = 100f;
-    //[Range(0, 50)][SerializeField] private float decriStamina = 0.5f;
     //[Range(0, 50)][SerializeField] private float staminaRegen = 0.5f;
+    //[Range(0, 50)][SerializeField] private float decriStamina = 0.5f;
+    [SerializeField] private float p_stamina = 100f;
+    [SerializeField] private float p_maxStamina = 100f;
 
     [Header("Speed")]
     //Velocidades
-    public float speedCrounch = 3f;
-    public float speedRunning = 15;
-    public float normalSpeed = 8;
-    public float currentScale;
-    private float scalePlayer, currentSpeed;
+    //[SerializeField] private float speedRunning = 15;
+    [SerializeField] private float p_speedCrounch = 3f;
+    [SerializeField] private float p_normalSpeed = 8;
+    [SerializeField] private float p_currentScale;
+    private float p_scalePlayer, p_currentSpeed;
 
     [Header("Bool")]
     //Boleana
-    [HideInInspector]
-    public bool crouch = false;
-    [HideInInspector]
-    public bool running;
-    [HideInInspector] public bool hasRegenStamina;
-    public bool isMoving { get; set; }
-    public bool canMove { get; set; } = true;
+    //[SerializeField] private bool hasRegenStamina;
+    [SerializeField] private bool p_crouch = false;
+    [SerializeField] private bool p_running;
+
 
     [Header("Stamina UI elements")]
-    [SerializeField] private Image staminaProgressUI;
+    [SerializeField] private Image p_staminaProgressUI;
     [SerializeField] private CanvasGroup sliderCanvasGroup;
 
     [Header("Interact")]
-    public float distanceToInteract = 4f;
+    [Range(0, 10)] [SerializeField] private float p_distanceToInteract;
 
     private void Start()
     {
+        p_controller = GetComponent<CharacterController>();
+        p_gameManager = GameObject.FindObjectOfType<GameManager>();
         camera = Camera.main;
-        camera = gameManager.GetCamera();
-        normalSpeed = speed;
-        currentSpeed = normalSpeed;
+        camera = p_gameManager.GetCamera();
+        p_normalSpeed = Speed;
+        p_currentSpeed = p_normalSpeed;
     }
 
     private void Update()
     {
-        if (canMove)
+        if (CanMove)
         {
             Movimente();
         }
@@ -72,19 +71,19 @@ public class Player : MonoBehaviour
         //Correr();
         Abaixar();
         Interacte();
-        gameManager.Breathing();
-        speed = currentSpeed;
+        p_gameManager.Breathing();
+        Speed = p_currentSpeed;
     }
 
     private void Interacte()
     {
         RaycastHit hitInfo;
 
-        var objInteract = Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact"));
+        var objInteract = Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, p_distanceToInteract, LayerMask.GetMask("Interact"));
 
         CrosshairImageChange(objInteract);
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, distanceToInteract, LayerMask.GetMask("Interact")))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, p_distanceToInteract, LayerMask.GetMask("Interact")))
         {
             if (hitInfo.transform.TryGetComponent<Interactable>(out Interactable obj))
             {
@@ -106,13 +105,13 @@ public class Player : MonoBehaviour
     {
         if (objInteract)
         {
-            crossHair.color = Color.red;
-            //crossHair.sprite = nova imagem
+            p_crossHair.color = Color.red;
+            //p_crossHair.sprite = nova imagem
         }
         else
         {
-            crossHair.color = Color.white;
-            //crossHair.sprite = volta para a outra imagem
+            p_crossHair.color = Color.white;
+            //p_crossHair.sprite = volta para a outra imagem
         }
     }
 
@@ -123,24 +122,24 @@ public class Player : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        velocity.y += gravity * Time.deltaTime;
+        p_velocity.y += p_gravity * Time.deltaTime;
         Vector3 move = new Vector3();
 
         if (Mathf.Abs(x) < 0.1 && Mathf.Abs(z) < 0.1)
         {
-            gameManager.audioManager.Play("Pasos");
-            isMoving = false;
+            p_gameManager.audioManager.Play("Pasos");
+            IsMoving = false;
         }
         else
         {
             move = Orientetion.right * x + Orientetion.forward * z;
-            move = new Vector3(move.x, velocity.y, move.z);
+            move = new Vector3(move.x, p_velocity.y, move.z);
             move = new Vector3(move.x, 0, move.z).normalized;
-            isMoving = true;
+            IsMoving = true;
 
         }
-        controller.Move(move * speed * Time.deltaTime);
-        controller.Move(velocity * Time.deltaTime);
+        p_controller.Move(move * Speed * Time.deltaTime);
+        p_controller.Move(p_velocity * Time.deltaTime);
     }
     private void Abaixar()
     {
@@ -159,54 +158,54 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && !running && !crouch)
+        if (Input.GetKey(KeyCode.LeftControl) && !p_running && !p_crouch)
         {
-            crouch = true;
-            scalePlayer = 0.5f;
-            currentSpeed = speedCrounch;
+            p_crouch = true;
+            p_scalePlayer = 0.5f;
+            p_currentSpeed = p_speedCrounch;
             //Orientetion.transform.position = new Vector3(0, 0.5f, 0);
         }
 
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            crouch = false;
-            scalePlayer = currentScale;
+            p_crouch = false;
+            p_scalePlayer = p_currentScale;
             //Orientetion.transform.position = new Vector3(0, 3.5f, 0);
         }
-        if (crouch && controller.height > scalePlayer)
+        if (p_crouch && p_controller.height > p_scalePlayer)
         {
-            controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
+            p_controller.height = Mathf.Lerp(p_controller.height, p_scalePlayer, 4 * Time.deltaTime);
         }
-        else if (!crouch && controller.height < scalePlayer && !estaEmBaixo)
+        else if (!p_crouch && p_controller.height < p_scalePlayer && !estaEmBaixo)
         {
-            controller.height = Mathf.Lerp(controller.height, scalePlayer, 4 * Time.deltaTime);
+            p_controller.height = Mathf.Lerp(p_controller.height, p_scalePlayer, 4 * Time.deltaTime);
         }
-        if (controller.height >= 3.4f && !running && !crouch)
+        if (p_controller.height >= 3.4f && !p_running && !p_crouch)
         {
-            currentSpeed = normalSpeed;
+            p_currentSpeed = p_normalSpeed;
         }
 
-        Orientetion.localPosition = new Vector3(0, scalePlayer == 0.5f ? 0.5f : 2f, 0);
+        Orientetion.localPosition = new Vector3(0, p_scalePlayer == 0.5f ? 0.5f : 2f, 0);
     }
 
     //private void Correr()
     //{
-    //    if (Input.GetKey(KeyCode.LeftShift) && !crouch && stamina > 0.1f && controller.height >= 3.4f)
+    //    if (Input.GetKey(KeyCode.LeftShift) && !p_crouch && p_stamina > 0.1f && p_controller.height >= 3.4f)
     //    {
     //        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
     //        {
-    //            currentSpeed = speedRunning;
-    //            running = true;
+    //            p_currentSpeed = speedRunning;
+    //            p_running = true;
     //            drainStamina();
     //            updateStamina(1);
     //        }
     //        else
     //        {
-    //            currentSpeed = normalSpeed;
-    //            running = false;
+    //            p_currentSpeed = p_normalSpeed;
+    //            p_running = false;
     //            gainStamina();
 
-    //            if (stamina >= maxStamina - 0.1f)
+    //            if (p_stamina >= p_maxStamina - 0.1f)
     //            {
     //                updateStamina(0);
     //            }
@@ -216,37 +215,37 @@ public class Player : MonoBehaviour
     //    {
     //        gainStamina();
 
-    //        if (stamina >= maxStamina - 0.1f)
+    //        if (p_stamina >= p_maxStamina - 0.1f)
     //        {
     //            updateStamina(0);
     //        }
     //    }
-    //    if (Input.GetKeyUp(KeyCode.LeftShift) && controller.height >= 3.4f || stamina < 0.1f)
+    //    if (Input.GetKeyUp(KeyCode.LeftShift) && p_controller.height >= 3.4f || p_stamina < 0.1f)
     //    {
-    //        currentSpeed = normalSpeed;
-    //        running = false;
+    //        p_currentSpeed = p_normalSpeed;
+    //        p_running = false;
     //    }
     //}
     //private void drainStamina()
     //{
-    //    if (running)
+    //    if (p_running)
     //    {
-    //        stamina -= decriStamina * Time.deltaTime;
+    //        p_stamina -= decriStamina * Time.deltaTime;
     //    }
     //}
 
     //private void gainStamina()
     //{
-    //    if (!running && stamina <= maxStamina - 0.01f)
+    //    if (!p_running && p_stamina <= p_maxStamina - 0.01f)
     //    {
-    //        stamina += staminaRegen * Time.deltaTime;
+    //        p_stamina += p_staminaRegen * Time.deltaTime;
     //        updateStamina(1);
     //    }
     //}
 
     private void updateStamina(int value)
     {
-        staminaProgressUI.fillAmount = stamina / maxStamina;
+        p_staminaProgressUI.fillAmount = p_stamina / p_maxStamina;
 
         if (value == 0)
         {
@@ -261,7 +260,9 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Get & Set
-    private float speed { get; set; } = 12;
+    private float Speed { get; set; } = 12;
+    public bool IsMoving { get; set; }
+    public bool CanMove { get; set; } = true;
     #endregion
 }
 

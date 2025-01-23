@@ -168,14 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - Mas qual o sentido disso estar aqui?
-    - Essa era a sua...
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -959,14 +953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Mas\u2026 que mensagem era aquela?"
-    - "Ser\xE1 que essa pessoa caiu aqui tamb\xE9m?"
-  manager: {fileID: 0}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -2037,7 +2025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59225908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.8, y: 2.31, z: 0.04}
+  m_LocalPosition: {x: -11.8, y: 1.4, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 831957986}
@@ -2056,18 +2044,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: ...
-    sentence:
-    - "Essas feridas\u2026"
-    - Elas voltaram a doer.
-    - "Por que estou dando relev\xE2ncia para isso agora?"
-  - name: ...
-    sentence:
-    - O que aconteceu?
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -3028,16 +3006,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Preciso achar algo que me tire dessa situa\xE7\xE3o."
-    - "\u2026"
-    - Como fui me meter nesse problema.
-    - "Era s\xF3 continuar seguindo a vida."
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet:
   - setValueBoxCollider: 0
     elemento: {fileID: 137430737}
@@ -3691,17 +3661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "N\xE3o me conformo\u2026"
-    - "Eu estava t\xE3o distra\xEDdo e de repente\u2026"
-    - "Cai nesse infort\xFAnio."
-    - Mas como algo desse tamanho estava no meio do caminho?
-    - "E pior, como eu n\xE3o vi?"
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet:
   - setValueBoxCollider: 0
     elemento: {fileID: 832100729}
@@ -5274,14 +5235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - Mas o que?
-    - "O que isso est\xE1 fazendo aqui?"
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -7422,16 +7377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - Que lugar tenebroso.
-    - Tem estalactite por todo lado.
-    - "Tomara que n\xE3o caiam sobre mim."
-    - "N\xE3o preciso de mais problemas em minhas costas."
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -11201,13 +11148,17 @@ PrefabInstance:
     - target: {fileID: 3249606369000162971, guid: 6256366d78f8d364f841a54d9a140604, type: 3}
       propertyPath: thoughts
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1722835142}
     - target: {fileID: 3249606369000162971, guid: 6256366d78f8d364f841a54d9a140604, type: 3}
       propertyPath: TMPSentence
       value: 
       objectReference: {fileID: 175703251}
     - target: {fileID: 3249606369000162971, guid: 6256366d78f8d364f841a54d9a140604, type: 3}
       propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 820894659}
+    - target: {fileID: 3249606369000162971, guid: 6256366d78f8d364f841a54d9a140604, type: 3}
+      propertyPath: p_dialogueCanvas
       value: 
       objectReference: {fileID: 820894659}
     - target: {fileID: 3249606369000162972, guid: 6256366d78f8d364f841a54d9a140604, type: 3}
@@ -19828,15 +19779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 1
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Porcaria! Ela rasgou e todas as minhas coisas est\xE3o espalhadas."
-    - "E tamb\xE9m a minha lanterna n\xE3o est\xE1 aqui."
-    - Preciso acha-la logo.
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet:
   - setValueBoxCollider: 0
     elemento: {fileID: 0}
@@ -21365,13 +21309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Que bom que pelo menos a lanterna ainda est\xE1 funcionando."
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -29214,14 +29153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Voltar agora n\xE3o vai adiantar nada."
-    - Preciso continuar.
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -67904,13 +67837,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: ...
-    sentence:
-    - Encontrei!
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet:
   - setValueBoxCollider: 1
     elemento: {fileID: 1467762472}
@@ -67990,16 +67918,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Ele\u2026"
-    - "Sumiu\u2026"
-    - Preciso ir emborda daqui.
-    - Ele pode voltar e me ferir.
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -68435,14 +68355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Que estranho\u2026"
-    - "Esse lugar me passa uma sensa\xE7\xE3o de solid\xE3o."
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -68791,13 +68705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Mas\u2026 o que \xE9 isso?"
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -74942,15 +74851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - AAAAAAAAAAH!
-    - Que dor repentina.
-    - "N\xE3o quero passar mais um minuto aqui."
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet:
   - setValueBoxCollider: 1
     elemento: {fileID: 1413179209}
@@ -76939,14 +76841,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "N\xE3o quero passar por esse sofrimento de novo."
-    - Preciso apressar o passo se quero sair disso logo.
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -77484,14 +77380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - Achei!
-    - Espero que ainda esteja funcionando.
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -80396,27 +80286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: ...
-    sentence:
-    - 'Onde estou?
-
-'
-    - "Que lugar \xE9 esse?\n"
-    - SOCORRO!
-    - SOCORRO!
-    - "TEM ALGU\xC9M A\xCD?"
-    - ...
-    - ...
-    - Mas que droga!
-    - "N\xE3o tem ningu\xE9m que possa me ajudar?"
-    - "Infelizmente, n\xE3o trouxe nada comigo que possa me ajudar a sair daqui."
-    - ...
-    - "Espera\u2026"
-    - "Cad\xEA as minhas coisas?"
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -82222,16 +82093,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputLanternMode: 0
-  dialogue:
-  - name: Santos
-    sentence:
-    - "Tem algu\xE9m ali!"
-    - "\u2026"
-    - OI!
-    - "OL\xC1!"
-  manager: {fileID: 1652724937}
+  Dialogue: []
   targetCamera: {fileID: 0}
-  thisObj: {fileID: 0}
   needToSet: []
   nextDialogue: 1
   autoDialogue: 1
@@ -86552,6 +86415,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9099608467793463, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+      propertyPath: p_crossHair
+      value: 
+      objectReference: {fileID: 927884716}
+    - target: {fileID: 9099608467793463, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: currentScale
       value: 5
       objectReference: {fileID: 0}
@@ -86571,6 +86438,14 @@ PrefabInstance:
       propertyPath: staminaProgressUI
       value: 
       objectReference: {fileID: 209938706}
+    - target: {fileID: 9099608467793463, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+      propertyPath: distanceToInteract
+      value: 6.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099608467793463, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
+      propertyPath: p_distanceToInteract
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9099609570100778, guid: 0fb31f1ac7650984fa9e697cc2860a63, type: 3}
       propertyPath: m_TagString
       value: Orientention

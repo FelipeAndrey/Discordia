@@ -4,11 +4,12 @@ using UnityEngine;
 public class DialogueTrigger : Interactable
 {
     [Header("Dialogue Settings")]
-    public DialogueStructure[] dialogue;
-    public DialogueManager manager;
+    public DialogueStructure[] Dialogue;
+    private DialogueManager p_Dmanager;
+    private GameManager p_manager;
     public Camera targetCamera;
-    public BoxCollider thisObj;
-    public TriggersStructur[] needToSet;
+    private BoxCollider p_thisObj;
+    [SerializeField] private TriggersStructur[] p_needToSet;
 
     [Header("Automatic Dialogue")]
     public bool nextDialogue;
@@ -48,8 +49,9 @@ public class DialogueTrigger : Interactable
 
     private void Start()
     {
-        thisObj = gameObject.GetComponent<BoxCollider>();
-        manager = GameObject.FindObjectOfType<DialogueManager>();
+        p_thisObj = gameObject.GetComponent<BoxCollider>();
+        p_Dmanager = GameObject.FindObjectOfType<DialogueManager>();
+        p_manager = FindObjectOfType<GameManager>();
         som = GameObject.FindObjectOfType<AudioManager>();
     }
 
@@ -67,9 +69,9 @@ public class DialogueTrigger : Interactable
         {
             doorOne.SetActive(false);
         }
-        if (needToSet != null)
+        if (p_needToSet != null)
         {
-            foreach (var set in needToSet)
+            foreach (var set in p_needToSet)
             {
                 if (set.elemento != null)
                 {
@@ -86,7 +88,7 @@ public class DialogueTrigger : Interactable
 
     void Update()
     {
-        waitTime = manager.time;
+        waitTime = p_Dmanager.Time;
 
         if (zoom)
         {
@@ -103,14 +105,14 @@ public class DialogueTrigger : Interactable
 
             TriggerDialogue(true);
 
-            if (thisObj == null)
+            if (p_thisObj == null)
                 return;
 
-            thisObj.enabled = false;
+            p_thisObj.enabled = false;
 
-            if (needToSet != null)
+            if (p_needToSet != null)
             {
-                foreach (var set in needToSet)
+                foreach (var set in p_needToSet)
                 {
                     if (set.elemento != null)
                     {
@@ -132,18 +134,18 @@ public class DialogueTrigger : Interactable
 
         if (notMove == true)
         {
-            manager.Manager.SetMoving(false);
-            manager.Manager.audioManager.Stop("Pasos");
+            p_manager.SetMoving(false);
+            p_manager.audioManager.Stop("Pasos");
         }
 
         if (activeAnimation && parameter != null)
-            manager.Manager.animator.SetBool(parameter, true);
+            p_Dmanager.Manager.animator.SetBool(parameter, true);
 
         if (thoughts != null)
-            manager.thoughts = thoughts;
+            p_Dmanager.p_thoughts = thoughts;
 
-        manager.canNext = nextDialogue;
-        manager.Dialogue(value, dialogue, this.gameObject, waitForThoughts);
+        p_Dmanager.CanNext = nextDialogue;
+        p_Dmanager.Dialogue(value, Dialogue, this.gameObject, waitForThoughts);
 
         if (som != null)
             som.Play(nomeSom);
@@ -154,7 +156,7 @@ public class DialogueTrigger : Interactable
     {
         yield return new WaitForSeconds(value + 2f);
         TriggerDialogue(true);
-        manager.time = 0f;
+        p_Dmanager.Time = 0f;
         yield return null;
     }
 
@@ -165,21 +167,21 @@ public class DialogueTrigger : Interactable
         if (sprite == null)
             return;
 
-        if (temp < 1.0f && manager.onDialogue)
+        if (temp < 1.0f && p_Dmanager.OnDialogue)
         {
             temp += Time.deltaTime * 0.5f;
-            manager.Manager.cameraAtual.GetComponent<Look>().canLook = false;
-            manager.Manager.cameraAtual.transform.LookAt(transformRef);
-            manager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
+            p_Dmanager.Manager.cameraAtual.GetComponent<Look>().canLook = false;
+            p_Dmanager.Manager.cameraAtual.transform.LookAt(transformRef);
+            p_Dmanager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
         }
-        else if (!manager.onDialogue && temp > 0f)
+        else if (!p_Dmanager.OnDialogue && temp > 0f)
         {
             temp -= Time.deltaTime * 0.5f;
-            manager.Manager.cameraAtual.GetComponent<Look>().canLook = true;
-            manager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
+            p_Dmanager.Manager.cameraAtual.GetComponent<Look>().canLook = true;
+            p_Dmanager.Manager.cameraAtual.fieldOfView = Mathf.Lerp(60, valueOfView, temp);
             StartCoroutine(SpriteFadeOut());
         }
-        else if (!manager.onDialogue && temp < 0f)
+        else if (!p_Dmanager.OnDialogue && temp < 0f)
         {
             this.gameObject.SetActive(false);
         }
@@ -214,7 +216,7 @@ public class DialogueTrigger : Interactable
             doorOne.SetActive(false);
             doorTwo.SetActive(false);
         }
-        manager.Manager.audioManager.Stop("Pasos");
+        p_Dmanager.Manager.audioManager.Stop("Pasos");
     }
 
     private void OnTriggerExit(Collider other)

@@ -5,36 +5,33 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+
     [Header("Atributos para o Diálogo")]
-    public GameManager Manager;
-    public GameObject dialogueCanvas;
+    private GameManager p_manager;
+    [SerializeField] private GameObject p_dialogueCanvas;
     public TextMeshProUGUI TMPName;
     public TextMeshProUGUI TMPSentence;
     public Queue<string> sentences;
-    private int index;
+    private int p_index;
     [HideInInspector]
-    private DialogueStructure[] structureArray;
-    private GameObject target;
-    /*[System.NonSerialized]*/
-    public Thoughts thoughts;
-    private float waitForThoughts;
+    private DialogueStructure[] p_structureArray;
+    private GameObject p_target;
+    public Thoughts p_thoughts;
+    private float p_waitForThoughts;
 
-    public bool onDialogue { get; set; } = false;
-    public bool canNext { get; set; } = false;
-    public float time { get; set; }
 
 
     void Start()
     {
         sentences = new Queue<string>();
-        dialogueCanvas.SetActive(false);
-        Manager = gameObject.GetComponent<GameManager>();
+        p_dialogueCanvas.SetActive(false);
+        p_manager = gameObject.GetComponent<GameManager>();
     }
 
     void Update()
     {
 
-        if (onDialogue && canNext)
+        if (OnDialogue && CanNext)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -45,19 +42,19 @@ public class DialogueManager : MonoBehaviour
 
     public void Dialogue(bool value, DialogueStructure[] dialogues, GameObject objectTarget, float waitForThoughtsTarget)
     {
-        target = objectTarget;
-        waitForThoughts = waitForThoughtsTarget;
-        index = 0;
-        structureArray = dialogues;
+        p_target = objectTarget;
+        p_waitForThoughts = waitForThoughtsTarget;
+        p_index = 0;
+        p_structureArray = dialogues;
         this.gameObject.SetActive(value);
-        onDialogue = true;
-        StartDialogue(structureArray[0]);
+        OnDialogue = true;
+        StartDialogue(p_structureArray[0]);
 
     }
 
     public void StartDialogue(DialogueStructure dialogue)
     {
-        dialogueCanvas.SetActive(onDialogue);
+        p_dialogueCanvas.SetActive(OnDialogue);
         TMPName.text = dialogue.name;
         sentences.Clear();
         foreach (string sentence in dialogue.sentence)
@@ -72,13 +69,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            index++;
-            if (index >= structureArray.Length)
+            p_index++;
+            if (p_index >= p_structureArray.Length)
             {
                 EndDialogue();
                 return;
             }
-            StartDialogue(structureArray[index]);
+            StartDialogue(p_structureArray[p_index]);
             return;
         }
         string displaySentence = sentences.Dequeue();
@@ -87,30 +84,36 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        onDialogue = false;
-        dialogueCanvas.SetActive(onDialogue);
+        OnDialogue = false;
+        p_dialogueCanvas.SetActive(OnDialogue);
         //target.gameObject.GetComponent<DialogueTrigger>().enabled = onDialogue;
 
-        if (Manager.player.canMove == false)
+        if (p_manager.player.CanMove == false)
         {
-            Manager.SetMoving(true);
+            p_manager.SetMoving(true);
         }
-        if (thoughts != null && waitForThoughts == 0)
+        if (p_thoughts != null && p_waitForThoughts == 0)
         {
-            thoughts.StartThoughts();
+            p_thoughts.StartThoughts();
         }
         else
         {
-            StartCoroutine(CallEvent(waitForThoughts));
+            StartCoroutine(CallEvent(p_waitForThoughts));
         }
     }
 
     private IEnumerator CallEvent(float value)
     {
         yield return new WaitForSeconds(value);
-        if (thoughts != null)
-            thoughts.StartThoughts();
+        if (p_thoughts != null)
+            p_thoughts.StartThoughts();
         yield return null;
     }
 
+    #region Get & Set
+    public bool OnDialogue { get; set; } = false;
+    public bool CanNext { get; set; } = false;
+    public float Time { get; set; }
+    public GameManager Manager { get => p_manager; }
+    #endregion
 }

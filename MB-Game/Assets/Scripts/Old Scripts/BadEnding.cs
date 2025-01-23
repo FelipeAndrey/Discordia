@@ -5,18 +5,18 @@ public class BadEnding : MonoBehaviour
 {
     public DialogueTrigger dialogueTrigger;
     public GameObject Loading;
-    private bool collided = false;
+    //private bool collided = false;
 
     private void Update()
     {
-        if (collided)
+        /*if (collided)
         {
-            dialogueTrigger.manager.canNext = true;
-            if (dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+            dialogueTrigger.p_Dmanager.CanNext = true;
+            if (dialogueTrigger.p_Dmanager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
             {
                 callGoodEndingScene();
             }
-        }
+        }*/
     }
 
     public void callGoodEndingScene()
@@ -28,6 +28,6 @@ public class BadEnding : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        collided = true;
+        //collided = true;
     }
 }

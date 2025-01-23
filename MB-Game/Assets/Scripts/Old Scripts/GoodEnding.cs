@@ -9,14 +9,14 @@ public class GoodEnding : MonoBehaviour
 
     private void Update()
     {
-        if (collided)
+        /*if (collided)
         {
-            dialogueTrigger.manager.canNext = true;
-            if (dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+            dialogueTrigger.p_Dmanager.CanNext = true;
+            if (dialogueTrigger.p_Dmanager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
             {
                 callGoodEndingScene();
             }
-        }
+        }*/
     }
 
     public void callGoodEndingScene()

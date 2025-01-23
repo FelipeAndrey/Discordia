@@ -44,7 +44,7 @@ public class Cards : Interactable
 
     void Start()
     {
-        som = GameObject.FindObjectOfType<AudioManager>();
+        som = FindObjectOfType<AudioManager>();
         manager = FindObjectOfType<GameManager>();
     }
 

@@ -16,24 +16,24 @@ public class Bargain : MonoBehaviour
     public int bargainID { get; set; }
 
     #region Privates
-    private bool collided;
+    //private bool collided;
     #endregion
 
     #region OnTriggerCollider
     private void OnTriggerEnter(Collider other)
     {
         audioManager.Play("Whisper");
-        collided = true;
+        //collided = true;
     }
     private void OnTriggerExit(Collider other)
     {
-        collided = false;
+        //collided = false;
     }
     #endregion
 
     private void Update()
     {
-        if (collided)
+        /*if (collided)
         {
             if (this.category.ToString() == "Interactive")//In Interactive Case
             {
@@ -41,7 +41,7 @@ public class Bargain : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.N))
                 {
                     audioManager.Stop("Whisper");
-                    dialogueTrigger.manager.EndDialogue();
+                    dialogueTrigger.p_Dmanager.EndDialogue();
                 }
 
             }
@@ -51,16 +51,16 @@ public class Bargain : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.N))
                 {
                     audioManager.Stop("Whisper");
-                    dialogueTrigger.manager.EndDialogue();
+                    dialogueTrigger.p_Dmanager.EndDialogue();
                 }
             }
-        }
+        }*/
     }
 
-    public void Interactive()
+   /* public void Interactive()
     {
-        dialogueTrigger.manager.canNext = dialogueTrigger.manager.sentences.Count == 0 ? false : true;
-        if (dialogueTrigger.manager.onDialogue && dialogueTrigger.manager.canNext == false && Input.GetKeyUp(KeyCode.Y))
+        dialogueTrigger.p_Dmanager.CanNext = dialogueTrigger.p_Dmanager.sentences.Count == 0 ? false : true;
+        if (dialogueTrigger.p_Dmanager.OnDialogue && dialogueTrigger.p_Dmanager.CanNext == false && Input.GetKeyUp(KeyCode.Y))
         {
             bargainManager.Type = type.ToString();
             bargainManager.AddBargain(this);
@@ -69,7 +69,7 @@ public class Bargain : MonoBehaviour
             {
                 bargainManager.Interactive(bargainTarget);
             }
-            dialogueTrigger.manager.EndDialogue();
+            dialogueTrigger.p_Dmanager.EndDialogue();
             this.gameObject.SetActive(false);
             collided = false;
             audioManager.Stop("Whisper");
@@ -83,14 +83,14 @@ public class Bargain : MonoBehaviour
         bargainTrigger.gameObject.SetActive(true);
         bargainID = bargainManager.Bargain.Count;
         bargainTrigger.GetComponent<LocalTrigger>().ID = bargainID;
-        dialogueTrigger.manager.canNext = true;
-        if (dialogueTrigger.manager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+        dialogueTrigger.p_Dmanager.CanNext = true;
+        if (dialogueTrigger.p_Dmanager.sentences.Count == 0 && Input.GetKeyDown(KeyCode.Space))
         {
             audioManager.Stop("Whisper");
-            dialogueTrigger.manager.canNext = false;
-            dialogueTrigger.manager.EndDialogue();
+            dialogueTrigger.p_Dmanager.CanNext = false;
+            dialogueTrigger.p_Dmanager.EndDialogue();
         }
         this.gameObject.SetActive(false);
         collided = false;
-    }
+    }*/
 }

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Managers")]
-    public DialogueManager dialogueManager;
-    public AudioManager audioManager;
+    private DialogueManager p_dialogueManager;
+    private AudioManager p_audioManager;
 
     [Header("Player")]
     public Player player;
@@ -28,13 +28,16 @@ public class GameManager : MonoBehaviour
     public bool turOffAnimation;
 
 
+
     void Start()
     {
+        p_dialogueManager = FindObjectOfType<DialogueManager>();
+        p_audioManager = FindObjectOfType<AudioManager>();
         if (!turOffAnimation)
         {
             Card = new CardsTrigger();
             cameraAtual.GetComponent<Look>().canLook = false;
-            player.canMove = false;
+            player.CanMove = false;
             animator.SetBool("isAwaking", true);
         }
 
@@ -83,11 +86,16 @@ public class GameManager : MonoBehaviour
 
     public void SetMoving(bool value)
     {
-        player.canMove = value;
+        player.CanMove = value;
     }
 
     public void LoadLevel(string level)
     {
         SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
     }
+
+    #region Get & Set
+    public AudioManager audioManager { get => p_audioManager; }
+    public DialogueManager dialogueManager { get => p_dialogueManager; }
+    #endregion
 }

@@ -9,24 +9,24 @@ public class PuzzleTrigger : Interactable
     public GameObject door;
     [HideInInspector] public List<GameObject> puzzleInteract;
 
-    private bool puzzleSpawn;
+    //private bool puzzleSpawn;
 
-    public override void Interact()
+   public override void Interact()
     {
-        if (manager.player.lantern == null)
-            return;
-        else if (manager.player.lantern.luzAtiva == true)
-        {
-            if (!puzzleSpawn)
-            {
-                this.gameObject.GetComponent<BoxCollider>().enabled = false;
-                this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                Words.SetActive(true);
-                puzzleSpawn = true;
-            }
-        }
-        else
-            return;
+        /*if (manager.player.lantern == null)
+           return;
+       else if (manager.player.lantern.luzAtiva == true)
+       {
+           if (!puzzleSpawn)
+           {
+               this.gameObject.GetComponent<BoxCollider>().enabled = false;
+               this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+               Words.SetActive(true);
+               puzzleSpawn = true;
+           }
+       }
+       else
+           return;*/
 
     }
     // Start is called before the first frame update
@@ -42,7 +42,7 @@ public class PuzzleTrigger : Interactable
         if (puzzleInteract.Count == 3)
         {
             Words.SetActive(false);
-            puzzleSpawn = false;
+            //puzzleSpawn = false;
             Destroy(door);
         }
     }

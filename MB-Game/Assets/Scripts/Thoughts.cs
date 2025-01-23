@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Thoughts : MonoBehaviour
 {
-    private GameManager manager;
+    private GameManager p_manager;
 
     [Header("Thoughts Settings")]
     [TextArea(1, 3)]
@@ -32,7 +32,7 @@ public class Thoughts : MonoBehaviour
 
     void Start()
     {
-        manager = GameObject.FindObjectOfType<GameManager>();
+        p_manager = GameObject.FindObjectOfType<GameManager>();
         sentence = new Queue<string>();
         TMP.enabled = false;
     }
@@ -83,7 +83,7 @@ public class Thoughts : MonoBehaviour
 
         if (notMove)
         {
-            manager.player.canMove = false;
+            p_manager.player.CanMove = false;
         }
 
         NextThinking();
@@ -119,7 +119,7 @@ public class Thoughts : MonoBehaviour
         this.gameObject.SetActive(false);
         if (notMove)
         {
-            manager.player.canMove = true;
+            p_manager.player.CanMove = true;
             notMove = false;
         }
     }

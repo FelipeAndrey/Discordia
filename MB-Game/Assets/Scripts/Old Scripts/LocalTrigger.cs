@@ -16,14 +16,14 @@ public class LocalTrigger : MonoBehaviour
                 {
                     bargainManager.Type = target.type.ToString();
                     bargainManager.Local(bargainTarget);
-                    if (!this.GetComponent<DialogueTrigger>().manager.onDialogue)
+                    /*if (!this.GetComponent<DialogueTrigger>().p_Dmanager.OnDialogue)
                     {
                         return;
                     }
                     else
                     {
                         this.gameObject.SetActive(false);
-                    }
+                    }*/
                 }
             }
 

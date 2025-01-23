@@ -42,13 +42,13 @@ public class WoodActive : Interactable
     IEnumerator CameraBridgeTime()
     {
         manager.cameraAtual.GetComponent<Look>().canLook = false;
-        manager.player.canMove = false;
+        manager.player.CanMove = false;
         manager.cameraAtual.transform.position = spotBrigeCamera.position;
         manager.cameraAtual.transform.rotation = spotBrigeCamera.rotation;
         manager.cameraAtual.GetComponent<CameraFollow>().enabled = false;
         lantern.SetActive(false);
         yield return new WaitForSeconds(5f);
-        manager.player.canMove = true;
+        manager.player.CanMove = true;
         manager.cameraAtual.GetComponent<Look>().canLook = true;
         manager.cameraAtual.transform.position = oldPlayerPosition.transform.position;
         manager.cameraAtual.transform.rotation = oldPlayerPosition.transform.rotation;
